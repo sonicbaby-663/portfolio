@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetSee — Your Name</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../index.html#work">Work</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="side-nav" aria-label="Разделы кейса">
+    <a href="#research">Исследование</a>
+    <a href="#benchmarking">Бенчмаркинг</a>
+    <a href="#hmw-before">How Might We</a>
+    <a href="#solutions">Дизайн-решения</a>
+    <a href="#usability">Юзабилити-тесты</a>
+    <a href="#hmw-after">HMW после тестов</a>
+  </nav>
+
+  <main class="case-page">
+
+    <section class="case-hero">
+      <span class="case-tag">Пет-проект · iOS</span>
+      <h1>PetSee</h1>
+      <p class="case-meta">Product Designer&nbsp;&nbsp;·&nbsp;&nbsp;2024</p>
+      <p class="case-intro">Маркетплейс для временной передержки домашних животных. Соединяет владельцев питомцев с людьми, которые готовы за ними присмотреть. Проектировал с нуля — от исследования до финального UI.</p>
+      <a href="#" class="btn-outline">Смотреть прототип в Figma →</a>
+    </section>
+
+    <div class="case-cover case-section" aria-hidden="true"></div>
+
+    <section class="case-section">
+      <h2>Проблема</h2>
+      <p>Владельцы боятся оставлять питомца незнакомому человеку. Зоогостиницы дорогие и стрессовые для животных. Те, кто хочет заботиться о чужих питомцах, не знают как начать.</p>
+    </section>
+
+    <section class="case-section">
+      <h2>Аудитория</h2>
+      <div class="audience-grid">
+        <div class="audience-card">
+          <h3>Владельцы</h3>
+          <p>Люди с домашними животными, которым нужно уехать в командировку, отпуск или просто провести день вне дома. Хотят, чтобы питомцу было комфортно и безопасно — в домашней атмосфере, а не в клетке зоогостиницы.</p>
+          <p class="audience-fear"><span class="audience-label">Главный страх</span>Отдать питомца незнакомцу и не знать, что с ним происходит.</p>
+        </div>
+        <div class="audience-card">
+          <h3>Ситтеры</h3>
+          <p>Люди, которые любят животных и хотят проводить с ними время — студенты, фрилансеры, пенсионеры. Готовы присматривать за чужими питомцами, но не знают, как найти владельцев и как это оформить.</p>
+          <p class="audience-fear"><span class="audience-label">Главный барьер</span>Непонятно, как начать и как вызвать доверие у незнакомых людей.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <h2>Метрики MVP</h2>
+      <table class="case-table">
+        <thead>
+          <tr>
+            <th>Метрика</th>
+            <th>Цель</th>
+            <th>Почему</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Конверсия из просмотра профиля ситтера в бронирование</td>
+            <td>≥ 15%</td>
+            <td>Показывает, насколько профиль вызывает доверие и закрывает страх владельца</td>
+          </tr>
+          <tr>
+            <td>Доля повторных бронирований</td>
+            <td>≥ 40% за 3 месяца</td>
+            <td>Индикатор реального доверия — владелец вернулся к тому же ситтеру</td>
+          </tr>
+          <tr>
+            <td>Среднее время до первого бронирования</td>
+            <td>≤ 7 дней после регистрации</td>
+            <td>Длинный путь до первой сделки убивает retention на старте</td>
+          </tr>
+          <tr>
+            <td>Доля ситтеров с хотя бы одним выполненным заказом</td>
+            <td>≥ 60% через 30 дней</td>
+            <td>Предложение без спроса не работает — ситтеры уйдут, если не будет заявок</td>
+          </tr>
+          <tr>
+            <td>Средний рейтинг по итогам передержки</td>
+            <td>≥ 4.7 из 5</td>
+            <td>Рейтинг — главный сигнал безопасности для новых пользователей</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="research" class="case-section">
+      <h2>Исследование</h2>
+      <p>8 глубинных интервью с владельцами животных и потенциальными ситтерами. Искали главные барьеры доверия, паттерны поведения при выборе и ключевые страхи обеих сторон.</p>
+      <div class="case-cover case-section" aria-hidden="true"></div>
+      <a href="./research/index.html" class="btn-outline">Открыть исследование →</a>
+    </section>
+
+    <section id="benchmarking" class="case-section">
+      <h2>Бенчмаркинг</h2>
+      <p>Анализ Rover, Wag, DogVacay и трёх российских конкурентов. Сравнивали механики доверия, онбординг ситтеров, систему отзывов и прозрачность во время передержки.</p>
+      <a href="./benchmarking.html" class="btn-outline">Открыть бенчмаркинг →</a>
+    </section>
+
+    <section id="hmw-before" class="case-section">
+      <h2>How Might We</h2>
+      <p>Ключевые вопросы, сформулированные по итогам исследования. Каждый вопрос опирается на конкретный инсайт и ведёт к измеримому дизайн-решению.</p>
+      <a href="./hmw-before.html" class="btn-outline">Открыть HMW →</a>
+    </section>
+
+    <section id="solutions" class="case-section">
+      <h2>Дизайн-решения</h2>
+      <p>UI для доверия: верифицированные профили, фото питомцев, live-отчёты во время передержки. Поиск и бронирование за минимальное количество шагов.</p>
+      <a href="./solutions.html" class="btn-outline">Открыть решения →</a>
+    </section>
+
+    <section id="usability" class="case-section">
+      <h2>Юзабилити-тесты</h2>
+      <p>5 сессий с реальными пользователями: 3 владельца и 2 потенциальных ситтера. Тестировали флоу бронирования и флоу регистрации ситтера по заранее составленным сценариям.</p>
+      <a href="./usability.html" class="btn-outline">Открыть тесты →</a>
+    </section>
+
+    <section id="hmw-after" class="case-section">
+      <h2>HMW после тестов</h2>
+      <p>Скорректированные вопросы после юзабилити-тестов. Часть гипотез подтвердилась, часть потребовала переосмысления — зафиксировали новые направления для итерации.</p>
+      <a href="./hmw-after.html" class="btn-outline">Открыть HMW →</a>
+    </section>
+
+    <nav class="case-nav case-section">
+      <a href="#" class="case-nav-link">← Предыдущий</a>
+      <a href="#" class="case-nav-link">Следующий →</a>
+    </nav>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.side-nav a');
+
+    function setActiveLink() {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop <= 120) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+
+</body>
+</html>

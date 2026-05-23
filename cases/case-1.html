@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study One — Your Name</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../index.html#work">Work</a></li>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="case-page">
+
+    <section class="case-hero">
+      <span class="case-tag">UX / Product</span>
+      <h1>Case Study One</h1>
+      <p class="case-meta">Product Designer&nbsp;&nbsp;·&nbsp;&nbsp;2024</p>
+      <p class="case-intro">This project focused on redesigning the core user flow for a B2B SaaS platform. Working closely with the product team, I led research, prototyping, and final delivery. The result was a significantly cleaner experience that reduced onboarding time by half.</p>
+      <a href="#" class="btn-outline">Смотреть прототип в Figma →</a>
+    </section>
+
+    <div class="case-cover case-section" aria-hidden="true"></div>
+
+    <section class="case-section">
+      <h2>Проблема и задача</h2>
+      <p>Пользователи застревали на этапе первичной настройки: форма содержала 24 поля, половина из которых оказалась необязательной. Задача — сократить время до первого результата и снизить количество незавершённых регистраций.</p>
+      <div class="img-placeholder" aria-hidden="true"></div>
+    </section>
+
+    <section class="case-section">
+      <h2>Исследование</h2>
+      <p>Провели 8 глубинных интервью с действующими пользователями и 3 сессии юзабилити-тестирования с прототипами. Ниже — транскрипции интервью.</p>
+      <a href="./research/case-1/index.html" class="btn-outline">Все исследования →</a>
+    </section>
+
+    <section class="case-section">
+      <h2>How Might We</h2>
+      <p>По итогам исследования сформулировали ключевые вопросы, которые направили дальнейшую работу над дизайном. Каждый вопрос опирается на конкретную боль, выявленную в интервью.</p>
+      <a href="./hmw/case-1/index.html" class="btn-outline">Все вопросы How Might We →</a>
+    </section>
+
+    <section class="case-section">
+      <h2>Дизайн-решение</h2>
+      <p>Разбили форму регистрации на три последовательных шага с прогресс-индикатором. На первом шаге — только email и пароль, пользователь сразу попадает в продукт с демо-данными. Сложные поля перенесли на второй и третий шаги, добавив подсказки и возможность пропустить.</p>
+      <div class="img-placeholder img-placeholder--lg" aria-hidden="true"></div>
+      <a href="./solutions/case-1/index.html" class="btn-outline">Смотреть дизайн-решения →</a>
+    </section>
+
+    <section class="case-section">
+      <h2>Результаты</h2>
+      <div class="metrics">
+        <div class="metric">
+          <span class="metric-value">−47%</span>
+          <span class="metric-label">время онбординга</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">+31%</span>
+          <span class="metric-label">завершённых регистраций</span>
+        </div>
+        <div class="metric">
+          <span class="metric-value">4.6</span>
+          <span class="metric-label">средняя оценка от пользователей</span>
+        </div>
+      </div>
+    </section>
+
+    <nav class="case-nav case-section">
+      <a href="#" class="case-nav-link">← Предыдущий</a>
+      <a href="case-2.html" class="case-nav-link">Следующий →</a>
+    </nav>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.min.js"></script>
+  <script>AOS.init({ duration: 600, easing: 'ease', once: true, offset: 0, startEvent: 'DOMContentLoaded' });</script>
+</body>
+</html>
