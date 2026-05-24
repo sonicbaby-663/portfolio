@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HMW после тестов · PetSee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../index.html#work">Work</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="bench-page">
+
+    <div class="research-back">
+      <a href="./index.html" class="back-link">← PetSee</a>
+    </div>
+
+    <section class="bench-hero">
+      <h1>HMW после тестов</h1>
+      <p class="bench-intro">Пять проблем из юзабилити-тестов переформулировал в вопросы «Как мы могли бы…» и нашёл конкретные решения для каждого.</p>
+    </section>
+
+    <div class="hmw-after-list">
+
+      <div class="hmw-after-item">
+        <p class="hmw-after-problem">
+          <span class="priority-badge high">Высокий</span>
+          Стрелка «‹» воспринималась как «пропустить» — 3/3 владельцев не завершили заполнение питомца
+        </p>
+        <p class="hmw-after-q">Как сделать так, чтобы пользователь понял, что данные питомца можно добавить позже — и не бросил бронирование?</p>
+        <p class="hmw-after-solution">Заменить стрелку «‹» на кнопку «Позже» с поясняющим тостом: «Добавьте данные питомца до начала передержки». Шаг остаётся необязательным, но намерение платформы становится очевидным.</p>
+        <p class="hmw-after-metric">Метрика: доля завершённых бронирований ≥ 70%</p>
+      </div>
+
+      <div class="hmw-after-item">
+        <p class="hmw-after-problem">
+          <span class="priority-badge high">Высокий</span>
+          Экран верификации выглядел обязательным — 3/3 ситтеров остановились и не поняли, можно ли продолжить
+        </p>
+        <p class="hmw-after-q">Как показать, что верификация необязательна прямо сейчас, но усиливает профиль и увеличивает доверие?</p>
+        <p class="hmw-after-solution">Переименовать экран в «Усильте профиль», добавить описание выгод (больше заказов, выше в выдаче) и заметную кнопку «Позже». Убрать всё, что визуально напоминает обязательный чекпоинт.</p>
+        <p class="hmw-after-metric">Метрика: конверсия регистрации ситтера ≥ 80%</p>
+      </div>
+
+      <div class="hmw-after-item">
+        <p class="hmw-after-problem">
+          <span class="priority-badge high">Высокий</span>
+          Условия отмены бронирования не были видны до экрана оплаты
+        </p>
+        <p class="hmw-after-q">Как убедиться, что пользователь прочитает и примет условия отмены до того, как деньги будут списаны?</p>
+        <p class="hmw-after-solution">Добавить блок с условиями отмены непосредственно на экран подтверждения оплаты — выше кнопки «Оплатить». Не отдельный экран, не мелкий текст, а читаемый блок с конкретными цифрами.</p>
+        <p class="hmw-after-metric">Метрика: снижение обращений в поддержку по теме отмен на 30%</p>
+      </div>
+
+      <div class="hmw-after-item">
+        <p class="hmw-after-problem">
+          <span class="priority-badge medium">Средний</span>
+          Карточка ситтера переворачивается, но 1/3 владельцев не догадались об этом
+        </p>
+        <p class="hmw-after-q">Как намекнуть пользователю, что за карточкой скрыта дополнительная информация?</p>
+        <p class="hmw-after-solution">Анимация-подсказка при первом открытии карточки: элемент слегка «приподнимается» и возвращается обратно в течение 1 секунды. Срабатывает один раз, не повторяется.</p>
+        <p class="hmw-after-metric">Метрика: доля открытий обратной стороны карточки ≥ 60%</p>
+      </div>
+
+      <div class="hmw-after-item">
+        <p class="hmw-after-problem">
+          <span class="priority-badge medium">Средний</span>
+          Свайп-жест в ленте заказов неочевиден — 3/3 ситтеров нажимали вместо свайпа
+        </p>
+        <p class="hmw-after-q">Как показать ситтеру при первом входе, что карточки в ленте листаются свайпом?</p>
+        <p class="hmw-after-solution">Анимация при первом открытии ленты: первая карточка сдвигается вправо на несколько пикселей и возвращается обратно. Визуальная подсказка без текста и без лишних экранов.</p>
+        <p class="hmw-after-metric">Метрика: доля ситтеров, использующих свайп в первую сессию ≥ 70%</p>
+      </div>
+
+    </div>
+
+    <div class="survey-wave-nav">
+      <a href="./usability.html" class="btn-outline">← Юзабилити-тесты</a>
+      <a href="./mvp-scope.html" class="btn-outline">Приоритизация MVP →</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+</body>
+</html>

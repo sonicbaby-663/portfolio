@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Flow · PetSee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../index.html#work">Work</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="bench-page">
+
+    <div class="research-back">
+      <a href="./index.html" class="back-link">← PetSee</a>
+    </div>
+
+    <section class="bench-hero">
+      <h1>User Flow</h1>
+      <p class="bench-intro">Два параллельных потока — владелец и ситтер. Оба начинаются с единой точки входа (онбординг), расходятся по роли и сходятся в момент активной передержки.</p>
+    </section>
+
+    <div class="img-placeholder" style="margin-bottom: 0.75rem;">Схема User Flow — диаграмма</div>
+    <p style="font-size: 0.8125rem; color: #9b9b9b; margin-bottom: 3rem;">Полная диаграмма в Figma с развилками, критическими сценариями и экранными переходами</p>
+
+    <div class="flow-block">
+      <h2>Общий старт</h2>
+
+      <div class="flow-stage">
+        <h3>Онбординг → Выбор роли</h3>
+        <pre class="flow-tree">Запуск приложения
+└── Онбординг (контент адаптируется после выбора роли)
+     ├── Пользовательское соглашение
+     ├── Политика обработки данных
+     └── Регистрация по номеру телефона
+          └── Развилка: Владелец / Ситтер</pre>
+      </div>
+    </div>
+
+    <div class="flow-block">
+      <h2>Поток: Владелец питомца</h2>
+
+      <div class="flow-stage">
+        <h3>1. Создание профиля</h3>
+        <pre class="flow-tree">Карточка питомца
+├── Основное (имя, вид, порода, возраст, фото)
+├── Подробнее (характер, триггеры, реакции)
+├── Здоровье (болезни, лекарства, контакт ветклиники)
+├── Дополнительно (режим дня, игрушки, инструкции)
+└── Способ оплаты → Свободный адрес владельца</pre>
+      </div>
+
+      <div class="flow-stage">
+        <h3>2. Поиск</h3>
+        <pre class="flow-tree">Главная страница поиска
+├── Выбор услуги → Выбор питомца (из профиля)
+└── Результаты поиска
+     ├── Фильтр «Проверен PetSee»
+     ├── Дополнительные фильтры
+     ├── Просмотр всех отзывов
+     └── ⚠ Подбор ситтеров не найден — экран-заглушка</pre>
+      </div>
+
+      <div class="flow-stage">
+        <h3>3. Бронирование</h3>
+        <pre class="flow-tree">Анкета ситтера
+└── Бронирование
+     ├── Выбор услуги → Проверка условий → Состав цены
+     └── Instant Book?
+          ├── Да → Автоприём → Создание оплаты ситтеру
+          └── Нет → Ожидание ответа ситтера → Способ оплаты</pre>
+      </div>
+
+      <div class="flow-stage">
+        <h3>4–5. Передержка и завершение</h3>
+        <pre class="flow-tree">Бронирование подтверждено
+└── Чат → Запрос отчёта
+
+Завершение передержки
+├── Перечисление средств ситтеру
+├── Оставить отзыв
+└── Пригласить друзей (реферальная программа)</pre>
+      </div>
+    </div>
+
+    <div class="flow-block">
+      <h2>Поток: Ситтер</h2>
+
+      <div class="flow-stage">
+        <h3>1. Создание профиля</h3>
+        <pre class="flow-tree">Анкета ситтера
+├── Основное (фото, имя, локация, о себе)
+├── Услуги (виды, цены, бейдж «Высокооплачиваемая услуга»)
+├── Подробности (условия, опыт)
+├── Опыт (животные, которых принимает)
+└── Способ оплаты
+     ├── Верификация ← → Выход
+     └── Теория PetSee ← → Выход
+          └── Профиль ситтера → Свободный ситтер</pre>
+      </div>
+
+      <div class="flow-stage">
+        <h3>2. Принятие заявки</h3>
+        <pre class="flow-tree">Пуш-уведомление
+└── Instant Book?
+     ├── Да → Автоприём
+     └── Нет → Список заявок
+               └── Просмотр карточки питомца
+                    └── Принять (кнопка или свайп вправо) / Отклонить</pre>
+      </div>
+
+      <div class="flow-stage">
+        <h3>3–4. Передержка и завершение</h3>
+        <pre class="flow-tree">Бронирование подтверждено
+└── Чат
+     ├── Пуш «Отправь отчёт» → камера напрямую
+     └── Шаблоны быстрых ответов
+
+Завершение передержки
+├── Перечисление средств
+└── Принять другие заказы</pre>
+      </div>
+    </div>
+
+    <div class="survey-wave-nav">
+      <a href="./benchmarking.html" class="btn-outline">← Бенчмаркинг</a>
+      <a href="./hmw-before.html" class="btn-outline">How Might We →</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+</body>
+</html>

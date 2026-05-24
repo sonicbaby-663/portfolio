@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Юзабилити-тесты · PetSee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../index.html#work">Work</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="bench-page">
+
+    <div class="research-back">
+      <a href="./index.html" class="back-link">← PetSee</a>
+    </div>
+
+    <section class="bench-hero">
+      <h1>Юзабилити-тесты</h1>
+      <p class="bench-meta-line">6 участников · 3 владельца, 3 ситтера · май 2026</p>
+      <p class="bench-intro">Тестировали кликабельный прототип из Figma: флоу бронирования для владельцев и флоу регистрации для ситтеров. Записывали экраны, замеряли время выполнения задач.</p>
+    </section>
+
+    <div style="margin-top: 2rem; padding: 1.75rem 2rem; background: #f9f9f9; border-radius: 8px;">
+      <p class="usability-score">71.7</p>
+      <p class="usability-score-label">SUS · Marginal Acceptable</p>
+      <p class="usability-score-desc">Граничный показатель — выше 70, но ниже «хорошего» порога 80. Три критических проблемы и две незначительных снизили оценку. После итерации цель — SUS ≥ 80.</p>
+    </div>
+
+    <div class="research-section">
+      <h2>Задачи владельцев</h2>
+      <p class="research-section-meta">3 участника · 6 задач</p>
+      <table class="case-table">
+        <thead>
+          <tr>
+            <th>Задача</th>
+            <th>Выполнено</th>
+            <th>Среднее время</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Найти ситтера рядом с домом</td>
+            <td>3/3</td>
+            <td>0.7 мин</td>
+          </tr>
+          <tr>
+            <td>Открыть профиль ситтера и перейти к бронированию</td>
+            <td>1/3</td>
+            <td>2.3 мин ⚠️</td>
+          </tr>
+          <tr>
+            <td>Заполнить данные питомца и перейти к оплате</td>
+            <td>0/3</td>
+            <td>2.3 мин ⚠️</td>
+          </tr>
+          <tr>
+            <td>Найти статус активного бронирования</td>
+            <td>1/3</td>
+            <td>1.7 мин</td>
+          </tr>
+          <tr>
+            <td>Написать ситтеру в чате</td>
+            <td>3/3</td>
+            <td>1.3 мин</td>
+          </tr>
+          <tr>
+            <td>Оставить отзыв о передержке</td>
+            <td>2/3</td>
+            <td>1.0 мин</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="research-section">
+      <h2>Задачи ситтеров</h2>
+      <p class="research-section-meta">3 участника · 5 задач</p>
+      <table class="case-table">
+        <thead>
+          <tr>
+            <th>Задача</th>
+            <th>Выполнено</th>
+            <th>Среднее время</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Создать профиль ситтера</td>
+            <td>3/3</td>
+            <td>1.0 мин</td>
+          </tr>
+          <tr>
+            <td>Пройти верификацию профиля</td>
+            <td>1/3</td>
+            <td>2.7 мин ⚠️</td>
+          </tr>
+          <tr>
+            <td>Принять заявку на передержку</td>
+            <td>2/3</td>
+            <td>0.7 мин</td>
+          </tr>
+          <tr>
+            <td>Отправить фотоотчёт владельцу</td>
+            <td>3/3</td>
+            <td>0.3 мин</td>
+          </tr>
+          <tr>
+            <td>Просмотреть ленту доступных заказов</td>
+            <td>3/3</td>
+            <td>0.7 мин</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="research-section">
+      <h2>Топ-5 проблем</h2>
+      <table class="case-table">
+        <thead>
+          <tr>
+            <th>Проблема</th>
+            <th>Кол-во</th>
+            <th>Severity</th>
+            <th>Приоритет</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Стрелка «‹» воспринималась как кнопка «пропустить» — пользователи выходили из флоу заполнения питомца</td>
+            <td>3/3 вл.</td>
+            <td>3</td>
+            <td><span class="priority-badge high">Высокий</span></td>
+          </tr>
+          <tr>
+            <td>Условия отмены бронирования не видны до экрана оплаты</td>
+            <td>1/3 вл.</td>
+            <td>3</td>
+            <td><span class="priority-badge high">Высокий</span></td>
+          </tr>
+          <tr>
+            <td>Экран верификации выглядит обязательным — ситтеры останавливались и не понимали, можно ли продолжить</td>
+            <td>3/3 ст.</td>
+            <td>2</td>
+            <td><span class="priority-badge high">Высокий</span></td>
+          </tr>
+          <tr>
+            <td>Карточку ситтера можно перевернуть, но интерактивность неочевидна</td>
+            <td>1/3 вл.</td>
+            <td>2</td>
+            <td><span class="priority-badge medium">Средний</span></td>
+          </tr>
+          <tr>
+            <td>Свайп-жест в ленте заказов неочевиден для ситтеров — пытались нажать вместо свайпа</td>
+            <td>3/3 ст.</td>
+            <td>1</td>
+            <td><span class="priority-badge medium">Средний</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="research-section">
+      <h2>Сессии</h2>
+      <p class="research-section-meta">6 участников · 3 владельца, 3 ситтера · модерируемое тестирование с рассуждением вслух</p>
+
+      <p class="accordion-section-label" style="margin-top: 0; margin-bottom: 1rem;">Расшифровки ↓</p>
+
+      <details class="accordion-item">
+        <summary>
+          <span class="accordion-title">Сессия 1 — Анна, 27 лет, владелец кошки</span>
+          <span class="accordion-meta">SUS 70</span>
+          <span class="accordion-chevron">↓</span>
+        </summary>
+        <div class="accordion-body">
+          <p><strong>Претест:</strong> До этого оставляла кошку у мамы. Сейчас мама уезжает, реально ищет альтернативу. Пробовала Авито — не доверяет. Важно: отзывы, фото, видно ли что человек ответственный.</p>
+          <p><strong>Задача 2 (Профиль питомца):</strong> На блоке «Дополнительно» нашла стрелки в хедере. «А вот эта стрелочка — это что? Дальше или это тип "отложить"? Ну я бы хотела, чтобы это было что-то типа "Сохранить и заполнить позже"».</p>
+          <p><strong>Задача 4 (Выбор ситтера):</strong> Механику разворота карточки не обнаружила самостоятельно — пришлось подсказать. «Что? А, действительно. Я не догадалась».</p>
+          <p><strong>Задача 6 (Запрос отчёта):</strong> Кнопку нашла за 10 секунд. «Последний, класс, что можно по одной кнопке запрос сделать, но сейчас кажется что это отправка фото».</p>
+          <p><strong>Постест:</strong> «Крутость, что можно в одном месте запомнить, не надо самой всё вспоминать». Рекомендовала бы: «Скорее да, крутая идея».</p>
+        </div>
+      </details>
+
+      <details class="accordion-item">
+        <summary>
+          <span class="accordion-title">Сессия 2 — Дмитрий, 33 года, владелец двух собак</span>
+          <span class="accordion-meta">SUS 65</span>
+          <span class="accordion-chevron">↓</span>
+        </summary>
+        <div class="accordion-body">
+          <p><strong>Претест:</strong> Сейчас знакомые. Для него важен опыт с крупными собаками — у него их две.</p>
+          <p><strong>Задача 2 (Профиль питомца):</strong> Высоко оценил детальность — особенно поле «триггеры». «Вот это правильные вопросы про триггеры — нечасто такое спрашивают». На стрелке сомневался: «Одна назад, вторая вперёд. Это "следующий блок" или "пропустить совсем"?»</p>
+          <p><strong>Задача 3 (Поиск):</strong> «А где фильтр по опыту с крупными собаками? Я бы как минимум по размеру собаки фильтр вынес».</p>
+          <p><strong>Задача 5 (Бронирование):</strong> «А если он откажется в последний момент, что мне будет? Хорошо, что условия отмены есть. Но я бы это вынес на сам экран оплаты — не в отдельное окно».</p>
+          <p><strong>Постест:</strong> «Анкета питомца, детальная информация — не нужно всё самому вспоминать». Рекомендовал бы: «Подпилить пару штрихов и довольно интересно должно получиться».</p>
+        </div>
+      </details>
+
+      <details class="accordion-item">
+        <summary>
+          <span class="accordion-title">Сессия 3 — Михаил, 26 лет, ситтер</span>
+          <span class="accordion-meta">SUS 67.5</span>
+          <span class="accordion-chevron">↓</span>
+        </summary>
+        <div class="accordion-body">
+          <p><strong>Претест:</strong> Хочет дополнительный доход, нравятся животные. «Не хочу попасть на конфликтного владельца, который потом скажет, что я что-то сделал не так».</p>
+          <p><strong>Задача 2 (Анкета ситтера):</strong> Время — 7:00 мин, самое долгое среди всех сессий. Верификацию и обучение воспринял как обязательную часть регистрации. «Заметил, что верификацию и обучение не обязательно проходить? — Нет, я думал это часть регистрации».</p>
+          <p><strong>Задача 3 (Принятие заявки):</strong> Свайп-жест заметил случайно при просмотре другой заявки. Хорошо оценил подробность карточки питомца: «О, тут реально подробно».</p>
+          <p><strong>Постест:</strong> «Шаблоны ответов и пуши» понравились. Не понравилось: «Длинно». Рекомендовал бы: «Точно бы сказал, что есть такое приложение».</p>
+        </div>
+      </details>
+
+      <details class="accordion-item">
+        <summary>
+          <span class="accordion-title">Сессия 4 — Олеся, 23 года, ситтер</span>
+          <span class="accordion-meta">SUS 75</span>
+          <span class="accordion-chevron">↓</span>
+        </summary>
+        <div class="accordion-body">
+          <p><strong>Претест:</strong> Удобно совмещать с учёбой. «Хочется, чтобы милый пушистик был, а не большая злая собака».</p>
+          <p><strong>Задача 2 (Анкета ситтера):</strong> Время — 8:30 мин, самое долгое в выборке. Верификацию не заметила: «Верификацию? Я её не видела. А, ну я не заметила». Бейдж «Высокооплачиваемая услуга» сработал — поставила рекомендуемую цену.</p>
+          <p><strong>Задача 3 (Принятие заявки):</strong> Свайп заметила случайно: «Ой, это правильно? А, я сама тоже попробовала бы свайпнуть».</p>
+          <p><strong>Задача 4 (Чат):</strong> «А свои шаблоны можно сделать?» — запрос на кастомные шаблоны.</p>
+          <p><strong>Постест:</strong> «Крутая идея с обучением, но маловато информации». Рекомендовала бы: «Да, мне понравилось».</p>
+        </div>
+      </details>
+
+      <details class="accordion-item">
+        <summary>
+          <span class="accordion-title">Сессия 5 — Артур, 31 год, ситтер (опыт Rover)</span>
+          <span class="accordion-meta">SUS 75</span>
+          <span class="accordion-chevron">↓</span>
+        </summary>
+        <div class="accordion-body">
+          <p><strong>Претест:</strong> Пользовался Rover за рубежом. «Страхование, ясные условия оплаты — на Rover это было хорошо устроено. Сразу хочется увидеть — есть ли страховка и гарантии».</p>
+          <p><strong>Задача 2 (Анкета ситтера):</strong> Понял опциональность верификации не из дизайна: «А я из дизайна и не понял. Я просто спросил у тебя». Пролистал обучение.</p>
+          <p><strong>Задача 3 (Принятие заявки):</strong> Свайп-жест не заметил — использовал тап. После подсказки: «А, не заметил. Когда много заявок — удобно должно быть».</p>
+          <p><strong>Важное замечание:</strong> Единственный респондент без серьёзных проблем — его опыт с Rover нельзя экстраполировать на новичков. Высокий SUS — результат знакомого паттерна, а не интуитивности дизайна.</p>
+          <p><strong>Постест:</strong> «Хорошая основа для русского рынка». Рекомендовал бы: «Да, расскажу друзьям».</p>
+        </div>
+      </details>
+
+      <details class="accordion-item">
+        <summary>
+          <span class="accordion-title">Сессия 6 — Карина, 24 года, владелец кошки</span>
+          <span class="accordion-meta">SUS 77.5</span>
+          <span class="accordion-chevron">↓</span>
+        </summary>
+        <div class="accordion-body">
+          <p><strong>Претест:</strong> Сейчас использует Telegram-чаты. Один раз уже оставляла питомца через сервис. Важно: человек норм и цена сошлась.</p>
+          <p><strong>Задача 2 (Профиль питомца):</strong> На стрелке: «Это "дальше" или "пропустить совсем"? Ну наверное "пропустить совсем", кнопка "Продолжить" же есть».</p>
+          <p><strong>Задача 4 (Выбор ситтера):</strong> Стратегия через бейджи: «Я смотрю, у кого больше плашек. Кто больше — наверное, лучше». Механику разворота карточки не нашла.</p>
+          <p><strong>Задача 6 (Запрос отчёта):</strong> Кнопку нашла за 5 секунд — лучший результат среди владельцев.</p>
+          <p><strong>Постест:</strong> «Легко, всё просто». Часть негатива («всё зависало») — издержки прототипа, не дизайна. Рекомендовала бы: «Да».</p>
+        </div>
+      </details>
+    </div>
+
+    <div class="survey-wave-nav">
+      <a href="./design.html" class="btn-outline">← Дизайн</a>
+      <a href="./hmw-after.html" class="btn-outline">HMW после тестов →</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+</body>
+</html>
