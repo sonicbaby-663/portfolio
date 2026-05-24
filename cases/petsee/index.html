@@ -23,6 +23,7 @@
   </header>
 
   <nav class="side-nav" aria-label="Разделы кейса">
+    <a href="#context">Обзор</a>
     <a href="#audience">Аудитория</a>
     <a href="#research">Исследование</a>
     <a href="#benchmarking">Бенчмаркинг</a>
@@ -32,7 +33,8 @@
     <a href="#design">Lo-fi → Hi-fi</a>
     <a href="#usability">Юзабилити</a>
     <a href="#hmw-after">HMW после тестов</a>
-    <a href="#roadmap">Роадмап</a>
+    <a href="#roadmap">Приоритизация</a>
+    <a href="#metrics">План измерений</a>
   </nav>
 
   <main class="case-page">
@@ -47,9 +49,10 @@
 
     <div class="case-cover case-section" aria-hidden="true"></div>
 
-    <section class="case-section">
-      <h2>Проблема</h2>
-      <p>Владельцы боятся оставлять питомца незнакомому человеку. Зоогостиницы дорогие и стрессовые для животных. Те, кто хочет заботиться о чужих питомцах, не знают как начать.</p>
+    <section id="context" class="case-section">
+      <h2>Обзор</h2>
+      <p>Цели, проблематика и ключевые допущения, которые определяли рамки проектирования.</p>
+      <a href="./context.html" class="btn-outline">Открыть обзор →</a>
     </section>
 
     <section id="audience" class="case-section">
@@ -66,7 +69,7 @@
           <p class="audience-fear"><span class="audience-label">Главный барьер</span>Юридическая незащищённость и страх «остаться один на один с проблемой».</p>
         </div>
       </div>
-      <a href="./segmentation.html" class="btn-outline">Полная сегментация →</a>
+      <a href="./segmentation.html" class="btn-outline" style="margin-top: 1.5rem; display: inline-block;">Полная сегментация →</a>
     </section>
 
     <section class="case-section">
@@ -141,6 +144,42 @@
     <section id="solutions" class="case-section">
       <h2>Дизайн-решения</h2>
       <p>UI для доверия: верифицированные профили, фото питомцев, live-отчёты во время передержки. Поиск и бронирование за минимальное количество шагов.</p>
+
+      <div class="carousel" id="solutionsCarousel">
+        <div class="carousel-slide is-left" data-slide="0">
+          <div class="carousel-slide-inner">
+            <svg class="carousel-slide-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
+            </svg>
+            <span class="carousel-slide-label">Экран 1</span>
+          </div>
+        </div>
+        <div class="carousel-slide is-center" data-slide="1">
+          <div class="carousel-slide-inner">
+            <svg class="carousel-slide-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
+            </svg>
+            <span class="carousel-slide-label">Экран 2</span>
+          </div>
+        </div>
+        <div class="carousel-slide is-right" data-slide="2">
+          <div class="carousel-slide-inner">
+            <svg class="carousel-slide-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
+            </svg>
+            <span class="carousel-slide-label">Экран 3</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-lightbox" id="carouselLightbox">
+        <div class="carousel-lightbox-backdrop" id="carouselBackdrop"></div>
+        <div class="carousel-lightbox-content">
+          <button class="carousel-lightbox-close" id="carouselClose">✕</button>
+          <span class="lightbox-placeholder-label" id="lightboxLabel">Экран 2</span>
+        </div>
+      </div>
+
       <a href="./solutions.html" class="btn-outline">Открыть решения →</a>
     </section>
 
@@ -163,16 +202,16 @@
     </section>
 
     <section id="roadmap" class="case-section">
-      <h2>Приоритизация и метрики</h2>
-      <p>Четыре релизные фазы от MVP до backlog + план измерений с шестью ключевыми метриками и бенчмарками.</p>
-      <a href="./mvp-scope.html" class="btn-outline">Приоритизация MVP →</a>
-      <a href="./measurement-plan.html" class="btn-outline" style="margin-left: 0.75rem;">Plan измерений →</a>
+      <h2>Приоритизация MVP</h2>
+      <p>Четыре релизные фазы — от обязательных механик доверия до backlog. Каждая фича обоснована данными исследования.</p>
+      <a href="./mvp-scope.html" class="btn-outline">Открыть приоритизацию →</a>
     </section>
 
-    <nav class="case-nav case-section">
-      <a href="#" class="case-nav-link">← Предыдущий</a>
-      <a href="#" class="case-nav-link">Следующий →</a>
-    </nav>
+    <section id="metrics" class="case-section">
+      <h2>План измерений</h2>
+      <p>Шесть метрик с целевыми значениями и бенчмарками. Каждая привязана к воронке и отвечает на вопрос о состоянии продукта.</p>
+      <a href="./measurement-plan.html" class="btn-outline">Открыть план измерений →</a>
+    </section>
 
   </main>
 
@@ -186,18 +225,24 @@
     const navLinks = document.querySelectorAll('.side-nav a');
 
     function setActiveLink() {
+      const midpoint = window.scrollY + window.innerHeight * 0.45;
       let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-        if (sectionTop <= 120) {
-          current = section.getAttribute('id');
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].offsetTop <= midpoint) {
+          current = sections[i].getAttribute('id');
+          break;
         }
-      });
+      }
+
+      // Last section may never reach midpoint — activate it at page bottom
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (maxScroll > 0 && maxScroll - window.scrollY <= 2) {
+        current = sections[sections.length - 1].getAttribute('id');
+      }
+
       navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) {
-          link.classList.add('active');
-        }
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
       });
     }
 
@@ -211,7 +256,66 @@
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
+
+    // Carousel
+    (function () {
+      const carousel = document.getElementById('solutionsCarousel');
+      if (!carousel) return;
+
+      const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      const lightbox = document.getElementById('carouselLightbox');
+      const lightboxClose = document.getElementById('carouselClose');
+      const backdrop = document.getElementById('carouselBackdrop');
+      const lightboxLabel = document.getElementById('lightboxLabel');
+
+      let activeIndex = 1;
+
+      function getPosition(i) {
+        const diff = ((i - activeIndex) % 3 + 3) % 3;
+        if (diff === 0) return 'is-center';
+        if (diff === 1) return 'is-right';
+        return 'is-left';
+      }
+
+      function applyPositions() {
+        slides.forEach(function (slide, i) {
+          slide.classList.remove('is-left', 'is-center', 'is-right');
+          slide.classList.add(getPosition(i));
+        });
+      }
+
+      function openLightbox(label) {
+        lightboxLabel.textContent = label;
+        lightbox.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      slides.forEach(function (slide, i) {
+        slide.addEventListener('click', function () {
+          const pos = getPosition(i);
+          if (pos === 'is-center') {
+            const label = slide.querySelector('.carousel-slide-label').textContent;
+            openLightbox(label);
+          } else {
+            activeIndex = i;
+            applyPositions();
+          }
+        });
+      });
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      backdrop.addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
   </script>
 
+  <script src="../../scroll.js"></script>
 </body>
 </html>
