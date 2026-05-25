@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Summary — Your Name</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../index.html#work">Work</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="side-nav" aria-label="Разделы кейса">
+    <a href="#context">Обзор</a>
+    <a href="#audience">Аудитория</a>
+    <a href="#research">Исследование</a>
+    <a href="#benchmarking">Бенчмаркинг</a>
+    <a href="#hypotheses">Гипотезы</a>
+    <a href="#solutions">Решения</a>
+    <a href="#design">Дизайн</a>
+    <a href="#usability">Валидация</a>
+    <a href="#metrics">Метрики</a>
+  </nav>
+
+  <main class="case-page">
+
+    <section class="case-hero">
+      <span class="case-tag">Пет-проект · iOS · 2026</span>
+      <h1>Travel Summary</h1>
+      <p class="case-meta">Product Designer&nbsp;&nbsp;·&nbsp;&nbsp;2026</p>
+      <p class="case-intro">Концептуальная фича для Яндекс Путешествий. Персонализированный итог поездки появляется через 24–48 часов после возвращения и мотивирует поделиться впечатлениями. Спроектировал с нуля — от исследования до UI.</p>
+      <a href="#" class="btn-outline">Смотреть прототип в Figma →</a>
+    </section>
+
+    <div class="case-cover case-section" aria-hidden="true"></div>
+
+    <section id="context" class="case-section">
+      <h2>Обзор</h2>
+      <p>Яндекс Путешествия хорошо закрывают фазу до поездки, но после возвращения у пользователя нет причины открывать приложение. Раздел «Мои поездки» работает как архив бронирований — без механики возврата. Travel Summary создаёт повод вернуться именно тогда, когда эмоции ещё живы.</p>
+      <a href="./context.html" class="btn-outline">Открыть обзор →</a>
+    </section>
+
+    <section id="audience" class="case-section">
+      <h2>Аудитория</h2>
+      <div class="audience-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="audience-card">
+          <h3>Активные шерящие (~30%)</h3>
+          <p>Публикуют контент о поездках по привычке. Для них важна визуальная подача и удобство — хотят story-формат с минимальной редактурой.</p>
+          <p class="audience-fear"><span class="audience-label">Барьер</span>Не сам факт публикации, а её качество. Конвертируются легче всего.</p>
+        </div>
+        <div class="audience-card">
+          <h3>Закрытые, но восприимчивые (~50%)</h3>
+          <p>Не публикуют в открытые соцсети, но готовы поделиться в личных чатах при правильном формате. Главный барьер — страх выглядеть хвастливо.</p>
+          <p class="audience-fear"><span class="audience-label">Ставка</span>Самый большой сегмент. Единственный мост к их шерингу — юмор и неожиданные факты.</p>
+        </div>
+        <div class="audience-card">
+          <h3>Функциональные (~20%)</h3>
+          <p>Используют сервис преимущественно для деловых поездок. Эмоциональная подача для них вторична — ценят утилитарность и структурированную статистику.</p>
+          <p class="audience-fear"><span class="audience-label">Роль</span>Не двигают метрику шеринга, но работают на DAU через архив и сравнение поездок.</p>
+        </div>
+      </div>
+      <a href="./segments.html" class="btn-outline" style="margin-top: 1.5rem; display: inline-block;">Полная сегментация →</a>
+    </section>
+
+    <section class="case-section">
+      <h2>Ключевые метрики MVP</h2>
+      <table class="case-table">
+        <thead>
+          <tr>
+            <th>Метрика</th>
+            <th>Цель</th>
+            <th>Почему</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Доля шеринга от DAU фичи</td>
+            <td>28–32%</td>
+            <td>Сейчас 19% публикуют контент о поездках — фича должна снять барьер</td>
+          </tr>
+          <tr>
+            <td>Генерация summary</td>
+            <td>&gt; 85%</td>
+            <td>Достаточно данных для генерации у большинства пользователей</td>
+          </tr>
+          <tr>
+            <td>Просмотр карусели</td>
+            <td>&gt; 95%</td>
+            <td>Из тех, кто получил summary — открывают карусель</td>
+          </tr>
+          <tr>
+            <td>Редактирование</td>
+            <td>&gt; 50%</td>
+            <td>89% назвали edit важным или критичным перед публикацией</td>
+          </tr>
+          <tr>
+            <td>Рост Retention (Day 30)</td>
+            <td>+4 pp</td>
+            <td>Базовое значение для travel-категории — 2,8%</td>
+          </tr>
+          <tr>
+            <td>CSI</td>
+            <td>&gt; 8/10</td>
+            <td>Фича должна создавать эмоциональную ценность, а не просто работать</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="research" class="case-section">
+      <h2>Исследование</h2>
+      <p>6 глубинных интервью и опрос 27 респондентов. Смотрел на барьеры к шерингу: почему люди не публикуют контент о поездках даже при позитивных впечатлениях.</p>
+      <div class="img-placeholder"></div>
+      <a href="./research.html" class="btn-outline">Открыть исследование →</a>
+    </section>
+
+    <section id="benchmarking" class="case-section">
+      <h2>Бенчмаркинг</h2>
+      <p>Разобрал пять продуктов с механикой персонального recap: Spotify Wrapped, Apple Music Replay, Strava, Polarsteps и Booking.com. Смотрел на story-формат, тайминг показа и шеринг-механики.</p>
+      <div class="img-placeholder"></div>
+      <a href="./benchmarking.html" class="btn-outline">Открыть бенчмаркинг →</a>
+    </section>
+
+    <section id="hypotheses" class="case-section">
+      <h2>Приоритизация гипотез</h2>
+      <p>После интервью было пять гипотез — нужно было решить, в каком порядке проверять количественно. Использовал ICE: Impact × Confidence × Ease.</p>
+      <table class="case-table case-table--equal" style="margin-top: 1.25rem;">
+        <thead>
+          <tr>
+            <th>Гипотеза</th>
+            <th>ICE</th>
+            <th>Приоритет</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Редактирование — обязательное условие шеринга</td>
+            <td>900</td>
+            <td>Must</td>
+          </tr>
+          <tr>
+            <td>Социальный барьер блокирует шеринг даже при хорошем контенте</td>
+            <td>810</td>
+            <td>Must</td>
+          </tr>
+          <tr>
+            <td>Детализация данных — основа персонализации</td>
+            <td>648</td>
+            <td>Should</td>
+          </tr>
+          <tr>
+            <td>Оптимальный момент показа — первые 48 часов после поездки</td>
+            <td>384</td>
+            <td>Nice</td>
+          </tr>
+          <tr>
+            <td>Пользователи с 2+ поездками ценят summary выше</td>
+            <td>315</td>
+            <td>Nice</td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="./hypotheses.html" class="btn-outline" style="margin-top: 1.5rem; display: inline-block;">Открыть приоритизацию →</a>
+    </section>
+
+    <section id="solutions" class="case-section">
+      <h2>Продуктовые рекомендации</h2>
+      <p>Story-формат из 5 карточек, показ через 24–48 часов, полное редактирование и забавные факты как главный инструмент снятия социального барьера.</p>
+
+      <div class="carousel" id="solutionsCarousel">
+        <div class="carousel-slide is-left" data-slide="0">
+          <div class="carousel-slide-inner">
+            <svg class="carousel-slide-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
+            </svg>
+            <span class="carousel-slide-label">Экран 1</span>
+          </div>
+        </div>
+        <div class="carousel-slide is-center" data-slide="1">
+          <div class="carousel-slide-inner">
+            <svg class="carousel-slide-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
+            </svg>
+            <span class="carousel-slide-label">Экран 2</span>
+          </div>
+        </div>
+        <div class="carousel-slide is-right" data-slide="2">
+          <div class="carousel-slide-inner">
+            <svg class="carousel-slide-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
+            </svg>
+            <span class="carousel-slide-label">Экран 3</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="./solutions.html" class="btn-outline">Открыть решения →</a>
+    </section>
+
+    <section id="design" class="case-section">
+      <h2>Дизайн</h2>
+      <p>User flow (swim-lanes, 6 фаз), UI kit на базе дизайн-системы Яндекс Путешествий и 10+ экранов с аннотациями, привязанными к данным исследования.</p>
+      <div class="img-placeholder"></div>
+      <a href="./design.html" class="btn-outline">Открыть дизайн →</a>
+    </section>
+
+    <section id="usability" class="case-section">
+      <h2>Валидация</h2>
+      <p>Спланировал 3 задачных сценария с 6 респондентами (по 2 на каждый сегмент). Тестирую персонализацию, edit-флоу и конверсию в шеринг. Метрика качества — SUS ≥ 70.</p>
+      <a href="./usability.html" class="btn-outline">Открыть план →</a>
+    </section>
+
+    <section id="metrics" class="case-section">
+      <h2>План измерений</h2>
+      <p>Конверсионная воронка из 4 этапов, события трекинга и три фазы A/B тестов. Ключевая метрика нормируется на DAU фичи, а не на DAU приложения.</p>
+      <a href="./measurement-plan.html" class="btn-outline">Открыть план измерений →</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.side-nav a');
+
+    function setActiveLink() {
+      const midpoint = window.scrollY + window.innerHeight * 0.45;
+      let current = '';
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].offsetTop <= midpoint) {
+          current = sections[i].getAttribute('id');
+          break;
+        }
+      }
+
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (maxScroll > 0 && maxScroll - window.scrollY <= 2) {
+        current = sections[sections.length - 1].getAttribute('id');
+      }
+
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Carousel
+    (function () {
+      const carousel = document.getElementById('solutionsCarousel');
+      if (!carousel) return;
+
+      const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      let activeIndex = 1;
+
+      function getPosition(i) {
+        const diff = ((i - activeIndex) % 3 + 3) % 3;
+        if (diff === 0) return 'is-center';
+        if (diff === 1) return 'is-right';
+        return 'is-left';
+      }
+
+      function applyPositions() {
+        slides.forEach(function (slide, i) {
+          slide.classList.remove('is-left', 'is-center', 'is-right');
+          slide.classList.add(getPosition(i));
+        });
+      }
+
+      slides.forEach(function (slide, i) {
+        slide.addEventListener('click', function () {
+          if (getPosition(i) === 'is-center') {
+            window.openGlobalLightbox('portrait');
+          } else {
+            activeIndex = i;
+            applyPositions();
+          }
+        });
+      });
+    })();
+  </script>
+
+  <script src="../../scroll.js"></script>
+</body>
+</html>

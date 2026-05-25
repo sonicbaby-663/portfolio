@@ -334,11 +334,19 @@ header {
 
 .img-placeholder {
   width: 100%;
-  height: 300px;
+  height: 240px;
   background: #f3f3f3;
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid #e8e8e8;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0;
+  cursor: zoom-in;
+}
+
+.hmw-preview {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
 }
 
 /* ── Before / After slider ── */
@@ -997,12 +1005,12 @@ header {
   letter-spacing: 0.03em;
 }
 
-/* Lightbox */
+/* ── Global Lightbox ── */
 
-.carousel-lightbox {
+.global-lightbox {
   position: fixed;
   inset: 0;
-  z-index: 1000;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1011,28 +1019,25 @@ header {
   transition: opacity 0.25s;
 }
 
-.carousel-lightbox.is-open {
+.global-lightbox.is-open {
   opacity: 1;
   pointer-events: auto;
 }
 
-.carousel-lightbox-backdrop {
+.global-lightbox-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.72);
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
 
-.carousel-lightbox-content {
+.global-lightbox-content {
   position: relative;
-  width: min(280px, 75vw);
-  height: min(607px, 82vh);
   background: #f3f3f3;
   border: 1px solid #e8e8e8;
-  border-radius: 24px;
   z-index: 1;
-  transform: scale(0.88);
+  transform: scale(0.9);
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   overflow: hidden;
   display: flex;
@@ -1040,11 +1045,29 @@ header {
   justify-content: center;
 }
 
-.carousel-lightbox.is-open .carousel-lightbox-content {
+.global-lightbox.is-open .global-lightbox-content {
   transform: scale(1);
 }
 
-.carousel-lightbox-close {
+.global-lightbox-content--portrait {
+  height: min(860px, 88vh);
+  width: calc(min(860px, 88vh) * 393 / 852);
+  max-width: 88vw;
+  border-radius: 28px;
+}
+
+.global-lightbox-content--landscape {
+  width: min(92vw, 1200px);
+  height: min(72vh, 680px);
+  border-radius: 14px;
+}
+
+.global-lightbox-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.global-lightbox-close {
   position: absolute;
   top: 12px;
   right: 12px;
@@ -1064,14 +1087,8 @@ header {
   line-height: 1;
 }
 
-.carousel-lightbox-close:hover {
+.global-lightbox-close:hover {
   background: rgba(0, 0, 0, 0.2);
-}
-
-.lightbox-placeholder-label {
-  font-size: 0.9375rem;
-  color: #b0b0b0;
-  font-weight: 500;
 }
 
 /* ── Survey pages ── */
@@ -1158,30 +1175,53 @@ header {
 
 .side-nav {
   position: fixed;
-  left: calc(50% - 530px);
+  left: calc(50% - 560px);
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 148px;
+  gap: 0;
+  width: 168px;
 }
 
 .side-nav a {
-  font-size: 0.8125rem;
-  color: #9b9b9b;
+  font-size: 0.75rem;
+  color: #b8b8b8;
   text-decoration: none;
-  transition: color 0.2s;
-  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px 0 5px 14px;
+  position: relative;
+  line-height: 1.5;
+  transition: color 0.2s ease;
+}
+
+.side-nav a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  bottom: 5px;
+  width: 2px;
+  background: #1a1a1a;
+  border-radius: 1px;
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .side-nav a:hover {
-  color: #1a1a1a;
+  color: #6b6b6b;
 }
 
 .side-nav a.active {
   color: #1a1a1a;
   font-weight: 500;
+}
+
+.side-nav a.active::before {
+  transform: scaleY(1);
 }
 
 section[id] {
@@ -1248,7 +1288,7 @@ section[id] {
   font-size: 1.125rem;
   font-weight: 500;
   color: #1a1a1a;
-  margin-bottom: 0.375rem;
+  margin-bottom: 1rem;
   letter-spacing: -0.01em;
 }
 
@@ -1256,6 +1296,16 @@ section[id] {
   font-size: 0.875rem;
   color: #9b9b9b;
   margin-bottom: 1.25rem;
+}
+
+.bench-quote {
+  margin: 1rem 0;
+  padding: 0.875rem 1.25rem;
+  border-left: 2px solid #e8e8e8;
+  font-size: 0.9375rem;
+  color: #6b6b6b;
+  font-style: italic;
+  line-height: 1.65;
 }
 
 .bench-problems,
@@ -1560,7 +1610,10 @@ section[id] {
   margin-top: 0.5rem;
 }
 
-.solution-item .img-placeholder {
+.solution-item .img-placeholder,
+.solution-item .carousel,
+.design-stage .img-placeholder,
+.design-stage .carousel {
   margin-top: 1rem;
   margin-bottom: 0.75rem;
 }

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приоритизация гипотез · Travel Summary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../index.html#work">Work</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="bench-page">
+
+    <div class="research-back">
+      <a href="./index.html" class="back-link">← Travel Summary</a>
+    </div>
+
+    <section class="bench-hero">
+      <h1>Приоритизация гипотез</h1>
+      <p class="bench-intro">После шести интервью было пять инсайтов без понимания, в каком порядке их проверять количественно. ICE-приоритизация позволила учесть не только силу потенциального эффекта, но и уверенность в данных.</p>
+    </section>
+
+    <div class="bench-list">
+
+      <div class="bench-block">
+        <h2>Почему ICE, а не RICE или MoSCoW</h2>
+        <p class="bench-problems">RICE требует оценки Reach — в пет-проекте таких данных нет. MoSCoW слишком грубо разделяет на бинарные категории. ICE (Impact × Confidence × Ease) позволяет работать с тем, что есть: оценить силу эффекта, насколько уверен в данных и насколько легко проверить.</p>
+      </div>
+
+      <div class="bench-block">
+        <h2>ICE-таблица</h2>
+        <table class="case-table">
+          <thead>
+            <tr>
+              <th>Гипотеза</th>
+              <th>I</th>
+              <th>C</th>
+              <th>E</th>
+              <th>ICE</th>
+              <th>Приоритет</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Редактирование — обязательное условие шеринга</td>
+              <td>10</td>
+              <td>10</td>
+              <td>10</td>
+              <td>900</td>
+              <td>Must</td>
+            </tr>
+            <tr>
+              <td>Социальный барьер блокирует шеринг даже при хорошем контенте</td>
+              <td>9</td>
+              <td>9</td>
+              <td>9</td>
+              <td>810</td>
+              <td>Must</td>
+            </tr>
+            <tr>
+              <td>Детализация данных — основа персонализации</td>
+              <td>8</td>
+              <td>9</td>
+              <td>9</td>
+              <td>648</td>
+              <td>Should</td>
+            </tr>
+            <tr>
+              <td>Оптимальный момент показа — сразу после поездки</td>
+              <td>8</td>
+              <td>6</td>
+              <td>8</td>
+              <td>384</td>
+              <td>Nice</td>
+            </tr>
+            <tr>
+              <td>Частота поездок влияет на ценность summary</td>
+              <td>7</td>
+              <td>5</td>
+              <td>9</td>
+              <td>315</td>
+              <td>Nice</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bench-block">
+        <h2>Выводы</h2>
+        <p class="bench-problems"><strong>Must (гипотезы 1 и 2)</strong> напрямую влияют на ключевую метрику. Гипотеза 2 блокирует весь потенциал органического привлечения. Гипотеза 1 получила максимальное подтверждение в качественной фазе — все 6 респондентов назвали редактирование важным или критичным.</p>
+        <p class="bench-problems"><strong>Should (гипотеза 3)</strong> влияет на восприятие персонализации и через это на NPS и Retention. Обязательна для MVP.</p>
+        <p class="bench-problems"><strong>Nice (гипотезы 4 и 5)</strong> требуют сегментации выборки, влияют на долгосрочную ценность, но не блокируют первичное внедрение. Гипотеза 4 проверяется A/B-тестом в фазе 2.</p>
+      </div>
+
+    </div>
+
+    <div class="survey-wave-nav">
+      <a href="./index.html" class="btn-outline">← Travel Summary</a>
+      <div style="display:flex;gap:0.75rem;">
+        <a href="./benchmarking.html" class="btn-outline">← Бенчмаркинг</a>
+        <a href="./solutions.html" class="btn-outline">Решения →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script src="../../scroll.js"></script>
+</body>
+</html>

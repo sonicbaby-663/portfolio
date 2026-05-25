@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Продуктовые рекомендации · Travel Summary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../index.html#work">Work</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="bench-page">
+
+    <div class="research-back">
+      <a href="./index.html" class="back-link">← Travel Summary</a>
+    </div>
+
+    <section class="bench-hero">
+      <h1>Продуктовые рекомендации</h1>
+      <p class="bench-intro">Каждое решение содержит альтернативу, которую рассматривал, и объяснение отказа. Это позволяет видеть логику выбора, а не только результат.</p>
+    </section>
+
+    <div class="solutions-list">
+
+      <div class="solutions-theme">
+
+        <div class="solution-item">
+          <h3>1. Формат — вертикальная карусель из 4–6 карточек</h3>
+          <p class="solution-desc">Пользователь получает summary как серию свайп-карточек, каждая посвящена одной теме: обложка, маршрут, места, расходы, итог.</p>
+          <div class="img-placeholder" aria-hidden="true"></div>
+          <p class="solution-alt">Альтернатива: длинная скроллящаяся страница со всей статистикой. Михаил прямо сказал: «Если итог будет слишком большим и подробным, мне лень будет разбираться». Длинная страница также плохо конвертируется в Stories-формат для шеринга.</p>
+        </div>
+
+        <div class="solution-item">
+          <h3>2. Тайминг — показ через 24–48 часов после возвращения</h3>
+          <p class="solution-desc">22 из 27 (81%) указали первые 48 часов как оптимальный момент. Это баланс между «эмоции ещё свежи» и «бытовой шум стих».</p>
+          <div class="img-placeholder" aria-hidden="true"></div>
+          <p class="solution-alt">Альтернатива 1: показ сразу в день возвращения — в этот день пользователь занят бытовыми задачами. Альтернатива 2: показ через неделю — слишком отложенно, эмоции остывают, только 5 из 27 (19%) выбрали этот вариант.</p>
+        </div>
+
+        <div class="solution-item">
+          <h3>3. Редактирование — полный edit перед публикацией</h3>
+          <p class="solution-desc">Пользователь может скрыть расходы одной кнопкой, заменить фото, удалить ошибочные места, переформулировать факты через AI-альтернативы.</p>
+          <div class="img-placeholder" aria-hidden="true"></div>
+          <p class="solution-alt">Альтернатива: режим «только просмотр» без редактирования. 16 из 27 (59%) считают edit критически важным и без него не будут делиться. Мотивация защитная: скрыть финансы, исправить геолокацию, убрать неудачное фото.</p>
+        </div>
+
+        <div class="solution-item">
+          <h3>4. Забавный факт как центральный элемент каждой карточки</h3>
+          <p class="solution-desc">В каждой карточке карусели есть блок с неожиданным или юмористичным фактом о поездке: «Вы прошли 47 км — это как пройти 3 раза по Кремлёвской набережной».</p>
+          <div class="img-placeholder" aria-hidden="true"></div>
+          <p class="solution-alt">Альтернатива: обобщающий AI-вывод в стиле Polarsteps Travel Personality («вы — городской исследователь»). Андрей: «Если там будут общие штуки типа "вы посетили достопримечательности Казани" — это слишком расплывчато». Конкретные факты переключают восприятие с хвастовства на развлекательный контент.</p>
+        </div>
+
+        <div class="solution-item">
+          <h3>5. Частота напоминаний — раз в 6–12 месяцев</h3>
+          <p class="solution-desc">15 из 27 (56%) указали комфортную частоту 6–12 месяцев. Дефолт с возможностью настройки в профиле.</p>
+          <div class="img-placeholder" aria-hidden="true"></div>
+          <p class="solution-alt">Альтернатива 1: ежемесячные напоминания — 4 из 27 (15%) прямо назвали спамом. Альтернатива 2: никаких напоминаний — убивает долгосрочный retention. Михаил: «Развлекательные напоминания — нет, спасибо».</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="bench-list">
+
+      <div class="bench-block">
+        <h2>MVP — минимальный состав</h2>
+        <table class="case-table">
+          <thead>
+            <tr>
+              <th>Элемент</th>
+              <th>Обоснование</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Генерация summary через 24–48ч с забавными фактами</td>
+              <td>Оптимальный тайминг + снятие барьера шеринга</td>
+            </tr>
+            <tr>
+              <td>Полное редактирование (скрытие данных, замена фото, корректировка текста)</td>
+              <td>16 из 27 назвали критически важным</td>
+            </tr>
+            <tr>
+              <td>Конкретные названия мест и количественные метрики</td>
+              <td>21 из 27 оценили как ключевую ценность</td>
+            </tr>
+            <tr>
+              <td>Карточка на главном экране с превью факта</td>
+              <td>Точка входа с высоким CTR — hook до открытия summary</td>
+            </tr>
+            <tr>
+              <td>Галерея прошлых summary в «Моих поездках»</td>
+              <td>Архив + точка возврата</td>
+            </tr>
+            <tr>
+              <td>Сравнение поездок для пользователей с 2+</td>
+              <td>9 из 15 готовы регулярно возвращаться к сравнению</td>
+            </tr>
+            <tr>
+              <td>Напоминания раз в 6–12 месяцев</td>
+              <td>Долгосрочный retention при низком раздражении</td>
+            </tr>
+            <tr>
+              <td>AI-генерация альтернативных формулировок фактов</td>
+              <td>Снижает барьер edit, помогает Сегменту 1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="survey-wave-nav">
+      <a href="./index.html" class="btn-outline">← Travel Summary</a>
+      <div style="display:flex;gap:0.75rem;">
+        <a href="./hypotheses.html" class="btn-outline">← Гипотезы</a>
+        <a href="./design.html" class="btn-outline">Дизайн →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script>
+    (function () {
+      var icon = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+        '<rect x="3" y="3" width="18" height="18" rx="2"/>' +
+        '<circle cx="8.5" cy="8.5" r="1.5"/>' +
+        '<path d="m21 15-5-5L5 21"/>' +
+        '</svg>';
+
+      function makeSlide(label, pos) {
+        var el = document.createElement('div');
+        el.className = 'carousel-slide ' + pos;
+        el.innerHTML = '<div class="carousel-slide-inner">' + icon +
+          '<span class="carousel-slide-label">' + label + '</span></div>';
+        return el;
+      }
+
+      document.querySelectorAll('.solution-item .img-placeholder').forEach(function (ph) {
+        var carousel = document.createElement('div');
+        carousel.className = 'carousel solution-carousel';
+        carousel.appendChild(makeSlide('Экран 1', 'is-left'));
+        carousel.appendChild(makeSlide('Экран 2', 'is-center'));
+        carousel.appendChild(makeSlide('Экран 3', 'is-right'));
+        ph.parentNode.replaceChild(carousel, ph);
+      });
+
+      document.querySelectorAll('.solution-carousel').forEach(function (carousel) {
+        var slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+        var active = 1;
+
+        function pos(i) {
+          var d = ((i - active) % 3 + 3) % 3;
+          return d === 0 ? 'is-center' : d === 1 ? 'is-right' : 'is-left';
+        }
+
+        function apply() {
+          slides.forEach(function (s, i) {
+            s.classList.remove('is-left', 'is-center', 'is-right');
+            s.classList.add(pos(i));
+          });
+        }
+
+        slides.forEach(function (slide, i) {
+          slide.addEventListener('click', function () {
+            if (pos(i) === 'is-center') {
+              if (window.openGlobalLightbox) window.openGlobalLightbox('portrait');
+            } else {
+              active = i;
+              apply();
+            }
+          });
+        });
+      });
+    })();
+  </script>
+
+  <script src="../../scroll.js"></script>
+</body>
+</html>

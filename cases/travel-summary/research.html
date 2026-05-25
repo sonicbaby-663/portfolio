@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Исследование · Travel Summary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../index.html#work">Work</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="bench-page">
+
+    <div class="research-back">
+      <a href="./index.html" class="back-link">← Travel Summary</a>
+    </div>
+
+    <section class="bench-hero">
+      <h1>Исследование</h1>
+      <p class="bench-intro">6 глубинных интервью и опрос 27 респондентов. Смотрел на то, почему люди не делятся контентом о поездках даже когда поездка была хорошей.</p>
+    </section>
+
+    <div class="bench-list">
+
+      <div class="bench-block">
+        <h2>Качественная фаза — глубинные интервью</h2>
+        <p class="bench-problems">Начал с качественного исследования, чтобы понять формат, содержание и сценарий использования travel summary, прежде чем переходить к конкретным решениям.</p>
+        <p class="bench-problems"><strong>Метод:</strong> глубинные интервью, онлайн, 40–45 минут каждое. <strong>Выборка:</strong> 6 респондентов — нижняя граница рекомендованной выборки по UX research best practices (5–8 для exploratory qualitative). Начиная с пятого интервью инсайты стали повторяться — сигнал насыщения.</p>
+        <div class="img-placeholder"></div>
+        <table class="case-table case-table--equal">
+          <thead>
+            <tr>
+              <th>Имя</th>
+              <th>Возраст</th>
+              <th>Частота поездок</th>
+              <th>Активность в соцсетях</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Андрей</td>
+              <td>25</td>
+              <td>1 раз в год</td>
+              <td>Не публикует</td>
+            </tr>
+            <tr>
+              <td>Алексей</td>
+              <td>34</td>
+              <td>3–4 раза в год</td>
+              <td>Сторис по привычке</td>
+            </tr>
+            <tr>
+              <td>Екатерина</td>
+              <td>29</td>
+              <td>1 раз в год</td>
+              <td>Инстаграм + телеграм-канал</td>
+            </tr>
+            <tr>
+              <td>Максим</td>
+              <td>38</td>
+              <td>Часто, деловые</td>
+              <td>Не публикует</td>
+            </tr>
+            <tr>
+              <td>Михаил</td>
+              <td>29</td>
+              <td>3–4 раза в год</td>
+              <td>Публикует «для галочки»</td>
+            </tr>
+            <tr>
+              <td>Артём</td>
+              <td>25</td>
+              <td>1 раз в год</td>
+              <td>Не публикует</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bench-block">
+        <h2>Инсайт 1 — Социальный барьер блокирует шеринг даже при хорошем контенте</h2>
+        <p class="bench-problems">Пользователи не делятся не потому что неудобно оформить — они боятся выглядеть хвастливо или чувствуют, что это никому не интересно. Этот инсайт прямо блокирует ключевую метрику фичи и снижает потенциал органического привлечения.</p>
+        <blockquote class="bench-quote">«Даже если итог классный — кому это интересно, кроме меня? Друзьям и так знают, что я ездил. Подписчикам вообще пофиг на мою Казань, скорее всего» — Андрей</blockquote>
+        <blockquote class="bench-quote">«Мне кажется, это выглядит наигранно. Как будто поездка у тебя не для себя, а для лайков» — Андрей</blockquote>
+      </div>
+
+      <div class="bench-block">
+        <h2>Инсайт 2 — Детализация создаёт ощущение «это про меня», обобщения — нет</h2>
+        <p class="bench-problems">Пользователи отвергают summary с общими формулировками даже при упоминании их данных. Ценность создаёт конкретика: названия мест, суммы, количественные метрики и личные моменты.</p>
+        <blockquote class="bench-quote">«Если там будут общие штуки типа "вы посетили достопримечательности Казани" — это слишком расплывчато, не интересно» — Андрей</blockquote>
+        <blockquote class="bench-quote">«Мне бы хотелось не отчёт, а историю про меня. Чтобы открыл и сразу ощущение — это точно моя поездка» — Артём</blockquote>
+      </div>
+
+      <div class="bench-block">
+        <h2>Инсайт 3 — Юмор и неожиданные факты снимают страх выглядеть хвастливо</h2>
+        <p class="bench-problems">Пользователи готовы делиться, если summary содержит что-то забавное или неожиданное — даже при простом оформлении. «Прикольное» переключает восприятие с хвастовства на развлекательный контент.</p>
+        <blockquote class="bench-quote">«Если бы выглядело не как хвастовство, а как что-то прикольное — типа карта с моим маршрутом туда-сюда — это бы точно отправил друзьям в чат» — Андрей</blockquote>
+        <blockquote class="bench-quote">«Ну, чтобы было над чем посмеяться или удивиться. Не просто сухие цифры, а с каким-то забавным выводом» — Михаил</blockquote>
+      </div>
+
+      <div class="bench-block">
+        <h2>Инсайт 4 — Редактирование нужно не для творчества, а как страховка</h2>
+        <p class="bench-problems">Все 6 респондентов назвали возможность редактирования важной или критичной. Мотивация защитная: убрать расходы, исправить ошибки геолокации, удалить неудачные фото.</p>
+        <blockquote class="bench-quote">«Вряд ли приложение идеально всё расставит. Может геолокация затупить — поставит мне какой-нибудь собор, в котором я никогда не был» — Андрей</blockquote>
+        <blockquote class="bench-quote">«Это очень важно. Не все детали хочется показывать, какие-то расходы не хочется палить» — Алексей</blockquote>
+      </div>
+
+      <div class="bench-block">
+        <h2>Инсайт 5 — Напоминания работают только при очень редкой частоте</h2>
+        <p class="bench-problems">Пользователи открыты к напоминаниям раз в несколько месяцев или раз в год — по аналогии с «Год назад» в Apple Photos. Любая частота выше воспринимается как спам.</p>
+        <blockquote class="bench-quote">«Если очень редко — нормально. Но каждые 2–3 месяца уже на спам похоже» — Андрей</blockquote>
+      </div>
+
+      <div class="bench-block">
+        <h2>Количественная фаза — опрос</h2>
+        <p class="bench-problems"><strong>Метод:</strong> онлайн-опрос, Google Forms, январь–февраль 2026. <strong>Выборка:</strong> 27 респондентов. Намеренно ограниченная для пет-проекта — нижняя граница того, что даёт устойчивые паттерны для дизайн-решений.</p>
+        <p class="bench-problems"><strong>Каналы:</strong> UX-кастдев чаты, личные контакты — bias в сторону технологически продвинутых пользователей крупных городов. Числа привожу в формате «N из 27» — читатель может самостоятельно оценить устойчивость.</p>
+        <div class="img-placeholder"></div>
+      </div>
+
+      <div class="bench-block">
+        <h2>Результаты по гипотезам</h2>
+        <table class="case-table">
+          <thead>
+            <tr>
+              <th>Гипотеза</th>
+              <th>Статус</th>
+              <th>Ключевые данные</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Конкретные данные создают персонализацию</td>
+              <td>✅ Подтверждена</td>
+              <td>21 из 27 (78%) оценили конкретные названия мест как важные</td>
+            </tr>
+            <tr>
+              <td>Юмор снимает социальный барьер</td>
+              <td>✅ Подтверждена</td>
+              <td>19 из 27 (70%): «Если факты забавные — мне не стыдно поделиться»</td>
+            </tr>
+            <tr>
+              <td>Редактирование — критическое условие шеринга</td>
+              <td>✅ Подтверждена</td>
+              <td>16 из 27 (59%): «Критически важно, без этого не буду делиться»</td>
+            </tr>
+            <tr>
+              <td>Оптимальный момент показа — 24–48 часов</td>
+              <td>✅ Частично подтверждена</td>
+              <td>22 из 27 (81%) указали первые 48 часов как оптимальный момент</td>
+            </tr>
+            <tr>
+              <td>Пользователи с 2+ поездками ценят summary выше</td>
+              <td>✅ Подтверждена</td>
+              <td>67% в сегменте 2+ поездок vs 42% в сегменте 1 поездка</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div class="survey-wave-nav">
+      <a href="./index.html" class="btn-outline">← Travel Summary</a>
+      <div style="display:flex;gap:0.75rem;">
+        <a href="./context.html" class="btn-outline">← Обзор</a>
+        <a href="./benchmarking.html" class="btn-outline">Бенчмаркинг →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script src="../../scroll.js"></script>
+</body>
+</html>
