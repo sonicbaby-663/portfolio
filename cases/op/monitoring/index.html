@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мониторинг 2.0 — Термика</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../../index.html#work">Work</a></li>
+        <li><a href="../../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="side-nav" aria-label="Разделы кейса">
+    <a href="#context">Обзор</a>
+    <a href="#audience">Аудитория</a>
+    <a href="#research">Исследование</a>
+    <a href="#design">Дизайн-решения</a>
+    <a href="#results">Результат</a>
+  </nav>
+
+  <main class="case-page">
+
+    <div class="research-back">
+      <a href="../index.html" class="back-link">← Опыт работы</a>
+    </div>
+
+    <section class="case-hero">
+      <span class="case-tag">Внутренний инструмент · Термика · 2024</span>
+      <h1>Мониторинг 2.0</h1>
+      <p class="case-meta">Product Designer&nbsp;&nbsp;·&nbsp;&nbsp;Март 2024</p>
+      <p class="case-intro">Внутренний инструмент для отслеживания актуальности нормативной базы учебных продуктов. Заменил ручной мониторинг через внешние агрегаторы на единую рабочую среду для экспертов и методистов. Проектировал один — от первых совещаний до запуска и текущего развития.</p>
+    </section>
+
+    <div class="case-cover case-section" aria-hidden="true"></div>
+
+    <section id="context" class="case-section">
+      <h2>Обзор</h2>
+      <p>Термика выпускает учебные курсы по промышленной безопасности и охране труда. Чтобы курс можно было продать клиенту, он должен соответствовать действующей нормативной базе. Законодательство в этой сфере меняется постоянно: новые редакции документов, замена одних стандартов другими, утрата силы актов.</p>
+      <p>До появления инструмента эксперты и методисты следили за изменениями вручную — каждый держал несколько вкладок: Консультант+, regulation.gov.ru, сайты ведомств, TechExpert. Централизованной системы не было. Следствие: изменения пропускались или обрабатывались с задержкой. Курс мог продолжать продаваться, когда нормативная база под ним уже изменилась.</p>
+      <table class="case-table case-table--meta" style="margin-top: 1.25rem;">
+        <tbody>
+          <tr>
+            <td>Роль</td>
+            <td>Единственный дизайнер. Участвовал в совещаниях, проводил исследование, проектировал, сдавал в разработку, продолжает развивать</td>
+          </tr>
+          <tr>
+            <td>Команда</td>
+            <td>Разработчики, тестировщики</td>
+          </tr>
+          <tr>
+            <td>Запуск</td>
+            <td>Март 2024</td>
+          </tr>
+          <tr>
+            <td>Статус</td>
+            <td>В продакшне, продолжает развиваться</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="audience" class="case-section">
+      <h2>Аудитория</h2>
+      <p>Эксперты и методисты — ~20 человек внутри компании, которые создают и обновляют учебные курсы.</p>
+      <div class="segment-rows">
+        <div class="segment-row">
+          <div class="segment-row-title">
+            <h3>Эксперт</h3>
+          </div>
+          <div class="segment-row-body">
+            <p>Отвечает за актуальность нормативной базы в конкретной области — например, промышленная безопасность. Следит за десятками документов. Открывает Консультант+ утром, проверяет отслеживаемые документы, записывает заметки в личный файл, передаёт задачи методистам устно или через почту.</p>
+            <p class="audience-fear"><span class="audience-label">Боль</span>Нет системного способа видеть, что изменилось. Много времени уходит на навигацию между вкладками и контекстные переключения.</p>
+          </div>
+        </div>
+        <div class="segment-row">
+          <div class="segment-row-title">
+            <h3>Методист</h3>
+          </div>
+          <div class="segment-row-body">
+            <p>Обновляет содержание курсов по задачам от экспертов. Получает задачу, открывает курс, вносит правку. Часто приходится отдельно запрашивать ссылку на источник.</p>
+            <p class="audience-fear"><span class="audience-label">Боль</span>Непрозрачность контекста — непонятно, насколько срочно, что именно изменилось и какого объёма работа.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research" class="case-section">
+      <h2>Исследование</h2>
+      <p>Перед стартом поговорил с ~20 пользователями — экспертами и методистами. Разговоры очные, прямо в рабочем процессе. Спрашивал: как выглядит утро, какие вкладки открыты, что раздражает, что нужно видеть сразу. Из этого сложилось понимание, что делать в первую очередь.</p>
+      <div class="solutions-list">
+        <div class="solutions-theme">
+          <div class="solution-item">
+            <h3>1. Видимость проблемы с первого экрана</h3>
+            <p class="solution-impact">Подтверждён пользователями</p>
+            <p class="solution-desc">Люди не хотят искать — хотят сразу видеть, что требует внимания. Открываешь инструмент утром и понимаешь, где горит, без дополнительных шагов.</p>
+            <p class="solution-alt">→ Определил требование к стартовому экрану: актуальность видна сразу, без фильтрации.</p>
+          </div>
+          <div class="solution-item">
+            <h3>2. Всё в одном месте, без переключений</h3>
+            <p class="solution-impact">Подтверждён пользователями</p>
+            <p class="solution-desc">Постоянное переключение между внешними сервисами разрывает контекст и отнимает время. Пользователи хотят работать в одном инструменте от начала задачи до её закрытия.</p>
+            <p class="solution-alt">→ Стало центральной идеей продукта: единственное место для всей работы с нормативными изменениями — от обнаружения до закрытия задачи.</p>
+          </div>
+          <div class="solution-item">
+            <h3>3. Важна связь «документ → курс»</h3>
+            <p class="solution-impact">Выявлен в интервью</p>
+            <p class="solution-desc">После того как эксперт находил изменение в документе, ему приходилось вручную вспоминать, в каких курсах этот документ используется. Никакой системы не было — просто память и личные заметки. Это тормозило работу и создавало риск что-то пропустить.</p>
+            <p class="solution-alt">→ Обосновывает правую панель со связанными сущностями в каждой карточке.</p>
+          </div>
+          <div class="solution-item">
+            <h3>4. Разная срочность требует разных сигналов</h3>
+            <p class="solution-impact">Выявлен в интервью</p>
+            <p class="solution-desc">Эксперты сами делили изменения на «срочное» и «на потом» — но нигде это не было видно явно. Документ, утративший силу, блокирует продажу курса — реакция нужна в тот же день. Незначительная правка в формулировке — плановая работа на следующей неделе. Без визуального разделения всё выглядело одинаково важным.</p>
+            <p class="solution-alt">→ Обосновывает систему приоритизации: тип инцидента (блокирующий / неблокирующий), значимость, приоритет.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="design" class="case-section">
+      <h2>Дизайн-решения</h2>
+      <div class="solutions-list">
+        <div class="solutions-theme">
+          <div class="solution-item">
+            <h3>1. Три связанных объекта</h3>
+            <p class="solution-impact">Единый контекст, видимость цепочки «изменение → курс → задача»</p>
+            <p class="solution-desc">Основная структура — документ, курс и инцидент — отражает реальный рабочий процесс: изменился нормативный документ → это инцидент → нужно обновить курс. Цепочка сделана видимой в интерфейсе: в каждой карточке правая панель со связанными сущностями. Открыл документ — видишь, в каких курсах он используется. Открыл инцидент — видишь, какие курсы затронуты и в каком статусе работа по ним.</p>
+            <div class="img-placeholder" aria-hidden="true"></div>
+            <p class="solution-alt">Альтернатива: разделить документы, курсы и задачи по отдельным изолированным разделам. Это упрощает разработку, но воспроизводит ту же проблему, что и с внешними агрегаторами — контекст снова разрывается.</p>
+          </div>
+          <div class="solution-item">
+            <h3>2. Система визуальной приоритизации</h3>
+            <p class="solution-impact">Время до обработки нужного инцидента, снижение когнитивной нагрузки в очереди задач</p>
+            <p class="solution-desc">Три измерения: тип инцидента (блокирующий / неблокирующий — красный тоггл в карточке), значимость изменения (три уровня, иконка-треугольник), приоритет задачи (три уровня, иконка-часы). Цветовая система покрывает более 10 типов событий: документ утратил силу, создана новая редакция, редакция изменена, действие восстановлено. Эксперт видит не просто «что-то изменилось», а что именно — и может сразу оценить, насколько критично.</p>
+            <div class="img-placeholder" aria-hidden="true"></div>
+            <p class="solution-alt">Альтернатива: единый статус «требует внимания / не требует». Проще, но теряет нюансы срочности. Блокирующий инцидент (документ утратил силу — курс нельзя продавать) и некритичная правка требуют принципиально разной реакции.</p>
+          </div>
+          <div class="solution-item">
+            <h3>3. API-данные из Консультант+ прямо в карточке</h3>
+            <p class="solution-impact">Сокращение переключений на внешние сервисы</p>
+            <p class="solution-desc">В карточке инцидента — блок с данными из API Консультант+: название новой редакции, дата начала действия, тип события, код изменения. Базовую информацию об изменении можно прочитать, не выходя из инструмента.</p>
+            <div class="img-placeholder" aria-hidden="true"></div>
+            <p class="solution-alt">Ограничение: блок показывает сырые технические данные из API — не всегда читабельно. Это компромисс между скоростью реализации и UX. На старте решили не усложнять, оставить как есть и вернуться позже.</p>
+          </div>
+          <div class="solution-item">
+            <h3>4. Задачи внутри карточки курса</h3>
+            <p class="solution-impact">Полный контекст работы по обновлению курса в одном месте</p>
+            <p class="solution-desc">Вкладка «Задачи» в карточке курса — список всех задач, привязанных к конкретным документам: тип изменения, значимость, приоритет, статус и история с комментариями ответственных. Добавил после релиза: из наблюдений стало понятно, что пользователи хотят видеть всю работу по обновлению курса из одного экрана — сколько задач открыто, какие закрыты, кто что написал.</p>
+            <div class="img-placeholder" aria-hidden="true"></div>
+            <p class="solution-alt">Источник: наблюдение за использованием после запуска. Без этой вкладки нужно было собирать картину из нескольких карточек.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="case-section">
+      <h2>Результат и развитие</h2>
+      <p>Запуск — март 2024. Продукт вышел с тремя основными разделами: Документы, Курсы, Инциденты (встроенными в карточки — отдельного раздела Инциденты на старте не было). Формальных метрик нет — продукт внутренний. После релиза пользователи говорили, что работать стало удобнее: меньше переключений между сервисами, статусы понятны с первого взгляда, проще понять с чего начать день.</p>
+      <h3 style="font-size: 1rem; font-weight: 500; color: #1a1a1a; margin: 1.5rem 0 0.75rem;">Добавлено после запуска</h3>
+      <p><strong>Раздел Инциденты</strong> — отдельный список всех событий, требующих реакции, в одном месте. До этого инциденты существовали только в контексте конкретных документов и курсов. Отдельный раздел дал возможность видеть очередь работы целиком — расставлять приоритеты по всему портфелю, а не по одному документу за раз.</p>
+      <p><strong>Вкладка «Задачи» в карточке курса</strong> — контекст всей работы по обновлению курса в одном месте. Появилась из наблюдений за реальным использованием.</p>
+      <p>Продукт в продакшне. Активно используется командой экспертов и методистов. Продолжаю вести как дизайнер — собираю запросы, приоритизирую, выпускаю обновления.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.side-nav a');
+
+    function setActiveLink() {
+      const midpoint = window.scrollY + window.innerHeight * 0.45;
+      let current = '';
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].offsetTop <= midpoint) {
+          current = sections[i].getAttribute('id');
+          break;
+        }
+      }
+
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (maxScroll > 0 && maxScroll - window.scrollY <= 2) {
+        current = sections[sections.length - 1].getAttribute('id');
+      }
+
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    (function () {
+      var icon = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+        '<rect x="3" y="3" width="18" height="18" rx="2"/>' +
+        '<circle cx="8.5" cy="8.5" r="1.5"/>' +
+        '<path d="m21 15-5-5L5 21"/>' +
+        '</svg>';
+
+      function makeSlide(label, pos) {
+        var el = document.createElement('div');
+        el.className = 'carousel-slide ' + pos;
+        el.innerHTML = '<div class="carousel-slide-inner">' + icon +
+          '<span class="carousel-slide-label">' + label + '</span></div>';
+        return el;
+      }
+
+      document.querySelectorAll('.solution-item .img-placeholder').forEach(function (ph) {
+        var carousel = document.createElement('div');
+        carousel.className = 'carousel carousel--landscape solution-carousel';
+        carousel.appendChild(makeSlide('Экран 1', 'is-left'));
+        carousel.appendChild(makeSlide('Экран 2', 'is-center'));
+        carousel.appendChild(makeSlide('Экран 3', 'is-right'));
+        ph.parentNode.replaceChild(carousel, ph);
+      });
+
+      document.querySelectorAll('.solution-carousel').forEach(function (carousel) {
+        var slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+        var active = 1;
+
+        function pos(i) {
+          var d = ((i - active) % 3 + 3) % 3;
+          return d === 0 ? 'is-center' : d === 1 ? 'is-right' : 'is-left';
+        }
+
+        function apply() {
+          slides.forEach(function (s, i) {
+            s.classList.remove('is-left', 'is-center', 'is-right');
+            s.classList.add(pos(i));
+          });
+        }
+
+        slides.forEach(function (slide, i) {
+          slide.addEventListener('click', function () {
+            if (pos(i) === 'is-center') {
+              if (window.openGlobalLightbox) window.openGlobalLightbox('landscape');
+            } else {
+              active = i;
+              apply();
+            }
+          });
+        });
+      });
+    })();
+  </script>
+
+  <script src="../../../scroll.js"></script>
+</body>
+</html>

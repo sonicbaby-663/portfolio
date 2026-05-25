@@ -1383,6 +1383,48 @@ section[id] {
   color: #9b9b9b;
 }
 
+/* ── Segment rows (Travel Summary audience) ── */
+
+.segment-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.segment-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2rem;
+  padding: 1.5rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+}
+
+.segment-row-title h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.375rem;
+}
+
+.segment-share {
+  font-size: 0.8125rem;
+  color: #9b9b9b;
+  font-weight: 500;
+}
+
+.segment-row-body p {
+  font-size: 0.9375rem;
+  color: #6b6b6b;
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+
+.segment-row-body p:last-child {
+  margin-bottom: 0;
+}
+
 /* ── Case table ── */
 
 .case-table {
@@ -1424,6 +1466,29 @@ section[id] {
 .case-table--equal td:nth-child(2) {
   font-weight: 400;
   white-space: normal;
+  color: #4b4b4b;
+}
+
+/* Landscape carousel variant (desktop 16:9 screens) */
+.carousel--landscape {
+  height: 240px;
+}
+.carousel--landscape .carousel-slide {
+  width: 320px;
+  height: 180px;
+  margin-left: -160px;
+  margin-top: -90px;
+  border-radius: 8px;
+}
+
+/* Key-value metadata table: short label col, long wrappable value col */
+.case-table--meta td:first-child {
+  width: 8rem;
+  white-space: nowrap;
+}
+.case-table--meta td:nth-child(2) {
+  white-space: normal;
+  font-weight: 400;
   color: #4b4b4b;
 }
 
