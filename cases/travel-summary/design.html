@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дизайн · Travel Summary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../index.html#work">Work</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="bench-page">
+
+    <div class="research-back">
+      <a href="./index.html" class="back-link">← Travel Summary</a>
+    </div>
+
+    <section class="bench-hero">
+      <h1>Дизайн</h1>
+      <p class="bench-intro">User flow (swim-lanes, 6 фаз), UI kit на базе дизайн-системы Яндекс Путешествий и 10+ экранов с аннотациями, привязанными к данным исследования. Центральный вопрос — как сделать так, чтобы пользователь захотел поделиться.</p>
+    </section>
+
+    <div class="design-stage">
+      <h2>User Flow</h2>
+      <p class="design-stage-focus">Полный жизненный цикл travel summary: от момента бронирования до повторного возврата через год. Три дорожки: пользователь, система, трекинг. Шесть фаз.</p>
+
+      <div class="img-placeholder"></div>
+
+      <p style="font-size: 0.9375rem; color: #4b4b4b; line-height: 1.7; margin-top: 1rem; margin-bottom: 0.5rem;">Ключевые ветвления в диаграмме:</p>
+      <ul class="design-decisions">
+        <li>Достаточно ли данных для генерации summary?</li>
+        <li>Пользователь дал согласие на геолокацию и фото?</li>
+        <li>Открыть сейчас или отложить?</li>
+        <li>Редактировать или делиться напрямую?</li>
+        <li>Есть ли подписка Плюс для убирания вотермарки?</li>
+      </ul>
+    </div>
+
+    <div class="design-stage">
+      <h2>Точка входа — карточка на главном экране</h2>
+      <p class="design-stage-focus">Карточка появляется через 24–48 часов после поездки и показывает тизер с забавным фактом ещё до перехода в карусель. Если тизер работает на уровне карточки, он создаёт hook в точке входа.</p>
+
+      <div class="img-placeholder"></div>
+
+      <p style="font-size: 0.9375rem; color: #4b4b4b; line-height: 1.7; margin-top: 1rem; margin-bottom: 0.5rem;">Почему именно так:</p>
+      <ul class="design-decisions">
+        <li>19 из 27 (70%) согласились: забавные факты снижают страх выглядеть хвастливо</li>
+        <li>Нейтральный анонс «итог готов» не даёт причины кликнуть — особенно Сегменту 2</li>
+        <li>Тизер переключает мотивацию с «надо посмотреть» на «интересно, что там ещё»</li>
+      </ul>
+    </div>
+
+    <div class="design-stage">
+      <h2>Карусель из 5 карточек</h2>
+      <p class="design-stage-focus">Порядок карточек выстроен по логике нарратива: эмоциональный hook → данные → призыв к действию. Жёлтый чип с забавным фактом присутствует на каждой информационной карточке.</p>
+
+      <div class="img-placeholder"></div>
+
+      <p style="font-size: 0.9375rem; color: #4b4b4b; line-height: 1.7; margin-top: 1rem; margin-bottom: 0.5rem;">Структура карусели:</p>
+      <ul class="design-decisions">
+        <li>Слайд 1/5 — Обложка: full-bleed фото, город, даты, три стат-чипа (дни / км / рубли)</li>
+        <li>Слайд 2/5 — Маршрут: схематичная карта, пронумерованные точки, жёлтый чип с фактом о дистанции</li>
+        <li>Слайд 3/5 — Места: список карточек с фото, названием и временем пребывания, чип про еду поездки</li>
+        <li>Слайд 4/5 — Бюджет: общая сумма, разбивка по категориям, сравнение с прошлой поездкой</li>
+        <li>Слайд 5/5 — Итог: achievement-чип, три метрики, иерархия CTA</li>
+      </ul>
+    </div>
+
+    <div class="design-stage">
+      <h2>Экран редактирования</h2>
+      <p class="design-stage-focus">Три секции в строго определённом порядке: ПРИВАТНОСТЬ (тогглы скрытия), ФОТОГРАФИИ (замена обложки), МЕСТА В МАРШРУТЕ (удаление). Порядок секций — это продуктовое решение, а не вёрстка.</p>
+
+      <div class="img-placeholder"></div>
+
+      <p style="font-size: 0.9375rem; color: #4b4b4b; line-height: 1.7; margin-top: 1rem; margin-bottom: 0.5rem;">Ключевые решения:</p>
+      <ul class="design-decisions">
+        <li>ПРИВАТНОСТЬ идёт первой: 18 из 27 (67%) назвали страх раскрытия финансов главным барьером</li>
+        <li>Тоггл «Скрыть расходы» в состоянии ON по умолчанию — deliberate default</li>
+        <li>Добавление пропущенных мест — за MVP: требует поиска и интеграции с базой мест</li>
+      </ul>
+    </div>
+
+    <div class="design-stage">
+      <h2>Раздел «Мои поездки»</h2>
+      <p class="design-stage-focus">Двухколоночная сетка карточек с фотографиями, сгруппированная по годам. На каждой карточке — чип с типом содержимого: История / Статистика / Маршрут / Сравнение.</p>
+
+      <div class="img-placeholder"></div>
+
+      <p style="font-size: 0.9375rem; color: #4b4b4b; line-height: 1.7; margin-top: 1rem; margin-bottom: 0.5rem;">Зачем чипы:</p>
+      <ul class="design-decisions">
+        <li>Дают пользователю превью содержимого без открытия — паттерн ambient awareness</li>
+        <li>Снижают порог повторного открытия через 6–12 месяцев</li>
+        <li>Выбор чипа — самый уникальный элемент конкретного summary, а не дата</li>
+      </ul>
+    </div>
+
+    <a href="#" class="btn-outline" style="margin-top: 1.5rem; display: inline-block;">Смотреть прототип в Figma →</a>
+
+    <div class="survey-wave-nav">
+      <a href="./index.html" class="btn-outline">← Travel Summary</a>
+      <div style="display:flex;gap:0.75rem;">
+        <a href="./solutions.html" class="btn-outline">← Решения</a>
+        <a href="./usability.html" class="btn-outline">Валидация →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script>
+    (function () {
+      var icon = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+        '<rect x="3" y="3" width="18" height="18" rx="2"/>' +
+        '<circle cx="8.5" cy="8.5" r="1.5"/>' +
+        '<path d="m21 15-5-5L5 21"/>' +
+        '</svg>';
+
+      function makeSlide(label, pos) {
+        var el = document.createElement('div');
+        el.className = 'carousel-slide ' + pos;
+        el.innerHTML = '<div class="carousel-slide-inner">' + icon +
+          '<span class="carousel-slide-label">' + label + '</span></div>';
+        return el;
+      }
+
+      document.querySelectorAll('.design-stage .img-placeholder').forEach(function (ph) {
+        var carousel = document.createElement('div');
+        carousel.className = 'carousel design-carousel';
+        carousel.appendChild(makeSlide('Экран 1', 'is-left'));
+        carousel.appendChild(makeSlide('Экран 2', 'is-center'));
+        carousel.appendChild(makeSlide('Экран 3', 'is-right'));
+        ph.parentNode.replaceChild(carousel, ph);
+      });
+
+      document.querySelectorAll('.design-carousel').forEach(function (carousel) {
+        var slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+        var active = 1;
+
+        function pos(i) {
+          var d = ((i - active) % 3 + 3) % 3;
+          return d === 0 ? 'is-center' : d === 1 ? 'is-right' : 'is-left';
+        }
+
+        function apply() {
+          slides.forEach(function (s, i) {
+            s.classList.remove('is-left', 'is-center', 'is-right');
+            s.classList.add(pos(i));
+          });
+        }
+
+        slides.forEach(function (slide, i) {
+          slide.addEventListener('click', function () {
+            if (pos(i) === 'is-center') {
+              if (window.openGlobalLightbox) window.openGlobalLightbox('portrait');
+            } else {
+              active = i;
+              apply();
+            }
+          });
+        });
+      });
+    })();
+  </script>
+
+  <script src="../../scroll.js"></script>
+</body>
+</html>

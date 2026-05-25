@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Валидация · Travel Summary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../index.html#work">Work</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="bench-page">
+
+    <div class="research-back">
+      <a href="./index.html" class="back-link">← Travel Summary</a>
+    </div>
+
+    <section class="bench-hero">
+      <h1>Валидация</h1>
+      <p class="bench-intro">Юзабилити-тесты — следующий шаг после прототипа. В рамках пет-проекта не успел их провести, но спланировал план, который применил бы перед внедрением. В real-team процессе тесты шли бы параллельно с tech estimation.</p>
+    </section>
+
+    <div class="bench-list">
+
+      <div class="bench-block">
+        <h2>Методология</h2>
+        <p class="bench-problems"><strong>Формат:</strong> модерируемые задачные сессии, удалённо, Zoom с записью экрана.</p>
+        <p class="bench-problems"><strong>Платформа:</strong> интерактивный прототип в Figma с рабочими переходами.</p>
+        <p class="bench-problems"><strong>Выборка:</strong> 6 респондентов — по 2 на каждый поведенческий сегмент из исследования.</p>
+        <p class="bench-problems"><strong>Длительность:</strong> 40–50 минут на сессию.</p>
+      </div>
+
+      <div class="bench-block">
+        <h2>Сценарий 1 — Прохождение карусели</h2>
+        <p class="bench-problems">Пользователь открывает summary самостоятельно и проходит карусель до конца без подсказок.</p>
+        <p class="bench-problems"><strong>Наблюдаю:</strong> на каких слайдах задерживается, пролистывает ли жёлтые чипы, находит ли кнопки «Поделиться» и «Редактировать» без поиска.</p>
+        <p class="bench-problems"><strong>Целевой результат:</strong> 100% доходимость до слайда 5, среднее время на карусели ≥ 45 секунд.</p>
+      </div>
+
+      <div class="bench-block">
+        <h2>Сценарий 2 — Редактирование без подсказки</h2>
+        <p class="bench-problems">Задача: «Скрой финансовую информацию в summary перед публикацией». Намеренно через цель, не через действие — чтобы увидеть, находит ли пользователь нужный инструмент самостоятельно.</p>
+        <p class="bench-problems"><strong>Наблюдаю:</strong> время выполнения (цель — менее 30 секунд), находит ли тоггл «Скрыть расходы» в секции ПРИВАТНОСТЬ как первый шаг.</p>
+        <p class="bench-problems"><strong>Критическая гипотеза:</strong> секция ПРИВАТНОСТЬ на первом месте в edit-экране ускоряет выполнение задачи.</p>
+      </div>
+
+      <div class="bench-block">
+        <h2>Сценарий 3 — Шеринг в реальный канал</h2>
+        <p class="bench-problems">Задача: «Опубликуй summary в свою story в Telegram» (отменяем перед фактической отправкой).</p>
+        <p class="bench-problems"><strong>Наблюдаю:</strong> добирается ли до экрана выбора канала, какой канал выбирает первым, какой формат story ожидает на выходе.</p>
+        <p class="bench-problems"><strong>Целевой результат:</strong> 5 из 6 завершают шеринг без обращения к модератору.</p>
+      </div>
+
+      <div class="bench-block">
+        <h2>Метрика качества — SUS</h2>
+        <p class="bench-problems">По итогам сессии каждый респондент заполняет System Usability Scale (10 вопросов, шкала 0–100). Ориентир: SUS ≥ 70 (уровень «Good»). Если ниже — edit-флоу или share-флоу требуют доработки до релиза.</p>
+      </div>
+
+      <div class="bench-block">
+        <h2>Приоритет проблем</h2>
+        <table class="case-table">
+          <thead>
+            <tr>
+              <th>Уровень</th>
+              <th>Описание</th>
+              <th>Решение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>P0 — Критично</td>
+              <td>Пользователь не может завершить задачу</td>
+              <td>Блокирует релиз, исправить до тестов</td>
+            </tr>
+            <tr>
+              <td>P1 — Серьёзно</td>
+              <td>Завершает с трудом или неверным путём</td>
+              <td>Исправить до релиза</td>
+            </tr>
+            <tr>
+              <td>P2 — Умеренно</td>
+              <td>Замешательство, но задача выполнена</td>
+              <td>Исправить до или после релиза</td>
+            </tr>
+            <tr>
+              <td>P3 — Незначительно</td>
+              <td>Комментарий или пожелание</td>
+              <td>В backlog</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bench-block">
+        <h2>Что ожидаю исправить после тестов</h2>
+        <p class="bench-problems"><strong>Итерация 1</strong> — скорее всего, edit-флоу. Если пользователи теряются при скрытии расходов или не находят замену фото — упрощаю поверхность, убираю вложенность.</p>
+        <p class="bench-problems"><strong>Итерация 2</strong> — share-переход. Если конверсия в нажатие «Поделиться» низкая — проверяю видимость кнопки на последнем слайде и понятность её смысла.</p>
+        <p class="bench-problems">После двух волн тестов — MVP ready.</p>
+      </div>
+
+    </div>
+
+    <div class="survey-wave-nav">
+      <a href="./index.html" class="btn-outline">← Travel Summary</a>
+      <div style="display:flex;gap:0.75rem;">
+        <a href="./design.html" class="btn-outline">← Дизайн</a>
+        <a href="./measurement-plan.html" class="btn-outline">Метрики →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script src="../../scroll.js"></script>
+</body>
+</html>
