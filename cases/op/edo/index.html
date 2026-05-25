@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЭДО — Термика</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../../index.html#work">Work</a></li>
+        <li><a href="../../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="side-nav" aria-label="Разделы кейса">
+    <a href="#context">Обзор</a>
+    <a href="#roles">Роли и флоу</a>
+    <a href="#process">Процесс работы</a>
+    <a href="#design">Дизайн-решения</a>
+    <a href="#results">Результат</a>
+  </nav>
+
+  <main class="case-page">
+
+    <div class="research-back">
+      <a href="../index.html" class="back-link">← Опыт работы</a>
+    </div>
+
+    <section class="case-hero">
+      <span class="case-tag">Новый раздел в продукте · 2024 · в роадмапе</span>
+      <h1>ЭДО</h1>
+      <p class="case-meta">Product Designer&nbsp;&nbsp;·&nbsp;&nbsp;2024</p>
+      <p class="case-intro">Электронный документооборот внутри административной панели. Заменил работу через сторонние ЭДО-сервисы на встроенный флоу с электронными подписями ПЭП и УНЭП и прямой отправкой в реестр Минтруда. Три роли, параллельное подписание. Спроектировал с нуля — передан в разработку.</p>
+    </section>
+
+    <div class="case-cover case-section" aria-hidden="true"></div>
+
+    <section id="context" class="case-section">
+      <h2>Обзор</h2>
+      <p>После того как сотрудники предприятия сдают экзамен по охране труда, результаты нужно официально зафиксировать: сформировать протокол, собрать подписи всех участников и отправить документ в реестр Минтруда. Это регуляторное требование — без него факт прохождения обучения считается неподтверждённым.</p>
+      <p>До появления этого раздела организаторы обучения работали в двух системах параллельно: в нашей — результаты экзаменов, в стороннем сервисе — подписание документов. Ручной перенос данных, отдельные аккаунты для всех подписантов и полный разрыв между результатами и протоколом.</p>
+      <p>Встроенный ЭДО решает всё это за счёт интеграции: данные об участниках и результатах экзаменов уже есть в системе, подписание происходит там же, готовый документ уходит в Минтруд напрямую.</p>
+      <table class="case-table case-table--meta" style="margin-top: 1.25rem;">
+        <tbody>
+          <tr>
+            <td>Роль</td>
+            <td>Единственный дизайнер. Раздел проектировался с нуля</td>
+          </tr>
+          <tr>
+            <td>Стейкхолдеры</td>
+            <td>Технический директор, руководитель дизайна, руководитель разработки</td>
+          </tr>
+          <tr>
+            <td>Подписи</td>
+            <td>ПЭП через Госключ (обучающиеся) + УНЭП (члены комиссии)</td>
+          </tr>
+          <tr>
+            <td>Статус</td>
+            <td>Спроектирован, передан в разработку, в роадмапе</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="roles" class="case-section">
+      <h2>Роли и флоу</h2>
+      <div class="segment-rows">
+        <div class="segment-row">
+          <div class="segment-row-title">
+            <h3>Организатор обучения</h3>
+          </div>
+          <div class="segment-row-body">
+            <p>Инициирует процесс и ведёт его от начала до конца. Создаёт документ, формирует состав участников и комиссии, запускает подписание, отслеживает прогресс, при необходимости отправляет напоминания. После того как все подписали — проверяет корректность данных (СНИЛС, должности) и отправляет документ в реестр Минтруда.</p>
+          </div>
+        </div>
+        <div class="segment-row">
+          <div class="segment-row-title">
+            <h3>Обучающиеся</h3>
+          </div>
+          <div class="segment-row-body">
+            <p>Сотрудники, которые сдали экзамен. Подписывают результат ПЭП (простая электронная подпись) через Госключ. Обычно это группа — десятки человек.</p>
+          </div>
+        </div>
+        <div class="segment-row">
+          <div class="segment-row-title">
+            <h3>Члены комиссии</h3>
+          </div>
+          <div class="segment-row-body">
+            <p>Подписывают протокол УНЭП (усиленная неквалифицированная электронная подпись). Несколько человек с разными ролями в комиссии.</p>
+          </div>
+        </div>
+      </div>
+      <table class="case-table" style="margin-top: 1.5rem;">
+        <thead>
+          <tr>
+            <th>Этап</th>
+            <th>Участник</th>
+            <th>Действие</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Подготовка</td>
+            <td>Организатор</td>
+            <td>Формирует состав: добавляет обучающихся и комиссию, указывает область аттестации, прикладывает файл протокола</td>
+          </tr>
+          <tr>
+            <td>Подписание (параллельно)</td>
+            <td>Обучающиеся + комиссия</td>
+            <td>Подписывают одновременно, не ожидая друг друга. Организатор видит прогресс: X/Y подписантов, % выполнения</td>
+          </tr>
+          <tr>
+            <td>Проверка и отправка</td>
+            <td>Организатор</td>
+            <td>Вручную проверяет корректность данных (СНИЛС, должности). Отправляет в реестр Минтруда</td>
+          </tr>
+          <tr>
+            <td>Архив</td>
+            <td>—</td>
+            <td>Подписанный документ сохраняется. Доступен для просмотра, проверки подписей и печати</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="solution-alt" style="margin-top: 1rem;">Отправка в Минтруд — ручное действие организатора, не автоматическое. Это намеренно: перед юридически значимым действием нужна ручная проверка данных.</p>
+    </section>
+
+    <section id="process" class="case-section">
+      <h2>Процесс работы</h2>
+      <p>Готового ТЗ не было — всё строилось на совещаниях. Участвовал с самого начала: вместе прорабатывали логику флоу, роли, что важно показывать. Технический директор зафиксировал итоги в документе: требования к подписям ПЭП и УНЭП, порядок отправки в Минтруд, организационные детали.</p>
+      <table class="case-table case-table--equal" style="margin-top: 1.25rem;">
+        <thead>
+          <tr>
+            <th>Стейкхолдер</th>
+            <th>Роль в проекте</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Технический директор</td>
+            <td>Архитектура и содержание — что должен уметь раздел, как устроен процесс подписания, требования к данным</td>
+          </tr>
+          <tr>
+            <td>Руководитель дизайна</td>
+            <td>UI-часть — обратная связь по визуальным решениям, соответствие системе</td>
+          </tr>
+          <tr>
+            <td>Руководитель разработки</td>
+            <td>Возможность реализации — что технически осуществимо в текущих условиях</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Архитектура определялась совместно. Дизайн-решения — самостоятельно: структура флоу, компоненты, состояния, визуализация прогресса, модальные окна, интеграция раздела с остальными частями системы. Итерировал через согласование с тремя стейкхолдерами.</p>
+    </section>
+
+    <section id="design" class="case-section">
+      <h2>Дизайн-решения</h2>
+      <div class="solutions-list">
+        <div class="solutions-theme">
+          <div class="solution-item">
+            <h3>1. Четырёхшаговый визард для подготовки</h3>
+            <p class="solution-impact">Снижение ошибок при формировании документа, понятный прогресс для организатора</p>
+            <p class="solution-desc">Подготовка к подписанию — самый сложный шаг: нужно добавить участников, комиссию, указать область аттестации и приложить файл протокола. Всё это разнородные данные, которые легко перепутать или пропустить. Решение: четыре вкладки-шага в рамках одного модального окна — Работники, Члены комиссии, Область аттестации, Файл протокола. Кнопка «Запустить на подписание» недоступна, пока не пройдены все шаги. Это предотвращает запуск неполного документа.</p>
+            <div class="img-placeholder" aria-hidden="true"></div>
+            <p class="solution-alt">Альтернатива: одна большая форма со всеми полями. Теряется ощущение прогресса и появляется риск отправить незаполненный документ.</p>
+          </div>
+          <div class="solution-item">
+            <h3>2. Прогресс-бары прямо в списке</h3>
+            <p class="solution-impact">Организатор видит статус всего портфеля документов без открытия каждого</p>
+            <p class="solution-desc">В разделе «На подписании» каждая строка сразу показывает: количество дней на подписании, X/Y подписантов (например, 6/12), состояние в % с цветовым индикатором. Зелёный — 100%, частично заполненный — в процессе. Без открытия карточки виден статус всего, что ждёт подписания. Это критично, когда у организатора несколько протоколов одновременно.</p>
+            <div class="img-placeholder" aria-hidden="true"></div>
+            <p class="solution-alt">Без визуализации в списке организатор должен открывать каждую карточку, чтобы понять статус. При 10+ протоколах это существенные затраты времени.</p>
+          </div>
+          <div class="solution-item">
+            <h3>3. Карточка протокола: две роли, один экран</h3>
+            <p class="solution-impact">Управление подписанием без переключения контекста</p>
+            <p class="solution-desc">При открытии протокола — две вкладки: Работники и Члены комиссии. В каждой: ФИО, должность, статус «Подписано» / «Не подписано» с цветом, дата и время подписания. Действие «Отправить напоминание» доступно прямо из карточки — выбираешь тех, кто ещё не подписал, и отправляешь одним действием. Не нужно копировать контакты и писать вручную.</p>
+            <div class="img-placeholder" aria-hidden="true"></div>
+            <p class="solution-alt">Без разделения на две вкладки организатор видел бы смешанный список работников и комиссии — с разными типами подписей и статусами. Это создаёт путаницу при отслеживании прогресса.</p>
+          </div>
+          <div class="solution-item">
+            <h3>4. Предпросмотр перед отправкой в Минтруд</h3>
+            <p class="solution-impact">Снижение риска отправки некорректного документа</p>
+            <p class="solution-desc">Перед финальной отправкой организатор может открыть PDF-предпросмотр готового протокола: увидеть как выглядит документ, убедиться что все подписи на месте, проверить данные. Отправка в Минтруд — ручное действие намеренно: это точка контроля перед юридически значимым действием.</p>
+            <div class="img-placeholder" aria-hidden="true"></div>
+            <p class="solution-alt">Автоматическая отправка после сбора всех подписей исключила бы шаг проверки. При ошибке в данных (СНИЛС, должности) это создаёт юридические риски — отмена некорректно отправленного документа значительно сложнее.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results" class="case-section">
+      <h2>Результат</h2>
+      <p>Раздел спроектирован полностью и передан в разработку. Находится в роадмапе продукта.</p>
+      <table class="case-table" style="margin-top: 1.25rem;">
+        <thead>
+          <tr>
+            <th>Что сделано</th>
+            <th>Статус</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Исследование и формирование логики совместно с техническим директором</td>
+            <td>Готово</td>
+          </tr>
+          <tr>
+            <td>Все состояния и флоу: подготовка, подписание, мониторинг, напоминания, предпросмотр, отправка в Минтруд, архив</td>
+            <td>Готово</td>
+          </tr>
+          <tr>
+            <td>Согласование с тремя стейкхолдерами</td>
+            <td>Готово</td>
+          </tr>
+          <tr>
+            <td>Передача в разработку с полной документацией</td>
+            <td>Готово</td>
+          </tr>
+          <tr>
+            <td>Разработка и запуск</td>
+            <td>В роадмапе</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>После запуска организаторы смогут управлять всем процессом подписания в одном месте без переключения в сторонние сервисы. Данные об участниках и результатах экзаменов уже есть в системе — ничего не нужно переносить вручную. Документы уходят в реестр Минтруда напрямую.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.side-nav a');
+
+    function setActiveLink() {
+      const midpoint = window.scrollY + window.innerHeight * 0.45;
+      let current = '';
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].offsetTop <= midpoint) {
+          current = sections[i].getAttribute('id');
+          break;
+        }
+      }
+
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (maxScroll > 0 && maxScroll - window.scrollY <= 2) {
+        current = sections[sections.length - 1].getAttribute('id');
+      }
+
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    (function () {
+      var icon = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+        '<rect x="3" y="3" width="18" height="18" rx="2"/>' +
+        '<circle cx="8.5" cy="8.5" r="1.5"/>' +
+        '<path d="m21 15-5-5L5 21"/>' +
+        '</svg>';
+
+      function makeSlide(label, pos) {
+        var el = document.createElement('div');
+        el.className = 'carousel-slide ' + pos;
+        el.innerHTML = '<div class="carousel-slide-inner">' + icon +
+          '<span class="carousel-slide-label">' + label + '</span></div>';
+        return el;
+      }
+
+      document.querySelectorAll('.solution-item .img-placeholder').forEach(function (ph) {
+        var carousel = document.createElement('div');
+        carousel.className = 'carousel carousel--landscape solution-carousel';
+        carousel.appendChild(makeSlide('Экран 1', 'is-left'));
+        carousel.appendChild(makeSlide('Экран 2', 'is-center'));
+        carousel.appendChild(makeSlide('Экран 3', 'is-right'));
+        ph.parentNode.replaceChild(carousel, ph);
+      });
+
+      document.querySelectorAll('.solution-carousel').forEach(function (carousel) {
+        var slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+        var active = 1;
+
+        function pos(i) {
+          var d = ((i - active) % 3 + 3) % 3;
+          return d === 0 ? 'is-center' : d === 1 ? 'is-right' : 'is-left';
+        }
+
+        function apply() {
+          slides.forEach(function (s, i) {
+            s.classList.remove('is-left', 'is-center', 'is-right');
+            s.classList.add(pos(i));
+          });
+        }
+
+        slides.forEach(function (slide, i) {
+          slide.addEventListener('click', function () {
+            if (pos(i) === 'is-center') {
+              if (window.openGlobalLightbox) window.openGlobalLightbox('landscape');
+            } else {
+              active = i;
+              apply();
+            }
+          });
+        });
+      });
+    })();
+  </script>
+
+  <script src="../../../scroll.js"></script>
+</body>
+</html>

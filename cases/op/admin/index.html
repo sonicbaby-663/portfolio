@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Редизайн Админки — Термика</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../../index.html#work">Work</a></li>
+        <li><a href="../../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <nav class="side-nav" aria-label="Разделы кейса">
+    <a href="#context">Обзор</a>
+    <a href="#users">Пользователи</a>
+    <a href="#approach">Подход</a>
+    <a href="#design">Дизайн-решения</a>
+    <a href="#process">Процесс отдела</a>
+    <a href="#results">Результат</a>
+  </nav>
+
+  <main class="case-page">
+
+    <div class="research-back">
+      <a href="../index.html" class="back-link">← Опыт работы</a>
+    </div>
+
+    <section class="case-hero">
+      <span class="case-tag">Редизайн SaaS · 2 года · в процессе</span>
+      <h1>Редизайн Админки</h1>
+      <p class="case-meta">Product Designer&nbsp;&nbsp;·&nbsp;&nbsp;2023—сейчас</p>
+      <p class="case-intro">Системный редизайн легаси-панели: 10 разделов, 50–100+ страниц, 3 в проде. Два типа пользователей с конфликтующими ожиданиями, работа в ограничениях легаси в связке с техлидом. Параллельно выстраивал процесс работы дизайн-отдела с нуля.</p>
+    </section>
+
+    <div class="case-cover case-section" aria-hidden="true"></div>
+
+    <section id="context" class="case-section">
+      <h2>Обзор</h2>
+      <p>SaaS для организации обучения по промышленной безопасности и охране труда. Компании регистрируют сотрудников, назначают программы, проводят экзамены и смотрят результаты. Административная панель — через неё проходит вся эта работа. 3500+ организаций.</p>
+      <p>Интерфейс накапливался годами: всё больше разделов, всё больше данных в таблицах, всё сложнее навигация. К началу редизайна — плотные таблицы с десятком столбцов, нагруженные фильтры, логика разделена по вкладкам внутри вкладок. Параллельно росла новая аудитория: компании, которые только начинали работать с системой. Для них старый интерфейс был непонятен с первого раза.</p>
+      <table class="case-table case-table--meta" style="margin-top: 1.25rem;">
+        <tbody>
+          <tr>
+            <td>Роль</td>
+            <td>Единственный дизайнер. Участвовал с самого начала редизайна</td>
+          </tr>
+          <tr>
+            <td>Ключевое взаимодействие</td>
+            <td>Технический лид — согласование решений с учётом ограничений реализации</td>
+          </tr>
+          <tr>
+            <td>Масштаб</td>
+            <td>10 разделов, 50–100+ страниц</td>
+          </tr>
+          <tr>
+            <td>Запущено в прод</td>
+            <td>3 раздела из 10</td>
+          </tr>
+          <tr>
+            <td>Статус</td>
+            <td>В процессе, продолжается</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="users" class="case-section">
+      <h2>Пользователи</h2>
+      <p>В системе два типа пользователей с противоположными ожиданиями.</p>
+      <div class="segment-rows">
+        <div class="segment-row">
+          <div class="segment-row-title">
+            <h3>Опытные пользователи</h3>
+          </div>
+          <div class="segment-row-body">
+            <p>Работают с системой годами. Выстроили свой способ работы вокруг легаси-паттернов. Все кнопки всегда доступны — даже те, которые требуют предварительного выбора элемента. Опытный пользователь знал, куда нажать, без лишних шагов.</p>
+            <p class="audience-fear"><span class="audience-label">Страх</span>«Сломают мой способ работы». Любое увеличение количества шагов воспринимается как регресс.</p>
+          </div>
+        </div>
+        <div class="segment-row">
+          <div class="segment-row-title">
+            <h3>Новые пользователи</h3>
+          </div>
+          <div class="segment-row-body">
+            <p>Приходят в систему без предыстории. Ориентируются на современные паттерны интерфейсов. Слишком много кнопок одновременно, непонятно что нажимать и в каком порядке. Нет визуальной подсказки — что нужно сделать сначала, чтобы действие стало доступным.</p>
+            <p class="audience-fear"><span class="audience-label">Боль</span>Легаси создаёт барьер на входе — продукт воспринимается как сложный до того, как пользователь освоился.</p>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top: 1.5rem;"><strong>Решение:</strong> прогрессивное раскрытие. Количество шагов до действия увеличилось — зато каждый шаг стал понятным. Кнопки появляются в нужный момент, а не все сразу.</p>
+      <p class="solution-alt">В первые дни после первого релиза вырос поток в поддержку — опытные пользователи искали привычные кнопки. Потом нормализация, обращения вернулись к прежнему уровню. Это один из немногих конкретных сигналов по проекту.</p>
+    </section>
+
+    <section id="approach" class="case-section">
+      <h2>Подход</h2>
+      <p>Параллельно с разделами строил дизайн-систему: нужен новый компонент — проектирую, добавляю, применяю в разделе. Не «сначала система, потом продукт» — всё шло параллельно. Это помогло не изобретать одно и то же в каждом разделе заново.</p>
+      <p>Разделы брал в работу по частоте использования — сначала те, с которыми организаторы работают каждый день.</p>
+      <p>Легаси накладывало ограничения на каждое решение. Каждое нетривиальное решение обсуждал с техлидом: предлагал → разбирали ограничения → находили баланс между UX и стоимостью реализации.</p>
+    </section>
+
+    <section id="design" class="case-section">
+      <h2>Дизайн-решения</h2>
+      <div class="solutions-list">
+        <div class="solutions-theme">
+          <div class="solution-item">
+            <h3>1. Прогрессивное раскрытие вместо «всё сразу»</h3>
+            <p class="solution-impact">Снижение барьера для новых пользователей — краткосрочный рост обращений в поддержку, затем нормализация</p>
+            <p class="solution-desc">В легаси все кнопки действий были доступны всегда, независимо от контекста. Новые пользователи терялись: непонятно что нажимать и зачем. Решение: кнопки появляются тогда, когда нужны — после выбора элемента или перехода к следующему шагу. Количество шагов увеличилось, но каждый шаг стал читаемым.</p>
+            <div class="img-placeholder" aria-hidden="true"></div>
+            <p class="solution-alt">Альтернатива: сохранить «всё всегда доступно», только визуально выделить приоритетные действия. Это не решало проблему новых пользователей — только маскировало её.</p>
+          </div>
+          <div class="solution-item">
+            <h3>2. Работники: от плотной таблицы к модульной карточке</h3>
+            <p class="solution-impact">Читаемость данных сотрудника, скорость работы с профилями</p>
+            <p class="solution-desc">До: таблица с 10+ столбцами, в колонке «Профили» — текстовый список через запятую, вся информация в одной строке. После: таблица с 5 ключевыми столбцами, профили как теги с точками. Окно создания работника — боковая навигация по секциям (Данные работника / Организация / Обучение / Дополнительно / Настройки). Каждая секция — отдельный шаг вместо одной бесконечной формы. Пользователь видит из чего состоит создание работника и на каком этапе находится.</p>
+            <div class="img-placeholder" aria-hidden="true"></div>
+            <p class="solution-alt">Альтернатива: сохранить единую форму, добавив только секционные заголовки. Это убирает визуальный хаос, но не даёт ощущения прогресса и не помогает понять объём ввода данных заранее.</p>
+          </div>
+          <div class="solution-item">
+            <h3>3. График: цветовая индикация и Диаграмма</h3>
+            <p class="solution-impact">Скорость обнаружения просроченных и предстоящих аттестаций, новая возможность видеть картину за год</p>
+            <p class="solution-desc">До: плотная таблица, все даты одинакового цвета — нужно читать каждую строку, чтобы понять статус. После (таблица): цветовое кодирование прямо в ячейках дат — красный (просрочено), оранжевый (скоро, требует внимания), зелёный (в норме). После (Диаграмма): новый вид, которого не было в легаси. Временная шкала по месяцам, блоки сроков по строкам в виде Ганта. Позволяет видеть картину аттестаций за год без построчного чтения. Также добавлены модальные окна при клике: состояние обучения и результаты по профилю — детализация без перехода на новую страницу.</p>
+            <div class="img-placeholder" aria-hidden="true"></div>
+            <p class="solution-alt">Альтернатива для Диаграммы: оставить только таблицу с фильтрами по статусу. Фильтры решают задачу «найди конкретное», но не «пойми картину целиком» — это разные задачи.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="case-section">
+      <h2>Процесс отдела</h2>
+      <p>Параллельно с продуктовой работой решал внутреннюю проблему: не было единого способа работы. Файлы в Figma хранились хаотично. Разработчики получали макеты без чёткого статуса — отсюда правки «на ходу» уже в процессе разработки. Тестировщики не могли быстро найти нужный экран.</p>
+      <p>Описал процесс работы отдела в виде BPMN-схемы с двумя потоками: дизайнер и программист.</p>
+      <table class="case-table case-table--equal" style="margin-top: 1.25rem;">
+        <thead>
+          <tr>
+            <th>Шаг</th>
+            <th>Действие</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Проверка задачи (новая или улучшение) → разработка макета</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Размещение в статус «В работе» в Figma → согласование (3 дня на ответ)</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Исправление замечаний (если есть) → перенос в «Релиз»</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Обновление информации в Redmine → ожидание выпуска</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Авторский контроль после релиза → завершение + обновление UI-кита</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Ключевая точка взаимодействия: согласование рабочего макета — разработчики проверяют реализуемость до того, как дизайн уходит в прод. Не после.</p>
+      <p><strong>Результат:</strong> жалоб от разработчиков стало меньше — правки в процессе разработки прекратились. Тестировщики стали быстро находить нужный экран по стандартной структуре файлов. Статус каждого макета виден без лишних вопросов. Двухлетний редизайн был бы невозможен без работающего процесса — выстроить его часть работы дизайнера там, где системы не было.</p>
+    </section>
+
+    <section id="results" class="case-section">
+      <h2>Результат</h2>
+      <p>3 раздела из 10 в продакшне. Проект продолжается.</p>
+      <table class="case-table case-table--equal" style="margin-top: 1.25rem;">
+        <thead>
+          <tr>
+            <th>Сигнал</th>
+            <th>Что показывает</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Обращения в поддержку</td>
+            <td>Краткосрочный рост после первого релиза (прогрессивное раскрытие), затем нормализация. Последующие разделы — без значимых обращений</td>
+          </tr>
+          <tr>
+            <td>Обратная связь от коллег</td>
+            <td>Устные разговоры с людьми, которые работают в системе: стало удобнее ориентироваться</td>
+          </tr>
+          <tr>
+            <td>Наблюдение</td>
+            <td>В процессе работы видел, как пользователи справляются с новыми разделами быстрее, меньше неловких пауз при навигации</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Помимо продуктовой работы — выстроил процесс работы дизайн-отдела. Спроектировал раздел Аналитика — дашборд с метриками обучения: доля успешных экзаменов, количество экзаменов по направлениям, сравнение результатов по курсам, график успеваемости. Раздел ожидает разработки, находится в роадмапе.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.side-nav a');
+
+    function setActiveLink() {
+      const midpoint = window.scrollY + window.innerHeight * 0.45;
+      let current = '';
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].offsetTop <= midpoint) {
+          current = sections[i].getAttribute('id');
+          break;
+        }
+      }
+
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      if (maxScroll > 0 && maxScroll - window.scrollY <= 2) {
+        current = sections[sections.length - 1].getAttribute('id');
+      }
+
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    (function () {
+      var icon = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
+        '<rect x="3" y="3" width="18" height="18" rx="2"/>' +
+        '<circle cx="8.5" cy="8.5" r="1.5"/>' +
+        '<path d="m21 15-5-5L5 21"/>' +
+        '</svg>';
+
+      function makeSlide(label, pos) {
+        var el = document.createElement('div');
+        el.className = 'carousel-slide ' + pos;
+        el.innerHTML = '<div class="carousel-slide-inner">' + icon +
+          '<span class="carousel-slide-label">' + label + '</span></div>';
+        return el;
+      }
+
+      document.querySelectorAll('.solution-item .img-placeholder').forEach(function (ph) {
+        var carousel = document.createElement('div');
+        carousel.className = 'carousel carousel--landscape solution-carousel';
+        carousel.appendChild(makeSlide('Экран 1', 'is-left'));
+        carousel.appendChild(makeSlide('Экран 2', 'is-center'));
+        carousel.appendChild(makeSlide('Экран 3', 'is-right'));
+        ph.parentNode.replaceChild(carousel, ph);
+      });
+
+      document.querySelectorAll('.solution-carousel').forEach(function (carousel) {
+        var slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+        var active = 1;
+
+        function pos(i) {
+          var d = ((i - active) % 3 + 3) % 3;
+          return d === 0 ? 'is-center' : d === 1 ? 'is-right' : 'is-left';
+        }
+
+        function apply() {
+          slides.forEach(function (s, i) {
+            s.classList.remove('is-left', 'is-center', 'is-right');
+            s.classList.add(pos(i));
+          });
+        }
+
+        slides.forEach(function (slide, i) {
+          slide.addEventListener('click', function () {
+            if (pos(i) === 'is-center') {
+              if (window.openGlobalLightbox) window.openGlobalLightbox('landscape');
+            } else {
+              active = i;
+              apply();
+            }
+          });
+        });
+      });
+    })();
+  </script>
+
+  <script src="../../../scroll.js"></script>
+</body>
+</html>
