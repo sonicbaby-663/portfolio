@@ -32,6 +32,7 @@
       <h1>Качественное исследование</h1>
       <p class="bench-meta-line">20 интервью · 10 владельцев, 10 ситтеров · апрель 2026 · ~40 мин каждое</p>
       <p class="bench-intro">Модерируемые глубинные интервью с рассуждением вслух. Искали паттерны страха, текущие способы решения задачи и барьеры к использованию нового сервиса.</p>
+      <a href="#" class="btn-outline" style="margin-top: 1rem;">Смотреть артефакт в Figma →</a>
     </section>
 
     <!-- Insights -->
@@ -79,7 +80,7 @@
     <!-- Hypothesis table -->
     <div class="research-section">
       <h2>Проверка гипотез</h2>
-      <table class="case-table">
+      <table class="case-table case-table--hypo">
         <thead>
           <tr>
             <th>Гипотеза</th>
@@ -89,27 +90,33 @@
         <tbody>
           <tr>
             <td>h1: Владелец откажется от сервиса без сигналов доверия</td>
-            <td>✅ Подтверждена</td>
+            <td><span class="hypo-badge hypo-badge--confirmed">Подтверждена</span></td>
           </tr>
           <tr>
             <td>h2: Без контроля над питомцем у владельца возникает тревога</td>
-            <td>✅ Подтверждена</td>
+            <td><span class="hypo-badge hypo-badge--confirmed">Подтверждена</span></td>
           </tr>
           <tr>
             <td>h3: Редкая связь от ситтера усиливает тревогу</td>
-            <td>⚡ Частично — важнее формат (фото/видео), а не частота</td>
+            <td>
+              <span class="hypo-badge hypo-badge--partial">Частично</span>
+              <span class="hypo-note">важнее формат (фото/видео), а не частота</span>
+            </td>
           </tr>
           <tr>
             <td>h4: Без гарантий пользователь не придёт на платформу</td>
-            <td>✅ Подтверждена</td>
+            <td><span class="hypo-badge hypo-badge--confirmed">Подтверждена</span></td>
           </tr>
           <tr>
             <td>h5: Оплата через сервис создаёт ощущение безопасности</td>
-            <td>✅ Подтверждена</td>
+            <td><span class="hypo-badge hypo-badge--confirmed">Подтверждена</span></td>
           </tr>
           <tr>
             <td>h6: Низкая цена влияет на выбор ситтера</td>
-            <td>❌ Опровергнута — фокус на доверии, не цене</td>
+            <td>
+              <span class="hypo-badge hypo-badge--refuted">Опровергнута</span>
+              <span class="hypo-note">фокус на доверии, не цене</span>
+            </td>
           </tr>
         </tbody>
       </table>
