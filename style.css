@@ -118,7 +118,7 @@ main {
 /* Case cards */
 .case {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
   padding: 2rem 0;
   border-top: 1px solid #e8e8e8;
@@ -287,14 +287,28 @@ header {
 }
 
 .case-cover {
-  width: 100%;
+  width: calc(100% + 3rem);
+  margin-left: -1.5rem;
   height: 400px;
-  background: #f3f3f3;
-  border-radius: 6px;
-  border: 1px solid #e8e8e8;
-  margin: 2rem 0;
+  border-radius: 0;
+  border: none;
   border-top: none;
+  box-shadow: none;
+  overflow: hidden;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   padding-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.case-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .case-section {
@@ -312,6 +326,12 @@ header {
 .case-section:nth-child(5) { animation-delay: 0.4s; }
 .case-section:nth-child(6) { animation-delay: 0.5s; }
 .case-section:nth-child(7) { animation-delay: 0.6s; }
+
+.case-cover.case-section {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 2rem;
+}
 
 .case-section h2 {
   font-size: 1.125rem;
@@ -397,13 +417,13 @@ header {
 }
 
 .ba-before .ba-badge {
-  background: rgba(0, 0, 0, 0.07);
-  color: #666;
+  background: rgba(220, 38, 38, 0.12);
+  color: #b91c1c;
 }
 
 .ba-after .ba-badge {
-  background: rgba(63, 94, 251, 0.1);
-  color: #3f5efb;
+  background: rgba(22, 163, 74, 0.12);
+  color: #15803d;
 }
 
 .ba-caption {
@@ -419,7 +439,7 @@ header {
   bottom: 0;
   left: 50%;
   width: 2px;
-  background: #fff;
+  background: rgba(0, 0, 0, 0.22);
   transform: translateX(-50%);
   display: flex;
   align-items: center;
@@ -578,7 +598,12 @@ header {
 }
 
 .back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.625rem 0;
   font-size: 0.875rem;
+  font-weight: 500;
   color: #9b9b9b;
   text-decoration: none;
   transition: color 0.15s;
@@ -900,7 +925,9 @@ header {
 }
 
 .btn-outline {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   border: 1px solid #e8e8e8;
   border-radius: 6px;
   padding: 0.625rem 1.25rem;
@@ -1907,8 +1934,8 @@ section[id] {
 }
 
 .solutions-theme {
-  margin-top: 3rem;
-  padding-top: 3rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
   border-top: 1px solid #e8e8e8;
 }
 
@@ -2176,51 +2203,78 @@ details[open] .accordion-chevron {
   margin: 2.5rem 0 0;
 }
 
-/* Scope phases */
-.scope-phase + .scope-phase {
-  margin-top: 3rem;
-  padding-top: 3rem;
-  border-top: 1px solid #e8e8e8;
+/* Scope kanban board */
+.scope-board-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2.5rem;
 }
 
-.scope-phase h2 {
-  font-size: 1.375rem;
-  font-weight: 500;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.25rem;
+.scope-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-items: start;
 }
 
-.scope-phase-meta {
-  font-size: 0.875rem;
-  color: #9b9b9b;
-  margin-bottom: 1.5rem;
+@media (max-width: 600px) {
+  .scope-board-section { padding: 0 1rem 2rem; }
+  .scope-board { grid-template-columns: 1fr 1fr; gap: 8px; }
 }
 
-.scope-group {
-  margin-top: 1.5rem;
-}
-
-.scope-group h3 {
+.scope-col-head {
   font-size: 0.8125rem;
-  font-weight: 500;
-  color: #9b9b9b;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.625rem;
+  text-align: center;
+  letter-spacing: 0.01em;
 }
 
-.scope-group ul {
-  list-style: disc;
-  padding-left: 1.25rem;
+.scope-col-head--mvp  { background: #5dac72; }
+.scope-col-head--v11  { background: #4a94c8; }
+.scope-col-head--v2   { background: #e8981e; }
+.scope-col-head--back { background: #8099b4; }
+
+.scope-card {
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
 }
 
-.scope-group li {
-  font-size: 0.9375rem;
-  color: #4b4b4b;
-  line-height: 1.55;
+.scope-card--mvp  { background: #5dac72; }
+.scope-card--v11  { background: #4a94c8; }
+.scope-card--v2   { background: #e8981e; }
+.scope-card--back { background: #8099b4; }
+
+.scope-card-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.45;
+  margin: 0 0 0.3rem;
+}
+
+.scope-card-desc {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.5;
+  margin: 0 0 0.5rem;
+}
+
+.scope-card-tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.9);
+  background: rgba(0,0,0,0.18);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  align-self: flex-start;
 }
 
 /* Metrics */

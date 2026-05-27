@@ -47,7 +47,9 @@
       <a href="#" class="btn-outline">Смотреть прототип в Figma →</a>
     </section>
 
-    <div class="case-cover case-section" aria-hidden="true"></div>
+    <div class="case-cover case-section" aria-hidden="true">
+      <img src="../../images/maincover.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+    </div>
 
     <section id="context" class="case-section">
       <h2>Обзор</h2>
@@ -190,7 +192,7 @@
       <div class="hmw-preview">
         <p class="hmw-after-problem">
           <span class="priority-badge high">Высокий</span>
-          Стрелка «‹» воспринималась как «пропустить» — 3/3 владельцев бросили заполнение профиля питомца
+          Стрелка «→» воспринималась как «пропустить» — 3/3 владельцев бросили заполнение профиля питомца
         </p>
         <p class="hmw-after-q">Как показать, что данные питомца можно добавить позже — и не терять бронирование?</p>
         <div class="before-after before-after--vertical">
@@ -202,8 +204,9 @@
           </div>
           <div class="ba-divider">
             <div class="ba-handle" aria-label="Перетащите для сравнения">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 4L2 9L6 14M12 4L16 9L12 14"/>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 4L2 9L6 14" stroke="rgba(220,38,38,0.75)"/>
+                <path d="M12 4L16 9L12 14" stroke="rgba(22,163,74,0.75)"/>
               </svg>
             </div>
           </div>
@@ -216,7 +219,6 @@
     <section id="roadmap" class="case-section">
       <h2>Приоритизация MVP</h2>
       <p>Расставил фичи по четырём фазам — от обязательных механик доверия до backlog. Каждая фича привязана к данным из исследования.</p>
-      <div class="img-placeholder"></div>
       <a href="./mvp-scope.html" class="btn-outline">Открыть приоритизацию →</a>
     </section>
 
@@ -295,7 +297,8 @@
       slides.forEach(function (slide, i) {
         slide.addEventListener('click', function () {
           if (getPosition(i) === 'is-center') {
-            window.openGlobalLightbox('portrait');
+            var img = slide.querySelector('img');
+            if (window.openGlobalLightbox) window.openGlobalLightbox('portrait', img ? img.src : '');
           } else {
             activeIndex = i;
             applyPositions();
@@ -323,6 +326,9 @@
           if (i !== active) {
             active = i;
             update();
+          } else {
+            var img = s.querySelector('img');
+            if (window.openGlobalLightbox) window.openGlobalLightbox('portrait', img ? img.src : '');
           }
         });
       });
