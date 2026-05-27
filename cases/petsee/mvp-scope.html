@@ -22,147 +22,272 @@
     </nav>
   </header>
 
-  <main class="bench-page">
-
+  <div class="bench-page">
     <div class="research-back">
       <a href="./index.html" class="back-link">← PetSee</a>
     </div>
-
     <section class="bench-hero">
       <h1>Приоритизация MVP</h1>
       <p class="bench-intro">Четыре релизные фазы. Внутри каждой — фичи по пяти тематическим блокам из HMW-раздела, привязанные к метрикам.</p>
       <a href="#" class="btn-outline" style="margin-top: 1rem;">Смотреть артефакт в Figma →</a>
     </section>
+  </div>
 
-    <div class="img-placeholder" style="margin-bottom: 2rem;"></div>
+  <div class="scope-board-section">
+    <div class="scope-board">
 
-    <div class="scope-phase">
-      <h2>MVP — запуск</h2>
-      <p class="scope-phase-meta">Минимальный набор для первой версии. Всё, что не решает проблему доверия или не ускоряет бронирование, — вне скоупа.</p>
+      <!-- MVP — 22 фичи -->
+      <div>
+        <div class="scope-col-head scope-col-head--mvp">MVP</div>
 
-      <div class="scope-group">
-        <h3>Доверие</h3>
-        <ul>
-          <li>Ролевой онбординг с выбором роли — первая точка формирования доверия к сервису</li>
-          <li>Верификация ситтера через Госуслуги — 78% владельцев ставят в топ-2 факторов выбора</li>
-          <li>Бейджи в карточке ситтера: «Верифицирован», «Топ-ситтер», «Прошёл обучение», «Мгновенное бронирование»</li>
-          <li>Дата обновления анкеты — косвенный сигнал активности, владельцы боятся «мёртвых» профилей</li>
-          <li>Просмотр всех отзывов с деталями (имя, тип питомца, дата)</li>
-          <li>Модуль обучения для ситтера — бейдж + приоритет в поиске</li>
-          <li>Поясняющие bottom sheets: «Что значит проверен», «Правила отмены», «Состав цены»</li>
-        </ul>
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Ролевой онбординг с выбором роли в начале</p>
+          <p class="scope-card-desc">Первая точка формирования доверия к сервису</p>
+          <span class="scope-card-tag">Доверие</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Верификация ситтера через Госуслуги</p>
+          <p class="scope-card-desc">Профили с отметками проверки личности — один из ключевых драйверов доверия</p>
+          <span class="scope-card-tag">Доверие</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Бейджи в карточке ситтера</p>
+          <p class="scope-card-desc">Верифицирован, топ-ситтер, прошёл обучение, проверен PetSee, мгновенное бронирование</p>
+          <span class="scope-card-tag">Доверие</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Дата обновления анкеты</p>
+          <p class="scope-card-desc">Свежая дата — косвенный сигнал активности без необходимости что-либо объяснять</p>
+          <span class="scope-card-tag">Доверие</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Просмотр всех отзывов</p>
+          <p class="scope-card-desc">Полный список с деталями: имя, тип питомца, дата — доверие через конкретные истории</p>
+          <span class="scope-card-tag">Доверие</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Модуль обучения для ситтера</p>
+          <p class="scope-card-desc">Пройденный тест и выданный бейдж повышают доверие владельцев и приоритет в выдаче</p>
+          <span class="scope-card-tag">Доверие</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Пошаговый поиск по модели Airbnb</p>
+          <p class="scope-card-desc">Услуга → даты → питомец → результаты. Питомец подставляется из профиля</p>
+          <span class="scope-card-tag">Путь к бронированию</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Расширенные фильтры в результатах</p>
+          <p class="scope-card-desc">Помогают владельцу сузить выборку до релевантной без лишней когнитивной нагрузки</p>
+          <span class="scope-card-tag">Путь к бронированию</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Карточка питомца в 4 блока</p>
+          <p class="scope-card-desc">С возможностью отложить заполнение — снижает брошенность анкеты</p>
+          <span class="scope-card-tag">Путь к бронированию</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Поясняющие bottom sheet окна</p>
+          <p class="scope-card-desc">Правила отмены, «проверен PetSee», состав цены — прямо перед нажатием «Забронировать»</p>
+          <span class="scope-card-tag">Путь к бронированию</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Instant Book как опциональная механика</p>
+          <p class="scope-card-desc">Ожидание ручного подтверждения добавляет паузу в момент, когда пользователь уже принял решение</p>
+          <span class="scope-card-tag">Путь к бронированию</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Свайп вправо/влево для принятия заявки</p>
+          <p class="scope-card-desc">Классический путь имеет 5 действий — свайп сокращает до одного жеста</p>
+          <span class="scope-card-tag">Путь к бронированию</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Кнопка запроса отчёта в чате</p>
+          <p class="scope-card-desc">Владелец запрашивает одним нажатием, ситтер получает триггер</p>
+          <span class="scope-card-tag">Контроль</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Push-напоминания ситтеру об отчёте</p>
+          <p class="scope-card-desc">83% владельцев назвали фото/видео главным успокаивающим фактором</p>
+          <span class="scope-card-tag">Контроль</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Цветовое выделение активного бронирования</p>
+          <p class="scope-card-desc">Закреплённый чат с плашкой «Активно» — нужные сообщения не теряются</p>
+          <span class="scope-card-tag">Контроль</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Деление чатов на группы</p>
+          <p class="scope-card-desc">Все / Активные / Непрочитанные / Завершённые — навигация по всем диалогам</p>
+          <span class="scope-card-tag">Контроль</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Быстрые ответы в чате</p>
+          <p class="scope-card-desc">4 категории шаблонов. 67% владельцев ждут ответ не дольше 30 минут</p>
+          <span class="scope-card-tag">Коммуникация</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Раздел поддержки PetSee</p>
+          <p class="scope-card-desc">Три уровня: FAQ, чат с поддержкой, экстренный контакт</p>
+          <span class="scope-card-tag">Коммуникация</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Комиссия 10% и заморозка средств</p>
+          <p class="scope-card-desc">Оплата через сервис — условия зафиксированы и есть механизм защиты</p>
+          <span class="scope-card-tag">Монетизация</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Бейдж «Высокооплачиваемая услуга»</p>
+          <p class="scope-card-desc">Привлекает внимание к высокодоходным услугам без прямой инструкции</p>
+          <span class="scope-card-tag">Монетизация</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Плейсхолдер рекомендуемой ставки</p>
+          <p class="scope-card-desc">Даёт рыночный ориентир без принуждения — ситтер видит точку отсчёта</p>
+          <span class="scope-card-tag">Монетизация</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Реферальная программа</p>
+          <p class="scope-card-desc">Бонус за приглашённого, завершившего первое бронирование</p>
+          <span class="scope-card-tag">Монетизация</span>
+        </div>
+
+        <div class="scope-card scope-card--mvp">
+          <p class="scope-card-title">Скидка за оставленный отзыв</p>
+          <p class="scope-card-desc">Платформа получает контент, пользователь — стимул к повторному бронированию</p>
+          <span class="scope-card-tag">Монетизация</span>
+        </div>
       </div>
 
-      <div class="scope-group">
-        <h3>Путь к бронированию</h3>
-        <ul>
-          <li>Пошаговый поиск по модели Airbnb: услуга → дата → питомец → результаты</li>
-          <li>Расширенные фильтры и мультиселект по типу питомца, размеру, опыту ситтера</li>
-          <li>Карточка питомца в 4 блока с возможностью отложить заполнение</li>
-          <li>Мгновенное бронирование (Instant Book) — автоподтверждение без ожидания</li>
-          <li>Свайпы заявок для ситтера — принять/отклонить прямо из списка</li>
-        </ul>
+      <!-- v1.1 — 7 фич -->
+      <div>
+        <div class="scope-col-head scope-col-head--v11">v1.1 ~3 месяца</div>
+
+        <div class="scope-card scope-card--v11">
+          <p class="scope-card-title">Видео-приветствие ситтера в анкете</p>
+          <p class="scope-card-desc">Живой ролик убедительнее трёх строк текста. Требует модерации — поэтому не MVP</p>
+          <span class="scope-card-tag">Доверие</span>
+        </div>
+
+        <div class="scope-card scope-card--v11">
+          <p class="scope-card-title">История передержек с фотографиями</p>
+          <p class="scope-card-desc">Доказательство реальной работы ситтера для новых пользователей</p>
+          <span class="scope-card-tag">Доверие</span>
+        </div>
+
+        <div class="scope-card scope-card--v11">
+          <p class="scope-card-title">Короткий вводный звонок или встреча</p>
+          <p class="scope-card-desc">Превращает незнакомца в «знакомого ситтера». Нужна механика против ухода на прямые сделки</p>
+          <span class="scope-card-tag">Доверие</span>
+        </div>
+
+        <div class="scope-card scope-card--v11">
+          <p class="scope-card-title">Сохранённые ситтеры</p>
+          <p class="scope-card-desc">«Избранное» сокращает путь к повторному бронированию — владелец возвращается к «своему» ситтеру</p>
+          <span class="scope-card-tag">Путь к бронированию</span>
+        </div>
+
+        <div class="scope-card scope-card--v11">
+          <p class="scope-card-title">Рейтинг специализации по типу питомца</p>
+          <p class="scope-card-desc">«23 передержки кошек / 7 собак» — конкретные данные вместо общих слов</p>
+          <span class="scope-card-tag">Путь к бронированию</span>
+        </div>
+
+        <div class="scope-card scope-card--v11">
+          <p class="scope-card-title">AI-контекстуализация шаблонов</p>
+          <p class="scope-card-desc">Модель читает историю чата и подставляет имя питомца, даты, адрес из профиля</p>
+          <span class="scope-card-tag">Коммуникация</span>
+        </div>
+
+        <div class="scope-card scope-card--v11">
+          <p class="scope-card-title">Геолокация ситтера во время прогулок</p>
+          <p class="scope-card-desc">Живая карта — наиболее прямой ответ на потребность владельца «видеть, что происходит»</p>
+          <span class="scope-card-tag">Контроль</span>
+        </div>
+
+        <div class="scope-card scope-card--v11">
+          <p class="scope-card-title">Накопительная программа лояльности</p>
+          <p class="scope-card-desc">Без стимулов ситтер становится «проверенным знакомым» — платформа теряет смысл</p>
+          <span class="scope-card-tag">Монетизация</span>
+        </div>
+
+        <div class="scope-card scope-card--v11">
+          <p class="scope-card-title">Динамическое ценообразование</p>
+          <p class="scope-card-desc">Рекомендуемая ставка адаптируется к спросу: праздники, выходные, пиковые сезоны</p>
+          <span class="scope-card-tag">Монетизация</span>
+        </div>
       </div>
 
-      <div class="scope-group">
-        <h3>Контроль во время передержки</h3>
-        <ul>
-          <li>Запрос отчёта — кнопка в чате + пуш ситтеру с напоминанием</li>
-          <li>Пуши ситтерам — 83% владельцев назвали фото/видео главным успокаивающим фактором</li>
-        </ul>
+      <!-- v2 — 5 фич -->
+      <div>
+        <div class="scope-col-head scope-col-head--v2">v2 ~6 месяцев</div>
+
+        <div class="scope-card scope-card--v2">
+          <p class="scope-card-title">Видео-обзор жилья ситтера</p>
+          <p class="scope-card-desc">Короткий видеотур с модерацией закрывает точку скептицизма, которую фото не закрывают</p>
+          <span class="scope-card-tag">Доверие</span>
+        </div>
+
+        <div class="scope-card scope-card--v2">
+          <p class="scope-card-title">AI-рекомендации ситтеров</p>
+          <p class="scope-card-desc">На основе истории владельца — сокращают время поиска с 15–30 до 5 минут</p>
+          <span class="scope-card-tag">Путь к бронированию</span>
+        </div>
+
+        <div class="scope-card scope-card--v2">
+          <p class="scope-card-title">Booking-календарь для ситтера</p>
+          <p class="scope-card-desc">Управление доступностью на даты вперёд — сейчас владельцы получают отказ постфактум</p>
+          <span class="scope-card-tag">Путь к бронированию</span>
+        </div>
+
+        <div class="scope-card scope-card--v2">
+          <p class="scope-card-title">Несколько питомцев в одном заказе</p>
+          <p class="scope-card-desc">40% владельцев имеют более одного животного — единый заказ повышает средний чек</p>
+          <span class="scope-card-tag">Путь к бронированию</span>
+        </div>
+
+        <div class="scope-card scope-card--v2">
+          <p class="scope-card-title">Premium-подписка для владельцев</p>
+          <p class="scope-card-desc">Снижение комиссии, приоритет в очереди заявок, расширенная поддержка</p>
+          <span class="scope-card-tag">Монетизация</span>
+        </div>
       </div>
 
-      <div class="scope-group">
-        <h3>Коммуникация</h3>
-        <ul>
-          <li>Быстрые ответы в чате — 4 категории шаблонов</li>
-          <li>Цветовое выделение активного бронирования — закреплённый чат с плашкой «Активно»</li>
-          <li>Поддержка PetSee — FAQ + чат платформы + экстренный контакт</li>
-        </ul>
+      <!-- Backlog — 1 фича -->
+      <div>
+        <div class="scope-col-head scope-col-head--back">Backlog</div>
+
+        <div class="scope-card scope-card--back">
+          <p class="scope-card-title">Чат с ветеринаром 24/7</p>
+          <p class="scope-card-desc">66% хотят бесплатно — бизнес-модель нежизнеспособна без партнёрства с ветеринарной сетью. Возможна как premium-опция</p>
+          <span class="scope-card-tag">Коммуникация</span>
+        </div>
       </div>
 
-      <div class="scope-group">
-        <h3>Монетизация</h3>
-        <ul>
-          <li>Реферальная программа — персональная ссылка + бонус за завершённое первое бронирование</li>
-          <li>Бейдж «Высокооплачиваемая услуга» + плейсхолдер рекомендуемой цены для ситтера</li>
-        </ul>
-      </div>
     </div>
+  </div>
 
-    <div class="scope-phase">
-      <h2>v1.1 — ~3 месяца после запуска</h2>
-      <p class="scope-phase-meta">Фичи на основе первых данных. Цель — повысить конверсию в повторное бронирование и снизить время до принятия заявки.</p>
-
-      <div class="scope-group">
-        <h3>Доверие</h3>
-        <ul>
-          <li>Видео-приветствие ситтера в анкете — живой ролик убедительнее трёх строк текста</li>
-          <li>История передержек с фотографиями — доказательство реальной работы для новых пользователей</li>
-          <li>Короткий вводный звонок или встреча до бронирования — превращает незнакомца в «знакомого ситтера»</li>
-        </ul>
-      </div>
-
-      <div class="scope-group">
-        <h3>Путь к бронированию</h3>
-        <ul>
-          <li>Рейтинг-фильтр ситтеров по числу успешных передержек</li>
-          <li>Пошаговый bottom sheet при завершении бронирования</li>
-        </ul>
-      </div>
-
-      <div class="scope-group">
-        <h3>Коммуникация</h3>
-        <ul>
-          <li>AI-контекстуализация быстрых ответов — подставляет имя питомца, даты, адрес из профиля</li>
-          <li>Приоритизация сообщений ситтеров на активных передержках</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="scope-phase">
-      <h2>v2 — ~6 месяцев после запуска</h2>
-      <p class="scope-phase-meta">Масштабирование и дифференциация. Фичи, требующие партнёрств или технической зрелости продукта.</p>
-
-      <div class="scope-group">
-        <h3>Доверие</h3>
-        <ul>
-          <li>Видео-обзор жилья ситтера — короткий видеотур с модерацией</li>
-          <li>AI-рекомендации ситтеров на основе истории владельца</li>
-        </ul>
-      </div>
-
-      <div class="scope-group">
-        <h3>Путь к бронированию</h3>
-        <ul>
-          <li>Booking-календарь для ситтера — управление доступностью на даты вперёд</li>
-        </ul>
-      </div>
-
-      <div class="scope-group">
-        <h3>Монетизация</h3>
-        <ul>
-          <li>Динамическое ценообразование — рекомендации ситтерам на основе спроса</li>
-          <li>Программа лояльности — накопительные бонусы за бронирования</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="scope-phase">
-      <h2>Backlog</h2>
-      <p class="scope-phase-meta">Желанные фичи без ясной бизнес-модели или с высокой сложностью реализации. В текущем роадмапе не стоят.</p>
-
-      <div class="scope-group">
-        <h3>Не в роадмапе</h3>
-        <ul>
-          <li>Чат с ветеринаром 24/7 — 66% хотят бесплатно, бизнес-модель нежизнеспособна без партнёрства</li>
-          <li>Страхование питомца — желанная функция для 64%, но не блокирует первое бронирование</li>
-          <li>Диагностика забытых ситтеров — напоминание владельцам при бездействии</li>
-          <li>Отдельное приложение для ситтера — при масштабировании</li>
-        </ul>
-      </div>
-    </div>
-
+  <div class="bench-page" style="padding-top: 0;">
     <div class="survey-wave-nav">
       <a href="./index.html" class="btn-outline">← PetSee</a>
       <div style="display:flex;gap:0.75rem;">
@@ -170,8 +295,7 @@
         <a href="./measurement-plan.html" class="btn-outline">План измерений →</a>
       </div>
     </div>
-
-  </main>
+  </div>
 
   <footer>
     <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>

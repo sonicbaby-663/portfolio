@@ -20,7 +20,7 @@
   // Floating scroll-to-top button
   var btn = document.createElement('button');
   btn.className = 'scroll-top-btn';
-  btn.innerHTML = '↑';
+  btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
   btn.setAttribute('aria-label', 'Наверх');
   document.body.appendChild(btn);
 
@@ -231,4 +231,17 @@
 
   window.openGlobalLightbox  = openLightbox;
   window.closeGlobalLightbox = closeLightbox;
+
+  // Replace text arrows in .btn-outline elements with SVG icons
+  var SVG_RIGHT = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+  var SVG_LEFT  = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>';
+
+  document.querySelectorAll('.btn-outline, .back-link').forEach(function (el) {
+    var html = el.innerHTML;
+    if (/→\s*$/.test(html)) {
+      el.innerHTML = html.replace(/→\s*$/, '') + SVG_RIGHT;
+    } else if (/^\s*←/.test(html)) {
+      el.innerHTML = SVG_LEFT + html.replace(/^\s*←\s*/, '');
+    }
+  });
 })();
