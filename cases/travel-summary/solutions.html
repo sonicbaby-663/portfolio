@@ -25,8 +25,22 @@
   <main class="bench-page">
 
     <div class="research-back">
-      <a href="./index.html" class="back-link">← Travel Summary</a>
+      <a href="./index.html" class="back-link" id="solutions-back-link">← Travel Summary</a>
     </div>
+    <script>
+      (function () {
+        var ref = document.referrer;
+        if (ref && ref.indexOf('hypotheses') !== -1) {
+          var el = document.getElementById('solutions-back-link');
+          if (el) { el.href = './hypotheses.html'; el.innerHTML = '← Гипотезы'; }
+          var floatBtn = document.createElement('a');
+          floatBtn.href = './hypotheses.html';
+          floatBtn.className = 'btn-outline hmw-back-float';
+          floatBtn.innerHTML = '← Гипотезы';
+          document.body.appendChild(floatBtn);
+        }
+      })();
+    </script>
 
     <section class="bench-hero">
       <h1>Продуктовые рекомендации</h1>

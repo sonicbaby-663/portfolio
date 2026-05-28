@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Количественное исследование · Travel Summary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../../index.html#work">Work</a></li>
+        <li><a href="../../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="bench-page">
+
+    <div class="research-back">
+      <a href="../research.html" class="back-link">← Исследование</a>
+    </div>
+
+    <section class="bench-hero">
+      <h1>Количественное исследование</h1>
+      <p class="bench-meta-line">27 респондентов · январь–февраль 2026 · Google Forms</p>
+      <p class="bench-intro">Онлайн-опрос для валидации пяти гипотез из качественной фазы на числах. Цель — понять, какие барьеры реальные, а какие единичные.</p>
+    </section>
+
+    <div class="research-section">
+      <h2>Методология и важное уточнение</h2>
+      <p style="font-size: 0.9375rem; color: #4b4b4b; line-height: 1.7; margin-bottom: 0.75rem;">Это намеренно ограниченная выборка для пет-проекта — нижняя граница того, что даёт устойчивые паттерны для дизайн-решений. Для production-внедрения нужно расширить до 150–200 респондентов с квотами по регионам, возрасту и частоте поездок. Все числа ниже я привожу в формате «N из 27» — чтобы можно было самостоятельно оценить, насколько данные устойчивы.</p>
+
+      <table class="case-table">
+        <tbody>
+          <tr>
+            <td>Критерии включения</td>
+            <td>18+ лет, минимум одна поездка за последние 12 месяцев, пользование онлайн-сервисами бронирования</td>
+          </tr>
+          <tr>
+            <td>Каналы рекрутинга</td>
+            <td>UX-кастдев чаты, личные контакты. Создаёт bias в сторону технологически продвинутых пользователей и жителей крупных городов</td>
+          </tr>
+          <tr>
+            <td>Сегментация выборки</td>
+            <td>12 респондентов с одной поездкой за год, 15 — с двумя и более</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="research-section">
+      <h2>Гипотеза 1 — Конкретные данные создают ощущение персонализации</h2>
+      <p style="font-size: 0.875rem; font-weight: 600; color: #2e7d32; margin-bottom: 0.75rem;">✓ Подтверждена</p>
+      <p style="font-size: 0.9375rem; color: #4b4b4b; line-height: 1.7; margin-bottom: 0.75rem;">Фактическая персонализация важнее визуальной.</p>
+
+      <div class="insight-list" style="margin-top: 0.75rem;">
+        <div class="insight-item">
+          <span class="insight-num">78%</span>
+          <div>
+            <p class="insight-title">21 из 27 оценили конкретные названия мест как важные</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">70%</span>
+          <div>
+            <p class="insight-title">19 из 27 считают ценными количественные метрики</p>
+            <p class="insight-desc">Дистанция, статистика расходов по категориям.</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">63%</span>
+          <div>
+            <p class="insight-title">17 из 27 положительно реагируют на статистику расходов</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">41%</span>
+          <div>
+            <p class="insight-title">Только 11 из 27 назвали красивое оформление ключевой ценностью</p>
+            <p class="insight-desc">Вдвое меньше, чем конкретные факты. Визуал помогает, но не является главным.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="research-section">
+      <h2>Гипотеза 2 — Юмор снимает социальный барьер</h2>
+      <p style="font-size: 0.875rem; font-weight: 600; color: #2e7d32; margin-bottom: 0.75rem;">✓ Подтверждена</p>
+      <p style="font-size: 0.9375rem; color: #4b4b4b; line-height: 1.7; margin-bottom: 0.75rem;">Социальный барьер блокирует шеринг даже при позитивном отношении к поездке.</p>
+
+      <p style="font-size: 0.875rem; font-weight: 600; color: #4b4b4b; margin: 1rem 0 0.5rem;">Текущее поведение:</p>
+      <div class="insight-list">
+        <div class="insight-item">
+          <span class="insight-num">19%</span>
+          <div>
+            <p class="insight-title">5 из 27 регулярно публикуют контент во время или после каждой поездки</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">44%</span>
+          <div>
+            <p class="insight-title">12 из 27 делятся иногда, если было что-то особенное</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">37%</span>
+          <div>
+            <p class="insight-title">10 из 27 практически никогда не делятся</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 0.875rem; font-weight: 600; color: #4b4b4b; margin: 1rem 0 0.5rem;">Основные барьеры:</p>
+      <div class="insight-list">
+        <div class="insight-item">
+          <span class="insight-num">63%</span>
+          <div>
+            <p class="insight-title">17 из 27 не уверены, что их поездка интересна другим</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">48%</span>
+          <div>
+            <p class="insight-title">13 из 27 не хотят выглядеть хвастливо</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">41%</span>
+          <div>
+            <p class="insight-title">11 из 27 — лень или нет времени оформлять</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 0.875rem; font-weight: 600; color: #4b4b4b; margin: 1rem 0 0.5rem;">Юмор снижает страх хвастовства:</p>
+      <div class="insight-list">
+        <div class="insight-item">
+          <span class="insight-num">70%</span>
+          <div>
+            <p class="insight-title">19 из 27: «Если факты забавные — мне не стыдно поделиться»</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">67%</span>
+          <div>
+            <p class="insight-title">18 из 27 готовы делиться, если summary выглядит как развлекательный контент, а не отчёт</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="research-section">
+      <h2>Гипотеза 3 — Редактирование критически важно для шеринга</h2>
+      <p style="font-size: 0.875rem; font-weight: 600; color: #2e7d32; margin-bottom: 0.75rem;">✓ Подтверждена</p>
+
+      <div class="insight-list">
+        <div class="insight-item">
+          <span class="insight-num">59%</span>
+          <div>
+            <p class="insight-title">16 из 27: «Критически важно, без этого не буду делиться»</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">30%</span>
+          <div>
+            <p class="insight-title">8 из 27: «Важно, но не критично»</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">11%</span>
+          <div>
+            <p class="insight-title">3 из 27: «Неважно»</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 0.875rem; font-weight: 600; color: #4b4b4b; margin: 1rem 0 0.5rem;">Что хотят редактировать:</p>
+      <div class="insight-list">
+        <div class="insight-item">
+          <span class="insight-num">67%</span>
+          <div>
+            <p class="insight-title">18 из 27 — скрыть личную информацию (расходы, места)</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">59%</span>
+          <div>
+            <p class="insight-title">16 из 27 — заменить фото</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">56%</span>
+          <div>
+            <p class="insight-title">15 из 27 — исправить ошибки геолокации</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">48%</span>
+          <div>
+            <p class="insight-title">13 из 27 — изменить или сократить текст</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="research-section">
+      <h2>Гипотеза 4 — Оптимальный момент показа 24–48 часов</h2>
+      <p style="font-size: 0.875rem; font-weight: 600; color: #e67e00; margin-bottom: 0.75rem;">◐ Частично подтверждена</p>
+      <p style="font-size: 0.9375rem; color: #4b4b4b; line-height: 1.7; margin-bottom: 0.75rem;">В сумме 22 из 27 (81%) указали первые 48 часов как оптимальный момент, но внутри этого окна мнения разделились.</p>
+
+      <div class="insight-list">
+        <div class="insight-item">
+          <span class="insight-num">44%</span>
+          <div>
+            <p class="insight-title">12 из 27 предпочли показ сразу в день возвращения</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">37%</span>
+          <div>
+            <p class="insight-title">10 из 27 — через 1–2 дня после возвращения</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">19%</span>
+          <div>
+            <p class="insight-title">5 из 27 — через неделю и позже</p>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 0.875rem; font-weight: 600; color: #4b4b4b; margin: 1rem 0 0.5rem;">Частота напоминаний о прошлых поездках:</p>
+      <div class="insight-list">
+        <div class="insight-item">
+          <span class="insight-num">56%</span>
+          <div>
+            <p class="insight-title">15 из 27 — раз в 6–12 месяцев</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">30%</span>
+          <div>
+            <p class="insight-title">8 из 27 — раз в 3–6 месяцев</p>
+          </div>
+        </div>
+        <div class="insight-item">
+          <span class="insight-num">15%</span>
+          <div>
+            <p class="insight-title">4 из 27 — любая бо́льшая частота воспринимается как спам</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="research-section">
+      <h2>Гипотеза 5 — Пользователи с 2+ поездками ценят summary выше</h2>
+      <p style="font-size: 0.875rem; font-weight: 600; color: #2e7d32; margin-bottom: 0.75rem;">✓ Подтверждена</p>
+      <p style="font-size: 0.9375rem; color: #4b4b4b; line-height: 1.7; margin-bottom: 0.75rem;">Сегмент с одной поездкой воспринимает summary как разовую функцию. Сегмент с двумя и более — как постоянный инструмент.</p>
+
+      <table class="case-table" style="margin-top: 0.75rem;">
+        <thead>
+          <tr>
+            <th>Показатель</th>
+            <th>1 поездка (12 чел.)</th>
+            <th>2+ поездки (15 чел.)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Оценивают как «очень ценный»</td>
+            <td>5 из 12 (42%)</td>
+            <td>10 из 15 (67%)</td>
+          </tr>
+          <tr>
+            <td>Готовы регулярно возвращаться к итогам</td>
+            <td>5 из 12 (42%)</td>
+            <td>9 из 15 (60%)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="survey-wave-nav">
+      <a href="../research.html" class="btn-outline">← Исследование</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script src="../../../scroll.js"></script>
+</body>
+</html>

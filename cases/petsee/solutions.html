@@ -25,8 +25,22 @@
   <main class="bench-page">
 
     <div class="research-back">
-      <a href="./index.html" class="back-link">← PetSee</a>
+      <a href="./index.html" class="back-link" id="solutions-back-link">← PetSee</a>
     </div>
+    <script>
+      (function () {
+        var ref = document.referrer;
+        if (ref && ref.indexOf('hmw-before') !== -1) {
+          var el = document.getElementById('solutions-back-link');
+          if (el) { el.href = './hmw-before.html'; el.innerHTML = '← How Might We'; }
+          var floatBtn = document.createElement('a');
+          floatBtn.href = './hmw-before.html';
+          floatBtn.className = 'btn-outline hmw-back-float';
+          floatBtn.innerHTML = '← How Might We';
+          document.body.appendChild(floatBtn);
+        }
+      })();
+    </script>
 
     <section class="bench-hero">
       <h1>Дизайн-решения</h1>

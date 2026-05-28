@@ -97,10 +97,15 @@
   }
 
   function openLightbox(type, src) {
-    lbContent.className = 'global-lightbox-content global-lightbox-content--' + (type || 'landscape');
+    var t = type || 'landscape';
+    lbContent.className = 'global-lightbox-content global-lightbox-content--' + t;
     if (src) {
-      lbInner.innerHTML = '<img src="' + src + '" style="width:100%;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none;">';
+      var imgStyle = t === 'landscape'
+        ? 'width:100%;height:auto;display:block;user-select:none;-webkit-user-drag:none;'
+        : 'width:100%;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none;';
+      lbInner.innerHTML = '<img src="' + src + '" style="' + imgStyle + '">';
     }
+    lbInner.style.height = t === 'landscape' ? 'auto' : '100%';
     resetView();
     applyZoom();
     lb.classList.add('is-open');
@@ -236,7 +241,7 @@
   var SVG_RIGHT = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
   var SVG_LEFT  = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>';
 
-  document.querySelectorAll('.btn-outline, .back-link').forEach(function (el) {
+  document.querySelectorAll('.btn-outline, .back-link, .hmw-q-link').forEach(function (el) {
     var html = el.innerHTML;
     if (/→\s*$/.test(html)) {
       el.innerHTML = html.replace(/→\s*$/, '') + SVG_RIGHT;

@@ -364,9 +364,7 @@ header {
 
 .hmw-preview {
   margin: 1.5rem 0;
-  padding: 1.5rem;
-  border: 1px solid #e8e8e8;
-  border-radius: 10px;
+  padding: 0;
 }
 
 /* ── Before / After slider ── */
@@ -376,7 +374,6 @@ header {
   height: 200px;
   overflow: hidden;
   border-radius: 10px;
-  border: 1px solid #e8e8e8;
   user-select: none;
   touch-action: none;
   cursor: col-resize;
@@ -467,7 +464,7 @@ header {
 
 .before-after--vertical {
   height: auto;
-  aspect-ratio: 393 / 852;
+  aspect-ratio: 18 / 37;
   max-width: 240px;
   margin-left: auto;
   margin-right: auto;
@@ -964,8 +961,6 @@ header {
   height: 401px;
   margin-left: -93px;
   margin-top: -200px;
-  background: #f3f3f3;
-  border: 1px solid #e8e8e8;
   border-radius: 18px;
   padding: 0;
   overflow: hidden;
@@ -1082,6 +1077,9 @@ header {
   transform: translateX(-285px) scale(0.57);
   opacity: 0.55;
 }
+#designCarousel .carousel-slide[data-pos="0"]:hover {
+  transform: translateX(0) scale(1.025);
+}
 
 /* ── Global Lightbox ── */
 
@@ -1112,8 +1110,7 @@ header {
 
 .global-lightbox-content {
   position: relative;
-  background: #f3f3f3;
-  border: 1px solid #e8e8e8;
+  background: transparent;
   z-index: 1;
   transform: scale(0.9);
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -1136,7 +1133,8 @@ header {
 
 .global-lightbox-content--landscape {
   width: min(92vw, 1200px);
-  height: min(72vh, 680px);
+  height: auto;
+  max-height: 90vh;
   border-radius: 14px;
 }
 
@@ -1862,18 +1860,30 @@ section[id] {
 }
 
 .hmw-q-link {
-  display: inline-block;
-  margin-top: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
   font-size: 0.875rem;
+  font-weight: 500;
   color: #1a1a1a;
+  background: #fff;
   text-decoration: none;
-  border-bottom: 1px solid #c8c8c8;
-  padding-bottom: 1px;
-  transition: border-color 0.15s;
+  transition: background 0.15s;
 }
 
 .hmw-q-link:hover {
-  border-color: #1a1a1a;
+  background: #f3f3f3;
+}
+
+.hmw-back-float {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  z-index: 200;
 }
 
 /* ── Survey results ── */
