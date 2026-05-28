@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Следующие шаги · Travel Summary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../index.html#work">Work</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="bench-page">
+
+    <div class="research-back">
+      <a href="./index.html" class="back-link">← Travel Summary</a>
+    </div>
+
+    <section class="bench-hero">
+      <h1>Следующие шаги</h1>
+      <p class="bench-intro">Что нужно закрыть до релиза, как запустить MVP поэтапно и куда масштабировать после первых данных.</p>
+    </section>
+
+    <div class="bench-list">
+
+      <div class="bench-block">
+        <h2>До релиза — 2–3 месяца</h2>
+        <p class="bench-problems"><strong>Расширить количественный опрос.</strong> Текущая выборка — 27 человек, нижняя граница для пет-проекта. Для production-внедрения нужно 200+ респондентов с квотами по регионам, возрасту и частоте поездок.</p>
+        <p class="bench-problems"><strong>Engineering risk assessment.</strong> Геолокационный трекинг и обработка фото названы самыми рискованными по сложности реализации — нужна оценка от команды до начала разработки.</p>
+        <p class="bench-problems"><strong>Применить два дизайн-изменения из валидации.</strong> Дублировать «Скрыть расходы» на слайде с бюджетом. Подготовить вариант B для теста кастомного экрана выбора канала.</p>
+      </div>
+
+      <div class="bench-block">
+        <h2>Запуск MVP — 8–10 недель, поэтапно</h2>
+        <table class="case-table">
+          <thead>
+            <tr>
+              <th>Фаза</th>
+              <th>Охват</th>
+              <th>Цель</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Фаза 0 — Догфудинг</td>
+              <td>1–2 нед., 5%</td>
+              <td>Техническая стабильность, никаких продуктовых метрик</td>
+            </tr>
+            <tr>
+              <td>Фаза 1 — Тест редактирования</td>
+              <td>3 нед., 15%</td>
+              <td>A/B: без edit vs полное редактирование + AI-альтернативы</td>
+            </tr>
+            <tr>
+              <td>Фаза 2 — Тест тайминга</td>
+              <td>4 нед., 30%</td>
+              <td>A/B: показ в день возвращения vs через 24–48 часов</td>
+            </tr>
+            <tr>
+              <td>Фаза 3 — Полный роллаут</td>
+              <td>100%</td>
+              <td>Выигравший вариант по каждому тесту</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bench-block">
+        <h2>После MVP — 3–6 месяцев</h2>
+        <p class="bench-problems"><strong>Сравнение поездок</strong> для пользователей с 2+ путешествиями. Подтверждено количественным исследованием: 9 из 15 (60%) в сегменте 2+ готовы регулярно возвращаться к итогам.</p>
+        <p class="bench-problems"><strong>Annual Travel Wrapped</strong> — итоговый summary года по аналогии со Spotify Wrapped. Механика сезонного возврата с высоким потенциалом шеринга.</p>
+        <p class="bench-problems"><strong>Интеграция с Яндекс Картами</strong> для точности геолокации. Снимает риск ошибочных мест в маршруте, который участники валидации называли поводом не делиться.</p>
+      </div>
+
+      <div class="bench-block">
+        <h2>Долгосрок — 6+ месяцев</h2>
+        <p class="bench-problems"><strong>Социальная механика:</strong> сравнить свою поездку с поездками друзей в тот же город. Создаёт причину открыть приложение вне контекста собственного путешествия.</p>
+        <p class="bench-problems"><strong>Совместные summary</strong> для групповых поездок. Один итог на несколько участников — более высокий стимул к шерингу, потому что история общая.</p>
+      </div>
+
+      <div class="bench-block">
+        <h2>Ключевые неизвестные</h2>
+        <p class="bench-problems"><strong>Реальное поведение шеринга vs декларируемое.</strong> 70% сказали, что поделятся при правильном формате — но это опрос. Фактическую конверсию покажет только A/B тест в фазе 1.</p>
+        <p class="bench-problems"><strong>Долгосрочный retention по напоминаниям.</strong> 56% назвали оптимальной частоту раз в 6–12 месяцев, но это тоже декларация. Реальный open rate напоминаний станет известен только после нескольких месяцев в продакшне.</p>
+      </div>
+
+    </div>
+
+    <div class="survey-wave-nav">
+      <a href="./index.html" class="btn-outline">← Travel Summary</a>
+      <a href="./measurement-plan.html" class="btn-outline">← Метрики</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script src="../../scroll.js"></script>
+</body>
+</html>
