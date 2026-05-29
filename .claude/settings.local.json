@@ -5,7 +5,8 @@
       "Bash(find /Users/sonicbaby -type d \\\\\\( -iname \"*obsidian*\" -o -iname \"*vault*\" \\\\\\) 2>/dev/null | head -20)",
       "Read(//Users/sonicbaby/**)",
       "Bash(find /Users/sonicbaby -type f \\\\\\( -iname \"*travel*\" -o -iname \"*summary*\" \\\\\\) 2>/dev/null | grep -i travel)",
-      "Bash(sips -g pixelWidth -g pixelHeight /Users/sonicbaby/Desktop/portfolio/images/Userflow.webp)"
+      "Bash(sips -g pixelWidth -g pixelHeight /Users/sonicbaby/Desktop/portfolio/images/Userflow.webp)",
+      "Bash(perl -i -pe ' *)"
     ]
   }
 }

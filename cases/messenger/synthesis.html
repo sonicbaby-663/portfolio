@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Синтез и приоритизация · Мессенджер</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../index.html" class="nav-name">Your Name</a>
+      <ul>
+        <li><a href="../../index.html#work">Work</a></li>
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="mailto:you@example.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="bench-page">
+
+    <div class="research-back">
+      <a href="./index.html" class="back-link">← Мессенджер</a>
+    </div>
+
+    <section class="bench-hero">
+      <h1>Синтез и приоритизация</h1>
+      <p class="bench-intro">После трёх этапов исследования: 10 расшифровок, 101 анкета, 8 подтверждённых гипотез. Следующий вопрос: что именно проектировать. Из 8 подтверждённых гипотез нельзя просто взять все восемь, нужна логика, которая переводит «что болит» в «что делаем».</p>
+    </section>
+
+    <div class="bench-list">
+
+      <div class="bench-block">
+        <h2>Аффинная диаграмма</h2>
+        <p class="bench-problems">Взяли все значимые инсайты из кодировочных отчётов: поведенческие паттерны, компенсаторные стратегии, острые моменты из UJM, цитаты с несколькими кодами. Каждый на отдельную карточку, разложили и начали группировать по смысловому сходству.</p>
+        <p class="bench-problems">Ключевое правило: карточка попадает в группу не потому что «похожа по теме», а потому что одно и то же дизайн-решение может адресовать обе. Это позволяло думать уже на языке функций, а не просто проблем.</p>
+        <div class="img-placeholder" aria-hidden="true"></div>
+      </div>
+
+      <div class="bench-block">
+        <h2>5 тематических направлений</h2>
+        <p class="bench-problems">После нескольких итераций перегруппировки получили 5 устойчивых кластеров. Каждый проверяли: есть ли количественное подтверждение из опроса? Если показатели обоих сегментов ниже 60%: кластер не идёт в разработку как самостоятельная функция.</p>
+        <table class="case-table">
+          <thead>
+            <tr>
+              <th>Кластер</th>
+              <th>Бэк-офис</th>
+              <th>Менеджеры</th>
+              <th>Среднее</th>
+              <th>Решение</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Н1: поиск информации и AI-суммаризация</td>
+              <td>70.8%</td>
+              <td>86.2%</td>
+              <td>78.5%</td>
+              <td>→ Ф1</td>
+            </tr>
+            <tr>
+              <td>Н2: прозрачность доступности</td>
+              <td>65.3%</td>
+              <td>69.0%</td>
+              <td>67.2%</td>
+              <td>→ Ф2</td>
+            </tr>
+            <tr>
+              <td>Н3: поиск файлов</td>
+              <td>51.4%</td>
+              <td>79.3%</td>
+              <td>65.4%</td>
+              <td>→ Ф3 (с прицелом на менеджеров)</td>
+            </tr>
+            <tr>
+              <td>Н4: фиксация задач из переписки</td>
+              <td>90.3%</td>
+              <td>86.2%</td>
+              <td>88.3%</td>
+              <td>→ Ф4</td>
+            </tr>
+            <tr>
+              <td>Н5: управление уведомлениями</td>
+              <td>61.1%</td>
+              <td>55.2%</td>
+              <td>58.2%</td>
+              <td>Ниже порога. Частично решается через Ф2</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="bench-problems" style="margin-top: 0.75rem;">Н6 (навигация по чатам) исключена: ни по одному ключевому показателю не достигает порога. Частично адресуется через общую информационную архитектуру прототипа.</p>
+      </div>
+
+      <div class="bench-block">
+        <h2>Почему RICE</h2>
+        <p class="bench-problems">RICE работает с несколькими независимыми факторами и не позволяет одному сильному показателю перекрыть слабые. У нас были ситуации, когда охват высокий, но уверенность в решении низкая, RICE учитывает оба фактора.</p>
+        <table class="case-table">
+          <thead>
+            <tr><th>Параметр</th><th>Что означает</th><th>Источник</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Reach (охват)</td><td>Среднее значение ключевых показателей двух сегментов из опроса</td><td>Прямые данные, без оценочного суждения</td></tr>
+            <tr><td>Impact (тяжесть)</td><td>1: неудобство, 2: регулярные затруднения, 3: прямые потери (время, задачи, коммуникация)</td><td>Материалы интервью</td></tr>
+            <tr><td>Confidence (уверенность)</td><td>Согласованность качественных и количественных данных</td><td>Кросс-верификация методов</td></tr>
+            <tr><td>Effort (сложность)</td><td>L=1, M=2, H=3 (требует AI/ML или сложной интеграции)</td><td>Экспертная оценка</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bench-block">
+        <h2>RICE-таблица</h2>
+        <table class="case-table">
+          <thead>
+            <tr>
+              <th>Функция</th>
+              <th>Reach</th>
+              <th>Impact</th>
+              <th>Conf.</th>
+              <th>Effort</th>
+              <th>RICE</th>
+              <th>Приоритет</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ф4: создание задачи из сообщения</td>
+              <td>88.3%</td>
+              <td>3</td>
+              <td>90%</td>
+              <td>M (2)</td>
+              <td><strong>119</strong></td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Ф1: AI-суммаризация обсуждения</td>
+              <td>78.5%</td>
+              <td>3</td>
+              <td>80%</td>
+              <td>H (3)</td>
+              <td><strong>63</strong></td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Ф2: статусы и автоответы</td>
+              <td>67.2%</td>
+              <td>2</td>
+              <td>70%</td>
+              <td>M (2)</td>
+              <td><strong>47</strong></td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Ф3: поиск файлов</td>
+              <td>65.4%</td>
+              <td>2</td>
+              <td>70%</td>
+              <td>M (2)</td>
+              <td><strong>46</strong></td>
+              <td>4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bench-block">
+        <h2>Почему именно такой порядок</h2>
+        <p class="bench-problems"><strong>Ф4: лидер с большим отрывом (119 vs 63).</strong> Три фактора сошлись: максимальный охват (88.3%), максимальная тяжесть (задачи реально теряются), высокая уверенность (паттерн кросс-инструментный). Effort средний: механика «нажать на сообщение → создать задачу → сохранить»: стандартный контекстный экшен без AI. Плюс живой прецедент: Б-4 уже использует AI-бот в Slack для этого и называет его «главной функцией своего рабочего окружения».</p>
+        <p class="bench-problems"><strong>Ф1: второй приоритет.</strong> Очень высокий охват (78.5%) и максимальная тяжесть снижаются высоким Effort: реализация с LLM-суммаризацией существенно дороже. Уверенность 80%: четыре из пяти менеджеров назвали суммаризатор сами, без наводящего стимула.</p>
+        <p class="bench-problems"><strong>Ф2 и Ф3: практически равные баллы (47 и 46).</strong> Ф2 немного выше: проблема проявляется в обоих сегментах примерно одинаково. Ф3 острее для менеджеров, но слабее для бэк-офиса, снижает средний Reach. Impact у обеих 2, не 3: серьёзные неудобства, но не прямые потери.</p>
+      </div>
+
+    </div>
+
+    <div class="survey-wave-nav">
+      <a href="./index.html" class="btn-outline">← Мессенджер</a>
+      <a href="./jtbd.html" class="btn-outline">JTBD и UJM →</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script src="../../scroll.js"></script>
+</body>
+</html>
