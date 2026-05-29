@@ -562,9 +562,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 0 4rem;
-  border-top: 1px solid #e8e8e8;
-  margin-top: 1rem;
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-color, #e5e5e5);
 }
 
 .case-nav__prev { margin-right: auto; }
