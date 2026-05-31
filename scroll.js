@@ -6,13 +6,26 @@
     var href = link.getAttribute('href');
     if (!href || href.startsWith('#') || href.startsWith('mailto:') || /^https?:/.test(href)) return;
     sessionStorage.setItem('scroll:' + location.pathname, window.scrollY);
+
+    // Не ставим флаг «вперёд» если это ← ссылка (back-link или кнопка с левой стрелкой)
+    var isBack = link.classList.contains('back-link') ||
+                 !!link.querySelector('[data-arrow="left"]');
+    if (!isBack) {
+      sessionStorage.setItem('scroll:fwd', '1');
+    }
   });
 
   window.addEventListener('load', function () {
-    var key = 'scroll:' + location.pathname;
+    var key   = 'scroll:' + location.pathname;
     var saved = sessionStorage.getItem(key);
-    if (saved !== null) {
-      sessionStorage.removeItem(key);
+    var isFwd = sessionStorage.getItem('scroll:fwd');
+
+    sessionStorage.removeItem('scroll:fwd'); // всегда сбрасываем флаг
+    sessionStorage.removeItem(key);          // всегда очищаем сохранённую позицию
+
+    // Если пришли по прямой ссылке (isFwd) — страница должна открыться сверху
+    // Если пришли назад (кнопка «Назад» или браузерная история) — восстанавливаем
+    if (saved !== null && !isFwd) {
       window.scrollTo(0, parseInt(saved, 10));
     }
   });
@@ -237,9 +250,29 @@
   window.openGlobalLightbox  = openLightbox;
   window.closeGlobalLightbox = closeLightbox;
 
+  // ── Carousel swipe (touch) ──
+  var swipeStartX = 0;
+  var swipeStartY = 0;
+
+  document.addEventListener('touchstart', function (e) {
+    swipeStartX = e.touches[0].clientX;
+    swipeStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', function (e) {
+    var carousel = e.target.closest('.carousel');
+    if (!carousel) return;
+    var dx = swipeStartX - e.changedTouches[0].clientX;
+    var dy = swipeStartY - e.changedTouches[0].clientY;
+    if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+    var targetClass = dx > 0 ? 'is-right' : 'is-left';
+    var target = carousel.querySelector('.carousel-slide.' + targetClass);
+    if (target) target.click();
+  }, { passive: true });
+
   // Replace text arrows in .btn-outline elements with SVG icons
   var SVG_RIGHT = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
-  var SVG_LEFT  = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>';
+  var SVG_LEFT  = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0" data-arrow="left"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>';
 
   document.querySelectorAll('.btn-outline, .back-link, .hmw-q-link').forEach(function (el) {
     var html = el.innerHTML;

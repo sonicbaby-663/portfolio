@@ -13,11 +13,10 @@
 
   <header>
     <nav>
-      <a href="../../index.html" class="nav-name">Your Name</a>
+      <a href="../../index.html" class="nav-name">Тимур Батуев</a>
       <ul>
-        <li><a href="../../index.html#work">Work</a></li>
-        <li><a href="../../index.html#about">About</a></li>
-        <li><a href="mailto:you@example.com">Contact</a></li>
+        <li><a href="../../cv.html">CV</a></li>
+        <li><a href="mailto:timurbatuev.work@gmail.com">timurbatuev.work@gmail.com</a></li>
       </ul>
     </nav>
   </header>
@@ -49,7 +48,7 @@
         <h2>Сценарий 1: Прохождение карусели</h2>
         <p class="bench-problems">Задача: открыть summary и дойти до конца карусели без подсказок.</p>
 
-        <table class="case-table" style="margin: 1rem 0;">
+        <div class="table-wrap"><table class="case-table" style="margin: 1rem 0;">
           <thead>
             <tr>
               <th>Метрика</th>
@@ -74,7 +73,7 @@
               <td>18–187 сек</td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
 
         <p class="bench-problems">Один участник не дошёл до слайда 5: предположительно ограничение платформы, не проблема дизайна. Дополнительный сигнал: один участник поднял тему геолокационного трекинга: стоит адресовать в онбординге.</p>
         <p class="bench-problems"><strong>Решение:</strong> изменений в дизайн карусели не вносить.</p>
@@ -86,7 +85,7 @@
         <h2>Сценарий 2: Скрытие финансовой информации</h2>
         <p class="bench-problems">Задача: «Скрой финансовую информацию в summary перед публикацией». Формулировка через цель, а не действие: чтобы увидеть, находит ли пользователь нужный инструмент самостоятельно.</p>
 
-        <table class="case-table" style="margin: 1rem 0;">
+        <div class="table-wrap"><table class="case-table" style="margin: 1rem 0;">
           <thead>
             <tr>
               <th>Метрика</th>
@@ -116,7 +115,7 @@
               <td>7/8 (88%) ✅</td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
 
         <p class="bench-problems">Трое участников, вероятно, искали кнопку напрямую на слайде с бюджетом, а не в edit-экране: отсюда задержка. 62% уложились в 30 секунд при цели 100%, но медиана 22 сек говорит, что большинство справились быстро.</p>
         <p class="bench-problems"><strong>Решение: дублировать кнопку «Скрыть расходы» прямо на слайде с бюджетом.</strong></p>
@@ -128,7 +127,7 @@
         <h2>Сценарий 3: Шеринг в Telegram</h2>
         <p class="bench-problems">Задача: «Опубликуй summary в свою story в Telegram» (отменяем до фактической отправки).</p>
 
-        <table class="case-table" style="margin: 1rem 0;">
+        <div class="table-wrap"><table class="case-table" style="margin: 1rem 0;">
           <thead>
             <tr>
               <th>Метрика</th>
@@ -158,7 +157,7 @@
               <td>3/8 (38%) ⚠️</td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
 
         <p class="bench-problems">Лучший результат по завершаемости из трёх сценариев, но трое поставили максимальную сложность. Причина: участники ожидали кастомный экран выбора канала, а получили нативный share sheet iOS. Это несовпадение ментальной модели, не навигационная проблема — найти кнопку «Поделиться» все смогли.</p>
         <p class="bench-problems"><strong>Решение: A/B тест кастомного экрана выбора канала против нативного share sheet.</strong></p>
@@ -168,7 +167,7 @@
 
       <div class="bench-block">
         <h2>Принятые дизайн-решения</h2>
-        <table class="case-table">
+        <div class="table-wrap"><table class="case-table case-table--equal">
           <thead>
             <tr>
               <th>Изменение</th>
@@ -185,7 +184,7 @@
               <td>Сценарий 3: несовпадение ментальной модели у 3/8 участников</td>
             </tr>
           </tbody>
-        </table>
+        </table></div>
       </div>
 
       <div class="bench-block">
@@ -206,7 +205,7 @@
   </main>
 
   <footer>
-    <p>Your Name &mdash; <a href="mailto:you@example.com">you@example.com</a></p>
+    <p>Тимур Батуев &mdash; <a href="mailto:timurbatuev.work@gmail.com">timurbatuev.work@gmail.com</a></p>
     <p>&copy; 2026</p>
   </footer>
 
