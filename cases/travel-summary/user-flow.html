@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Flow · Travel Summary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="../../index.html" class="nav-name">Тимур Батуев</a>
+      <ul>
+        <li><a href="../../cv.html">CV</a></li>
+        <li><a href="mailto:timurbatuev.work@gmail.com">timurbatuev.work@gmail.com</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="bench-page">
+
+    <div class="research-back">
+      <a href="./index.html" class="back-link">← Travel Summary</a>
+    </div>
+
+    <section class="bench-hero">
+      <h1>User Flow</h1>
+      <p class="bench-intro">Полный жизненный цикл Travel Summary: от момента бронирования до повторного возврата через год. Три дорожки: пользователь, система, трекинг. Шесть фаз.</p>
+      <a href="#" class="btn-outline" style="margin-top: 1rem;">Смотреть артефакт в Figma →</a>
+    </section>
+
+    <img src="../../images/travelsummaryuserflow.png" alt="User Flow" data-lightbox="landscape" style="width:100%; border-radius:8px; display:block; margin-bottom:2rem;">
+
+    <div class="flow-block">
+      <h2>Ключевые ветвления в диаграмме</h2>
+
+      <div class="flow-stage">
+        <h3>Точки принятия решений</h3>
+        <p>Флоу содержит пять ветвлений, которые определяют путь пользователя: достаточно ли данных для генерации summary; дал ли пользователь согласие на геолокацию и фото; открыть summary сейчас или отложить; редактировать перед шерингом или поделиться напрямую; есть ли подписка Плюс для убирания вотермарки.</p>
+      </div>
+    </div>
+
+    <div class="flow-block">
+      <h2>Фаза 1: Бронирование</h2>
+
+      <div class="flow-stage">
+        <h3>Триггер</h3>
+        <p>Пользователь бронирует поездку в Яндекс Путешествиях. Система фиксирует данные: даты, направление, тип бронирования. Если включена геолокация — начинается трекинг мест во время поездки.</p>
+      </div>
+    </div>
+
+    <div class="flow-block">
+      <h2>Фаза 2: Возвращение (24–48ч)</h2>
+
+      <div class="flow-stage">
+        <h3>Генерация summary</h3>
+        <p>Через 24–48 часов после возвращения система проверяет достаточность данных: есть ли места, метрики, фото. Если данных достаточно — генерируется summary с забавными фактами. Если данных мало — summary не создаётся или создаётся в упрощённом формате.</p>
+      </div>
+    </div>
+
+    <div class="flow-block">
+      <h2>Фаза 3: Уведомление</h2>
+
+      <div class="flow-stage">
+        <h3>Push и карточка на главном экране</h3>
+        <p>Пользователь получает push с тизером: конкретным забавным фактом из поездки. Параллельно на главном экране приложения появляется карточка с превью. Тизер переключает мотивацию с «надо посмотреть» на «интересно, что там написано».</p>
+      </div>
+    </div>
+
+    <div class="flow-block">
+      <h2>Фаза 4: Просмотр карусели</h2>
+
+      <div class="flow-stage">
+        <h3>5 карточек нарратива</h3>
+        <p>Пользователь открывает summary — карусель из 5 карточек: обложка, маршрут, места, бюджет, итог. На каждой карточке жёлтый чип с забавным или неожиданным фактом. После просмотра — предложение: отредактировать или поделиться напрямую.</p>
+      </div>
+    </div>
+
+    <div class="flow-block">
+      <h2>Фаза 5: Редактирование</h2>
+
+      <div class="flow-stage">
+        <h3>Три секции в строгом порядке</h3>
+        <p>Экран редактирования открывается с трёх секций: ПРИВАТНОСТЬ (скрытие расходов, геолокации), ФОТОГРАФИИ (замена обложки), МЕСТА В МАРШРУТЕ (удаление ошибочных точек). Порядок секций — продуктовое решение: 67% называли страх раскрытия финансов главным барьером, поэтому приватность идёт первой. Тоггл «Скрыть расходы» по умолчанию в состоянии ON.</p>
+      </div>
+    </div>
+
+    <div class="flow-block">
+      <h2>Фаза 6: Шеринг и архив</h2>
+
+      <div class="flow-stage">
+        <h3>Публикация и «Мои поездки»</h3>
+        <p>После редактирования пользователь делится summary через нативный share sheet или сохраняет в раздел «Мои поездки». Архив — двухколоночная сетка карточек, сгруппированная по годам. Через 6–12 месяцев приходит напоминание: «Год назад вы были в...» — точка повторного возврата в приложение.</p>
+      </div>
+    </div>
+
+    <div class="survey-wave-nav">
+      <a href="./index.html" class="btn-outline">← Travel Summary</a>
+      <div style="display:flex;gap:0.75rem;">
+        <a href="./hypotheses.html" class="btn-outline">← Гипотезы</a>
+        <a href="./design.html" class="btn-outline">Дизайн →</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Тимур Батуев &mdash; <a href="mailto:timurbatuev.work@gmail.com">timurbatuev.work@gmail.com</a></p>
+    <p>&copy; 2026</p>
+  </footer>
+
+  <script src="../../scroll.js"></script>
+</body>
+</html>

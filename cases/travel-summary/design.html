@@ -33,22 +33,6 @@
     </section>
 
     <div class="design-stage">
-      <h2>User Flow</h2>
-      <p class="design-stage-focus">Полный жизненный цикл travel summary: от момента бронирования до повторного возврата через год. Три дорожки: пользователь, система, трекинг. Шесть фаз.</p>
-
-      <div class="img-placeholder"></div>
-
-      <p style="font-size: 0.9375rem; color: #4b4b4b; line-height: 1.7; margin-top: 1rem; margin-bottom: 0.5rem;">Ключевые ветвления в диаграмме:</p>
-      <ul class="design-decisions">
-        <li>Достаточно ли данных для генерации summary?</li>
-        <li>Пользователь дал согласие на геолокацию и фото?</li>
-        <li>Открыть сейчас или отложить?</li>
-        <li>Редактировать или делиться напрямую?</li>
-        <li>Есть ли подписка Плюс для убирания вотермарки?</li>
-      </ul>
-    </div>
-
-    <div class="design-stage">
       <h2>Точка входа: карточка на главном экране</h2>
       <p class="design-stage-focus">Карточка появляется через 24–48 часов после поездки и показывает тизер с забавным фактом ещё до перехода в карусель. Если тизер работает на уровне карточки, он создаёт hook в точке входа.</p>
 
@@ -106,12 +90,58 @@
       </ul>
     </div>
 
+    <div class="bench-block" style="margin-top:2rem;">
+      <h2>MVP: минимальный состав</h2>
+      <div class="table-wrap"><table class="case-table case-table--equal">
+        <thead>
+          <tr>
+            <th>Элемент</th>
+            <th>Обоснование</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Генерация summary через 24–48ч с забавными фактами</td>
+            <td>Оптимальный тайминг + снятие барьера шеринга</td>
+          </tr>
+          <tr>
+            <td>Полное редактирование (скрытие данных, замена фото, корректировка текста)</td>
+            <td>16 из 27 назвали критически важным</td>
+          </tr>
+          <tr>
+            <td>Конкретные названия мест и количественные метрики</td>
+            <td>21 из 27 оценили как ключевую ценность</td>
+          </tr>
+          <tr>
+            <td>Карточка на главном экране с превью факта</td>
+            <td>Точка входа с высоким CTR: hook до открытия summary</td>
+          </tr>
+          <tr>
+            <td>Галерея прошлых summary в «Моих поездках»</td>
+            <td>Архив + точка возврата</td>
+          </tr>
+          <tr>
+            <td>Сравнение поездок для пользователей с 2+</td>
+            <td>9 из 15 готовы регулярно возвращаться к сравнению</td>
+          </tr>
+          <tr>
+            <td>Напоминания раз в 6–12 месяцев</td>
+            <td>Долгосрочный retention при низком раздражении</td>
+          </tr>
+          <tr>
+            <td>AI-генерация альтернативных формулировок фактов</td>
+            <td>Снижает барьер edit, помогает Сегменту 1</td>
+          </tr>
+        </tbody>
+      </table></div>
+    </div>
+
     <a href="#" class="btn-outline" style="margin-top: 1.5rem; display: inline-block;">Смотреть прототип в Figma →</a>
 
     <div class="survey-wave-nav">
       <a href="./index.html" class="btn-outline">← Travel Summary</a>
       <div style="display:flex;gap:0.75rem;">
-        <a href="./solutions.html" class="btn-outline">← Решения</a>
+        <a href="./user-flow.html" class="btn-outline">← User Flow</a>
         <a href="./usability.html" class="btn-outline">Валидация →</a>
       </div>
     </div>
@@ -125,55 +155,83 @@
 
   <script>
     (function () {
-      var icon = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
-        '<rect x="3" y="3" width="18" height="18" rx="2"/>' +
-        '<circle cx="8.5" cy="8.5" r="1.5"/>' +
-        '<path d="m21 15-5-5L5 21"/>' +
-        '</svg>';
+      var SETS = [
+        ['../../images/travelsummaryentrypoint1.webp', '../../images/travelsummaryentrypoint2.png'],
+        ['../../images/travelsummarycarousel1.webp', '../../images/travelsummarycarousel2.webp',
+         '../../images/travelsummarycarousel3.webp', '../../images/travelsummarycarousel4.png',
+         '../../images/travelsummarycarousel5.webp'],
+        ['../../images/travelsummaryedit1.webp', '../../images/travelsummaryedit2.webp'],
+        ['../../images/travelsummarytrips1.png', '../../images/travelsummarytrips2.webp']
+      ];
 
-      function makeSlide(label, pos) {
-        var el = document.createElement('div');
-        el.className = 'carousel-slide ' + pos;
-        el.innerHTML = '<div class="carousel-slide-inner">' + icon +
-          '<span class="carousel-slide-label">' + label + '</span></div>';
-        return el;
-      }
+      document.querySelectorAll('.design-stage .img-placeholder').forEach(function (ph, idx) {
+        var srcs = SETS[idx];
+        if (!srcs) return;
+        var n = srcs.length;
 
-      document.querySelectorAll('.design-stage .img-placeholder').forEach(function (ph) {
-        var carousel = document.createElement('div');
-        carousel.className = 'carousel design-carousel';
-        carousel.appendChild(makeSlide('Экран 1', 'is-left'));
-        carousel.appendChild(makeSlide('Экран 2', 'is-center'));
-        carousel.appendChild(makeSlide('Экран 3', 'is-right'));
-        ph.parentNode.replaceChild(carousel, ph);
-      });
-
-      document.querySelectorAll('.design-carousel').forEach(function (carousel) {
-        var slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
-        var active = 1;
-
-        function pos(i) {
-          var d = ((i - active) % 3 + 3) % 3;
-          return d === 0 ? 'is-center' : d === 1 ? 'is-right' : 'is-left';
+        if (n <= 2) {
+          var pair = document.createElement('div');
+          pair.style.cssText = 'display:flex;gap:12px;height:401px;margin:1rem 0 0.75rem;';
+          srcs.forEach(function (src) {
+            var img = document.createElement('img');
+            img.src = src;
+            img.style.cssText = 'flex:1;min-width:0;height:401px;width:calc(50% - 6px);object-fit:contain;border-radius:12px;cursor:zoom-in;display:block;';
+            img.addEventListener('click', function () {
+              if (window.openGlobalLightbox) window.openGlobalLightbox('portrait', src);
+            });
+            pair.appendChild(img);
+          });
+          ph.parentNode.replaceChild(pair, ph);
+          return;
         }
 
-        function apply() {
+        var carousel = document.createElement('div');
+        carousel.className = 'carousel design-carousel';
+
+        var slides = srcs.map(function (src) {
+          var div = document.createElement('div');
+          div.className = 'carousel-slide';
+          div.style.cssText = 'background:none;border:none;box-shadow:none;';
+          var img = document.createElement('img');
+          img.src = src;
+          img.style.cssText = 'width:100%;height:100%;object-fit:contain;display:block;';
+          div.appendChild(img);
+          carousel.appendChild(div);
+          return div;
+        });
+
+        var active = 0;
+
+        function getPos(i) {
+          var d = (i - active + n) % n;
+          if (d === 0) return 'is-center';
+          if (d === 1) return 'is-right';
+          if (d === n - 1) return 'is-left';
+          return 'is-hidden';
+        }
+
+        function update() {
           slides.forEach(function (s, i) {
-            s.classList.remove('is-left', 'is-center', 'is-right');
-            s.classList.add(pos(i));
+            s.className = 'carousel-slide ' + getPos(i);
+            s.style.cssText = 'background:none;border:none;box-shadow:none;';
           });
         }
 
-        slides.forEach(function (slide, i) {
-          slide.addEventListener('click', function () {
-            if (pos(i) === 'is-center') {
-              if (window.openGlobalLightbox) window.openGlobalLightbox('portrait');
-            } else {
-              active = i;
-              apply();
+        slides.forEach(function (s, i) {
+          s.addEventListener('click', function () {
+            var p = getPos(i);
+            if (p === 'is-center') {
+              if (window.openGlobalLightbox) window.openGlobalLightbox('portrait', srcs[active]);
+            } else if (p === 'is-left') {
+              active = (active - 1 + n) % n; update();
+            } else if (p === 'is-right') {
+              active = (active + 1) % n; update();
             }
           });
         });
+
+        update();
+        ph.parentNode.replaceChild(carousel, ph);
       });
     })();
   </script>
