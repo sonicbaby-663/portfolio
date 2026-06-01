@@ -2128,6 +2128,12 @@ section[id] {
   margin-bottom: 1.75rem;
 }
 
+.research-note {
+  font-size: 0.875rem;
+  color: #8a8a8a;
+  margin-top: 0.75rem;
+}
+
 .insight-item {
   display: flex;
   gap: 1.25rem;
@@ -2271,7 +2277,8 @@ details[open] .accordion-chevron {
   margin-bottom: 0;
 }
 
-.accordion-body blockquote {
+.accordion-body blockquote,
+.insight-item blockquote {
   margin: 0.75rem 0;
   padding-left: 1rem;
   border-left: 2px solid #e8e8e8;
