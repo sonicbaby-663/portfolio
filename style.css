@@ -1702,6 +1702,7 @@ section[id] {
 .hypo-badge--confirmed { background: #dcfce7; color: #15803d; }
 .hypo-badge--partial   { background: #fef9c3; color: #92400e; }
 .hypo-badge--refuted   { background: #fee2e2; color: #b91c1c; }
+.hypo-badge--barrier   { background: #fff7ed; color: #c2710c; }
 .hypo-note {
   display: block;
   font-size: 0.8125rem;
