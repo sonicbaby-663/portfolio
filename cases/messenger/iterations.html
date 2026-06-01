@@ -46,7 +46,16 @@
         <p class="bench-problems"><strong>Правки.</strong> Добавили явную кнопку «Установить статус» рядом с аватаром: текстовая метка, а не только иконка. Текстовые кнопки обнаруживаются лучше, особенно для функций, которые пользователь ещё не знает. Дублировали вход из шапки чата: через иконку рядом с именем пользователя. Второй маршрут для тех, кто мысленно связывает «статус» с тем, как они выглядят для других в переписке.</p>
         <p class="bench-problems">На экране детальных настроек добавили визуальные разделители между блоками каждого статуса. До правки четыре блока (В сети, Не беспокоить, На встрече, Не в сети) выглядели как один длинный список параметров. После правки каждый статус в своей карточке с заголовком.</p>
         <p class="bench-problems"><strong>Ожидаемый эффект:</strong> success rate с 70% до 80%+. Основная гипотеза: большинство провалов было на этапе поиска точки входа, а не самой функции.</p>
-        <div class="img-placeholder" aria-hidden="true"></div>
+        <div class="carousel-desktop-wrap">
+          <div class="carousel carousel--desktop" id="f2IterCarousel">
+            <div class="carousel-slide is-right" style="background:none;box-shadow:none;">
+              <img src="../../images/messengerfirstiterationfeature2.1.webp" style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+            <div class="carousel-slide is-center" style="background:none;box-shadow:none;">
+              <img src="../../images/messengerfirstiterationfeature2.2.webp" style="width:100%;height:100%;object-fit:contain;display:block;">
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="bench-block">
@@ -54,7 +63,7 @@
         <p class="bench-problems"><strong>Проблема.</strong> Фильтры-чипы под строкой поиска не воспринимались как интерактивные элементы частью пользователей. Выглядели как текстовые метки, не кликали. Часть не замечала вообще. Дополнительно: часть шла не в глобальный поиск, а в раздел «Файлы» конкретного чата: ожидаемый, но неверный маршрут.</p>
         <p class="bench-problems"><strong>Правки.</strong> Добавили иконки в каждый чип: «от кого» получил иконку человека, «когда»: иконку календаря, «вложение»: иконку скрепки. Иконки в интерактивных элементах: стандартный приём для повышения affordance, они сигнализируют «это кнопка». Добавили подсказку под строкой при пустом запросе: «Уточните поиск через фильтры». Одна строка, которая направляет взгляд вниз: туда, где чипы. В разделе «Файлы» конкретного чата добавили ссылку «Найти через поиск».</p>
         <p class="bench-problems"><strong>Ожидаемый эффект:</strong> success rate с 71% до 80%+, за счёт снижения доли пользователей, которые открывали поиск и не трогали чипы.</p>
-        <div class="img-placeholder" aria-hidden="true"></div>
+        <img src="../../images/messengerfirstiterationfeature3.1.webp" alt="Ф3 итерация" data-lightbox="landscape" style="width:100%;border-radius:8px;display:block;margin-top:1rem;cursor:zoom-in;">
       </div>
 
       <div class="bench-block">
@@ -62,14 +71,7 @@
         <p class="bench-problems"><strong>Проблема.</strong> Три кнопки действий на экране готового резюме («Закрепить в чате», «Создать задачу», «Редактировать») выглядели как равнозначные. Часть пользователей нажимала «Редактировать» первым и застревала в редакторе без ощущения, что задача выполнена.</p>
         <p class="bench-problems"><strong>Правки.</strong> «Закрепить в чате» оформили как primary action: полная ширина кнопки, насыщенный цвет заливки. «Создать задачу» и «Редактировать» как secondary actions: outline-кнопки меньшего веса, расположены ниже. Добавили подпись под кнопкой «Закрепить»: «Станет видно всем участникам». Убирает неопределённость «что произойдёт, если нажму»: один из главных источников нерешительности у пользователей.</p>
         <p class="bench-problems"><strong>Ожидаемый эффект:</strong> снижение времени выполнения для тех, кто доходил до финального экрана. Рост success rate незначительный: большинство проблем было с обнаружением плашки, не с финальным экраном.</p>
-        <div class="img-placeholder" aria-hidden="true"></div>
-      </div>
-
-      <div class="bench-block">
-        <h2>Ф4: заметность предзаполнения (P4)</h2>
-        <p class="bench-problems"><strong>Проблема.</strong> Часть пользователей не замечала, что поле «Название» уже заполнено текстом из сообщения. Ждали, что нужно что-то ввести самостоятельно.</p>
-        <p class="bench-problems"><strong>Правка.</strong> Пометку «из сообщения» перенесли из подстрочника в inline-тег внутри поля: маленький чип рядом с текстом: «из сообщения ×». Крестик позволяет сбросить предзаполнение, если оно не нужно. Одновременно объясняет происхождение текста и даёт контроль над ним.</p>
-        <div class="img-placeholder" aria-hidden="true"></div>
+        <img src="../../images/messengerfirstiterationfeature1.1.webp" alt="Ф1 итерация" data-lightbox="landscape" style="width:100%;border-radius:8px;display:block;margin-top:1rem;cursor:zoom-in;">
       </div>
 
       <div class="bench-block">
@@ -146,6 +148,46 @@
     <p>&copy; 2026</p>
   </footer>
 
+  <script>
+    (function () {
+      var carousel = document.getElementById('f2IterCarousel');
+      if (!carousel) return;
+      var srcs = [
+        '../../images/messengerfirstiterationfeature2.1.webp',
+        '../../images/messengerfirstiterationfeature2.2.webp'
+      ];
+      var slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      var n = slides.length;
+      var activeIndex = 1;
+
+      function getPos(i) {
+        var d = (i - activeIndex + n) % n;
+        if (d === 0) return 'is-center';
+        if (d === 1) return 'is-right';
+        if (d === n - 1) return 'is-left';
+        return 'is-hidden';
+      }
+
+      function apply() {
+        slides.forEach(function (s, i) {
+          s.className = 'carousel-slide ' + getPos(i);
+          s.style.cssText = 'background:none;box-shadow:none;';
+        });
+      }
+
+      slides.forEach(function (slide, i) {
+        slide.addEventListener('click', function () {
+          var p = getPos(i);
+          if (p === 'is-center') {
+            if (window.openGlobalLightbox) window.openGlobalLightbox('landscape', srcs[activeIndex]);
+          } else {
+            activeIndex = i;
+            apply();
+          }
+        });
+      });
+    })();
+  </script>
   <script src="../../scroll.js"></script>
 </body>
 </html>

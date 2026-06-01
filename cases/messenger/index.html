@@ -46,7 +46,9 @@
       <a href="#" class="btn-outline">Смотреть прототип в Figma →</a>
     </section>
 
-    <div class="case-cover case-section" aria-hidden="true"></div>
+    <div class="case-cover case-section">
+      <img src="../../images/messengercover.webp" alt="Мессенджер" data-lightbox="landscape" style="width:100%;border-radius:8px;display:block;">
+    </div>
 
     <section id="context" class="case-section">
       <h2>Обзор</h2>
@@ -119,7 +121,6 @@
     <section id="research" class="case-section">
       <h2>Исследование</h2>
       <p>Три метода последовательно: фокус-группа (8 участников), глубинные интервью (10 респондентов), онлайн-опрос (101 анкета). 8 из 12 гипотез подтверждены.</p>
-      <div class="img-placeholder"></div>
       <a href="./research/index.html" class="btn-outline">Открыть исследование →</a>
     </section>
 
@@ -139,26 +140,16 @@
       <h2>Дизайн-решения</h2>
       <p>Двухколоночная ИА: сайдбар с разделами Поиск, Треды, Задачи, Активность. Четыре функции спроектированы как система: разные задачи, единая архитектура.</p>
 
-      <div class="carousel" id="solutionsCarousel">
-        <div class="carousel-slide is-left" data-slide="0">
-          <div class="carousel-slide-inner">
-            <svg class="carousel-slide-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
-            </svg>
+      <div class="carousel-desktop-wrap">
+        <div class="carousel carousel--desktop" id="designCarousel">
+          <div class="carousel-slide is-left" style="background:none;box-shadow:none;">
+            <img src="../../images/messengermain1.webp" style="width:100%;height:100%;object-fit:contain;display:block;">
           </div>
-        </div>
-        <div class="carousel-slide is-center" data-slide="1">
-          <div class="carousel-slide-inner">
-            <svg class="carousel-slide-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
-            </svg>
+          <div class="carousel-slide is-center" style="background:none;box-shadow:none;">
+            <img src="../../images/messengermain2.webp" style="width:100%;height:100%;object-fit:contain;display:block;">
           </div>
-        </div>
-        <div class="carousel-slide is-right" data-slide="2">
-          <div class="carousel-slide-inner">
-            <svg class="carousel-slide-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/>
-            </svg>
+          <div class="carousel-slide is-right" style="background:none;box-shadow:none;">
+            <img src="../../images/messengermain3.webp" style="width:100%;height:100%;object-fit:contain;display:block;">
           </div>
         </div>
       </div>
@@ -226,14 +217,19 @@
     });
 
     (function () {
-      const carousel = document.getElementById('solutionsCarousel');
+      var carousel = document.getElementById('designCarousel');
       if (!carousel) return;
 
-      const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
-      let activeIndex = 1;
+      var srcs = [
+        '../../images/messengermain1.webp',
+        '../../images/messengermain2.webp',
+        '../../images/messengermain3.webp'
+      ];
+      var slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      var activeIndex = 1;
 
       function getPosition(i) {
-        const diff = ((i - activeIndex) % 3 + 3) % 3;
+        var diff = ((i - activeIndex) % 3 + 3) % 3;
         if (diff === 0) return 'is-center';
         if (diff === 1) return 'is-right';
         return 'is-left';
@@ -243,13 +239,14 @@
         slides.forEach(function (slide, i) {
           slide.classList.remove('is-left', 'is-center', 'is-right');
           slide.classList.add(getPosition(i));
+          slide.style.cssText = 'background:none;box-shadow:none;';
         });
       }
 
       slides.forEach(function (slide, i) {
         slide.addEventListener('click', function () {
           if (getPosition(i) === 'is-center') {
-            if (window.openGlobalLightbox) window.openGlobalLightbox('portrait');
+            if (window.openGlobalLightbox) window.openGlobalLightbox('landscape', srcs[activeIndex]);
           } else {
             activeIndex = i;
             applyPositions();

@@ -114,11 +114,12 @@
     lbContent.className = 'global-lightbox-content global-lightbox-content--' + t;
     if (src) {
       var imgStyle = t === 'landscape'
-        ? 'width:100%;height:auto;display:block;user-select:none;-webkit-user-drag:none;'
+        ? 'max-width:min(92vw,1200px);max-height:calc(90vh - 80px);width:auto;height:auto;display:block;border-radius:12px;user-select:none;-webkit-user-drag:none;'
         : 'width:100%;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none;';
       lbInner.innerHTML = '<img src="' + src + '" style="' + imgStyle + '">';
     }
     lbInner.style.height = t === 'landscape' ? 'auto' : '100%';
+    lbInner.style.width  = t === 'landscape' ? 'auto' : '100%';
     resetView();
     applyZoom();
     lb.classList.add('is-open');

@@ -1191,9 +1191,9 @@ a.case-image:hover {
 }
 
 .global-lightbox-content--landscape {
-  width: min(92vw, 1200px);
+  width: auto;
+  max-width: min(92vw, 1200px);
   height: auto;
-  max-height: 90vh;
   border-radius: 14px;
 }
 
@@ -1664,6 +1664,53 @@ section[id] {
   margin-left: -160px;
   margin-top: -90px;
   border-radius: 8px;
+}
+
+/* Desktop carousel variant (wide 16:9 desktop screenshots) */
+.carousel-desktop-wrap {
+  margin: 1rem -1.5rem 0.75rem;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0px, black 20px, black calc(100% - 20px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0px, black 20px, black calc(100% - 20px), transparent 100%);
+}
+.carousel--desktop {
+  height: 400px;
+  overflow: visible;
+  margin: 0;
+}
+.carousel--desktop .carousel-slide {
+  width: 660px;
+  height: 400px;
+  margin-left: -330px;
+  margin-top: -200px;
+  border-radius: 8px;
+  background: none;
+}
+.carousel--desktop .carousel-slide.is-left {
+  transform: translateX(-518px) scale(0.72);
+  opacity: 0.45;
+  z-index: 2;
+  cursor: pointer;
+}
+.carousel--desktop .carousel-slide.is-right {
+  transform: translateX(518px) scale(0.72);
+  opacity: 0.45;
+  z-index: 2;
+  cursor: pointer;
+}
+.carousel--desktop .carousel-slide.is-left:hover {
+  transform: translateX(-518px) scale(0.76);
+  opacity: 0.7;
+}
+.carousel--desktop .carousel-slide.is-right:hover {
+  transform: translateX(518px) scale(0.76);
+  opacity: 0.7;
+}
+.carousel--desktop .carousel-slide.is-center {
+  transform: translateX(0) scale(0.7);
+}
+.carousel--desktop .carousel-slide.is-center:hover {
+  transform: translateX(0) scale(0.74);
 }
 
 /* Key-value metadata table: short label col, long wrappable value col */
