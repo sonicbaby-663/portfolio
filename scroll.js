@@ -101,6 +101,7 @@
     lbInner.style.cursor = zoomScale > 1
       ? (isDragging ? 'grabbing' : 'grab')
       : '';
+    lbZoomOut.disabled = zoomScale <= 1;
   }
 
   function resetView() {
@@ -147,7 +148,7 @@
     applyZoom();
   });
   lbZoomOut.addEventListener('click', function () {
-    zoomScale = Math.max(0.5, zoomScale - 0.25);
+    zoomScale = Math.max(1, zoomScale - 0.25);
     if (zoomScale <= 1) { panX = 0; panY = 0; }
     clampPan();
     applyZoom();
@@ -157,7 +158,7 @@
   lbContent.addEventListener('wheel', function (e) {
     e.preventDefault();
     var step = e.deltaY < 0 ? 0.15 : -0.15;
-    zoomScale = Math.min(4, Math.max(0.5, zoomScale + step));
+    zoomScale = Math.min(4, Math.max(1, zoomScale + step));
     if (zoomScale <= 1) { panX = 0; panY = 0; }
     clampPan();
     applyZoom();
@@ -216,7 +217,7 @@
         e.touches[0].clientX - e.touches[1].clientX,
         e.touches[0].clientY - e.touches[1].clientY
       );
-      zoomScale = Math.min(4, Math.max(0.5, pinchScale0 * dist / pinchDist0));
+      zoomScale = Math.min(4, Math.max(1, pinchScale0 * dist / pinchDist0));
       if (zoomScale <= 1) { panX = 0; panY = 0; }
       clampPan();
       applyZoom();

@@ -542,6 +542,12 @@ a.case-image:hover {
   transform: rotate(90deg);
 }
 
+/* Horizontal/landscape before-after for desktop screenshots */
+.before-after--landscape {
+  height: 400px;
+  border-radius: 8px;
+}
+
 /* Transcripts */
 .transcripts {
   margin-top: 1.5rem;
@@ -1257,6 +1263,11 @@ a.case-image:hover {
 .global-lightbox-zoom-btn:hover {
   background: rgba(0, 0, 0, 0.22);
 }
+.global-lightbox-zoom-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
 
 /* ── Survey pages ── */
 
@@ -1670,47 +1681,48 @@ section[id] {
 .carousel-desktop-wrap {
   margin: 1rem -1.5rem 0.75rem;
   overflow: hidden;
+  padding: 10px 0;
   -webkit-mask-image: linear-gradient(to right, transparent 0px, black 20px, black calc(100% - 20px), transparent 100%);
   mask-image: linear-gradient(to right, transparent 0px, black 20px, black calc(100% - 20px), transparent 100%);
 }
 .carousel--desktop {
-  height: 400px;
+  height: 320px;
   overflow: visible;
   margin: 0;
 }
 .carousel--desktop .carousel-slide {
-  width: 660px;
-  height: 400px;
-  margin-left: -330px;
-  margin-top: -200px;
+  width: 600px;
+  height: 320px;
+  margin-left: -300px;
+  margin-top: -160px;
   border-radius: 8px;
   background: none;
 }
 .carousel--desktop .carousel-slide.is-left {
-  transform: translateX(-518px) scale(0.72);
+  transform: translateX(-465px) scale(0.72);
   opacity: 0.45;
   z-index: 2;
   cursor: pointer;
 }
 .carousel--desktop .carousel-slide.is-right {
-  transform: translateX(518px) scale(0.72);
+  transform: translateX(465px) scale(0.72);
   opacity: 0.45;
   z-index: 2;
   cursor: pointer;
 }
 .carousel--desktop .carousel-slide.is-left:hover {
-  transform: translateX(-518px) scale(0.76);
+  transform: translateX(-465px) scale(0.76);
   opacity: 0.7;
 }
 .carousel--desktop .carousel-slide.is-right:hover {
-  transform: translateX(518px) scale(0.76);
+  transform: translateX(465px) scale(0.76);
   opacity: 0.7;
 }
 .carousel--desktop .carousel-slide.is-center {
-  transform: translateX(0) scale(0.7);
+  transform: translateX(0) scale(1);
 }
 .carousel--desktop .carousel-slide.is-center:hover {
-  transform: translateX(0) scale(0.74);
+  transform: translateX(0) scale(1.03);
 }
 
 /* Key-value metadata table: short label col, long wrappable value col */
@@ -2129,6 +2141,12 @@ section[id] {
 .design-stage .carousel {
   margin-top: 1rem;
   margin-bottom: 0.75rem;
+}
+
+/* Reset carousel margins inside wrap — vertical breathing room comes from wrap's padding */
+.carousel-desktop-wrap > .carousel {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .carousel-slide.is-hidden {

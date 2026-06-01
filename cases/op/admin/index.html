@@ -44,7 +44,9 @@
       <p class="case-intro">Системный редизайн легаси-панели: 10 разделов, 50–100+ страниц, 3 в проде. Два типа пользователей с конфликтующими ожиданиями, работа в ограничениях легаси в связке с техлидом. Параллельно выстраивал процесс работы дизайн-отдела с нуля.</p>
     </section>
 
-    <div class="case-cover case-section" aria-hidden="true"></div>
+    <div class="case-cover case-section">
+      <img src="../../../images/adminpanelcover.webp" alt="Редизайн Админки" data-lightbox="landscape" style="width:100%;border-radius:8px;display:block;">
+    </div>
 
     <section id="context" class="case-section">
       <h2>Обзор</h2>
@@ -117,21 +119,46 @@
             <h3>1. Прогрессивное раскрытие вместо «всё сразу»</h3>
             <p class="solution-impact">Снижение барьера для новых пользователей: краткосрочный рост обращений в поддержку, затем нормализация</p>
             <p class="solution-desc">В легаси все кнопки действий были доступны всегда, независимо от контекста. Новые пользователи терялись: непонятно что нажимать и зачем. Решение: кнопки появляются тогда, когда нужны, после выбора элемента или перехода к следующему шагу. Количество шагов увеличилось, но каждый шаг стал читаемым.</p>
-            <div class="img-placeholder" aria-hidden="true"></div>
+            <div class="before-after before-after--landscape">
+              <div class="ba-before"><img src="../../../images/adminpaneldesigndecisionbefore1.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>
+              <div class="ba-after"><img src="../../../images/adminpaneldesigndecisionafter1.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>
+              <div class="ba-divider"><div class="ba-handle" aria-label="Перетащите для сравнения"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4L2 9L6 14" stroke="rgba(220,38,38,0.75)"/><path d="M12 4L16 9L12 14" stroke="rgba(22,163,74,0.75)"/></svg></div></div>
+            </div>
             <p class="solution-alt">Альтернатива: сохранить «всё всегда доступно», только визуально выделить приоритетные действия. Это не решало проблему новых пользователей, только маскировало её.</p>
           </div>
           <div class="solution-item">
             <h3>2. Работники: от плотной таблицы к модульной карточке</h3>
             <p class="solution-impact">Читаемость данных сотрудника, скорость работы с профилями</p>
             <p class="solution-desc">До: таблица с 10+ столбцами, в колонке «Профили»: текстовый список через запятую, вся информация в одной строке. После: таблица с 5 ключевыми столбцами, профили как теги с точками. Окно создания работника: боковая навигация по секциям (Данные работника / Организация / Обучение / Дополнительно / Настройки). Каждая секция: отдельный шаг вместо одной бесконечной формы. Пользователь видит из чего состоит создание работника и на каком этапе находится.</p>
-            <div class="img-placeholder" aria-hidden="true"></div>
+            <div class="before-after before-after--landscape">
+              <div class="ba-before"><img src="../../../images/adminpaneldesigndecisionbefore2.1.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>
+              <div class="ba-after"><img src="../../../images/adminpaneldesigndecisionafter2.1.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>
+              <div class="ba-divider"><div class="ba-handle" aria-label="Перетащите для сравнения"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4L2 9L6 14" stroke="rgba(220,38,38,0.75)"/><path d="M12 4L16 9L12 14" stroke="rgba(22,163,74,0.75)"/></svg></div></div>
+            </div>
+            <div class="before-after before-after--landscape" style="margin-top:1.25rem;">
+              <div class="ba-before"><img src="../../../images/adminpaneldesigndecisionbefore2.2.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>
+              <div class="ba-after"><img src="../../../images/adminpaneldesigndecisionafter2.2.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>
+              <div class="ba-divider"><div class="ba-handle" aria-label="Перетащите для сравнения"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4L2 9L6 14" stroke="rgba(220,38,38,0.75)"/><path d="M12 4L16 9L12 14" stroke="rgba(22,163,74,0.75)"/></svg></div></div>
+            </div>
             <p class="solution-alt">Альтернатива: сохранить единую форму, добавив только секционные заголовки. Это убирает визуальный хаос, но не даёт ощущения прогресса и не помогает понять объём ввода данных заранее.</p>
           </div>
           <div class="solution-item">
             <h3>3. График: цветовая индикация и Диаграмма</h3>
             <p class="solution-impact">Скорость обнаружения просроченных и предстоящих аттестаций, новая возможность видеть картину за год</p>
             <p class="solution-desc">До: плотная таблица, все даты одинакового цвета, нужно читать каждую строку, чтобы понять статус. После (таблица): цветовое кодирование прямо в ячейках дат (красный: просрочено, оранжевый: скоро, зелёный: в норме). После (Диаграмма): новый вид, которого не было в легаси. Временная шкала по месяцам, блоки сроков по строкам в виде Ганта. Позволяет видеть картину аттестаций за год без построчного чтения. Также добавлены модальные окна при клике: состояние обучения и результаты по профилю, детализация без перехода на новую страницу.</p>
-            <div class="img-placeholder" aria-hidden="true"></div>
+            <div class="before-after before-after--landscape">
+              <div class="ba-before"><img src="../../../images/adminpaneldesigndecisionbefore3.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>
+              <div class="ba-after"><img src="../../../images/adminpaneldesigndecisionafter3.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>
+              <div class="ba-divider"><div class="ba-handle" aria-label="Перетащите для сравнения"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4L2 9L6 14" stroke="rgba(220,38,38,0.75)"/><path d="M12 4L16 9L12 14" stroke="rgba(22,163,74,0.75)"/></svg></div></div>
+            </div>
+            <div class="carousel-desktop-wrap">
+              <div class="carousel carousel--desktop" id="adminDecision3Carousel">
+                <div class="carousel-slide is-left" style="background:none;box-shadow:none;"><img src="../../../images/adminpaneldesigndecision3.1.webp" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+                <div class="carousel-slide is-center" style="background:none;box-shadow:none;"><img src="../../../images/adminpaneldesigndecision3.2.webp" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+                <div class="carousel-slide is-right" style="background:none;box-shadow:none;"><img src="../../../images/adminpaneldesigndecision3.3.webp" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+                <div class="carousel-slide is-hidden" style="background:none;box-shadow:none;"><img src="../../../images/adminpaneldesigndecision3.4.webp" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+              </div>
+            </div>
             <p class="solution-alt">Альтернатива для Диаграммы: оставить только таблицу с фильтрами по статусу. Фильтры решают задачу «найди конкретное», но не «пойми картину целиком». Это разные задачи.</p>
           </div>
         </div>
@@ -278,54 +305,71 @@
     });
 
     (function () {
-      var icon = '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">' +
-        '<rect x="3" y="3" width="18" height="18" rx="2"/>' +
-        '<circle cx="8.5" cy="8.5" r="1.5"/>' +
-        '<path d="m21 15-5-5L5 21"/>' +
-        '</svg>';
+      document.querySelectorAll('.before-after:not(.before-after--vertical)').forEach(function (ba) {
+        var after = ba.querySelector('.ba-after');
+        var divider = ba.querySelector('.ba-divider');
+        var dragging = false;
+        function setPos(pct) {
+          pct = Math.max(0, Math.min(100, pct));
+          after.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+          divider.style.left = pct + '%';
+        }
+        setPos(50);
+        ba.addEventListener('mousedown', function (e) { dragging = true; e.preventDefault(); });
+        document.addEventListener('mouseup', function () { dragging = false; });
+        document.addEventListener('mousemove', function (e) {
+          if (!dragging) return;
+          var rect = ba.getBoundingClientRect();
+          setPos((e.clientX - rect.left) / rect.width * 100);
+        });
+        ba.addEventListener('touchstart', function () { dragging = true; }, { passive: true });
+        ba.addEventListener('touchend', function () { dragging = false; }, { passive: true });
+        ba.addEventListener('touchmove', function (e) {
+          if (!dragging) return;
+          var rect = ba.getBoundingClientRect();
+          setPos((e.touches[0].clientX - rect.left) / rect.width * 100);
+        }, { passive: false });
+      });
+    })();
 
-      function makeSlide(label, pos) {
-        var el = document.createElement('div');
-        el.className = 'carousel-slide ' + pos;
-        el.innerHTML = '<div class="carousel-slide-inner">' + icon +
-          '<span class="carousel-slide-label">' + label + '</span></div>';
-        return el;
+    (function () {
+      var carousel = document.getElementById('adminDecision3Carousel');
+      if (!carousel) return;
+      var srcs = [
+        '../../../images/adminpaneldesigndecision3.1.webp',
+        '../../../images/adminpaneldesigndecision3.2.webp',
+        '../../../images/adminpaneldesigndecision3.3.webp',
+        '../../../images/adminpaneldesigndecision3.4.webp'
+      ];
+      var slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      var n = slides.length;
+      var active = 1;
+
+      function getPos(i) {
+        var d = (i - active + n) % n;
+        if (d === 0) return 'is-center';
+        if (d === 1) return 'is-right';
+        if (d === n - 1) return 'is-left';
+        return 'is-hidden';
       }
 
-      document.querySelectorAll('.solution-item .img-placeholder').forEach(function (ph) {
-        var carousel = document.createElement('div');
-        carousel.className = 'carousel carousel--landscape solution-carousel';
-        carousel.appendChild(makeSlide('Экран 1', 'is-left'));
-        carousel.appendChild(makeSlide('Экран 2', 'is-center'));
-        carousel.appendChild(makeSlide('Экран 3', 'is-right'));
-        ph.parentNode.replaceChild(carousel, ph);
-      });
+      function update() {
+        slides.forEach(function (s, i) {
+          s.className = 'carousel-slide ' + getPos(i);
+          s.style.cssText = 'background:none;box-shadow:none;';
+        });
+      }
 
-      document.querySelectorAll('.solution-carousel').forEach(function (carousel) {
-        var slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
-        var active = 1;
-
-        function pos(i) {
-          var d = ((i - active) % 3 + 3) % 3;
-          return d === 0 ? 'is-center' : d === 1 ? 'is-right' : 'is-left';
-        }
-
-        function apply() {
-          slides.forEach(function (s, i) {
-            s.classList.remove('is-left', 'is-center', 'is-right');
-            s.classList.add(pos(i));
-          });
-        }
-
-        slides.forEach(function (slide, i) {
-          slide.addEventListener('click', function () {
-            if (pos(i) === 'is-center') {
-              if (window.openGlobalLightbox) window.openGlobalLightbox('landscape');
-            } else {
-              active = i;
-              apply();
-            }
-          });
+      slides.forEach(function (slide, i) {
+        slide.addEventListener('click', function () {
+          var p = getPos(i);
+          if (p === 'is-center') {
+            if (window.openGlobalLightbox) window.openGlobalLightbox('landscape', srcs[active]);
+          } else if (p === 'is-left') {
+            active = (active - 1 + n) % n; update();
+          } else if (p === 'is-right') {
+            active = (active + 1) % n; update();
+          }
         });
       });
     })();
