@@ -41,9 +41,9 @@
     <section class="case-hero">
       <span class="case-tag">Desktop · 2024</span>
       <h1>Мессенджер</h1>
-      <p class="case-meta">UX-проектирование&nbsp;&nbsp;·&nbsp;&nbsp;2024</p>
-      <p class="case-intro">Исследовал информационную перегрузку в корпоративных мессенджерах: Slack, Teams, Mattermost, Пачка, Telegram. Спроектировал четыре функции и проверил их в немодерируемом тестировании. Работал в команде трёх человек: отвечал за методологию и дизайн.</p>
-      <a href="#" class="btn-outline">Смотреть прототип в Figma →</a>
+      <p class="case-meta">UX-проектирование&nbsp;&nbsp;·&nbsp;&nbsp;2026</p>
+      <p class="case-intro">Проанализровали популярные мессенджеры, исследовали почему нынешние решения не подходят, спроектировали четыре фичи и проверили их в немодерируемом тестировании. Работал в команде из трех человек, отвечал за методологию и дизайн</p>
+      <a href="#" class="btn-outline">Смотреть Figma →</a>
     </section>
 
     <div class="case-cover case-section">
@@ -52,7 +52,7 @@
 
     <section id="context" class="case-section">
       <h2>Обзор</h2>
-      <p>Сотрудник получает в среднем 153 сообщения в день. После каждого прерывания требуется 15–23 минуты, чтобы вернуться в задачу. Мессенджеры хорошо доставляют сообщения, но не помогают управлять вниманием.</p>
+      <p>Сотрудник получает в среднем 150 сообщения в день. После каждого прерывания требуется около 20 минут, чтобы вернуться в задачу. Мессенджеры хорошо помогают в коммуникации, но не помогают разграничивать «горящие» сообщения от обычных</p>
       <a href="./context.html" class="btn-outline">Открыть обзор →</a>
     </section>
 
@@ -61,13 +61,13 @@
       <div class="audience-grid">
         <div class="audience-card">
           <h3>Бэк-офис</h3>
-          <p>Разработчики, дизайнеры, аналитики. Коммуникация для них инструмент, не цель: получить информацию, уточнить, вернуться к работе.</p>
-          <p class="audience-fear"><span class="audience-label">Стрессор</span>: техно-инвазия. Каждое прерывание разрушает фокус, на восстановление 15–23 минуты.</p>
+          <p>Разработчики, дизайнеры, аналитики. Коммуникация для них как инструмент, который помогает получить информацию или уточнить ее.</p>
+          <p class="audience-fear"><span class="audience-label">Главная боль</span> Каждое прерывание разрушает фокус, на восстановление нужно около 20 минут.</p>
         </div>
         <div class="audience-card">
           <h3>Менеджеры</h3>
-          <p>Тимлиды, PM, руководители среднего звена. Коммуникация и есть основная работа: обсуждения, решения, статусы, согласования.</p>
-          <p class="audience-fear"><span class="audience-label">Стрессор</span>: техно-оверлоад. Критичные сообщения тонут в рутинных, различить их нет инструмента.</p>
+          <p>Тимлиды, PM, руководители среднего звена. Коммуникация для них основная часть работы: обсуждения, решения, статусы, согласования.</p>
+          <p class="audience-fear"><span class="audience-label">Главная боль</span> Важные сообщения тонут в рутинных, различить их нет инструмента.</p>
         </div>
       </div>
       <a href="./segments.html" class="btn-outline" style="margin-top: 1.5rem; display: inline-block;">Полная сегментация →</a>
@@ -102,7 +102,7 @@
           <tr>
             <td>Ф1: AI-суммаризация</td>
             <td>&gt; 85%</td>
-            <td>81.3%: проблема обнаруживаемости триггера, не концепции</td>
+            <td>81.3%: проблема в обнаружении в интерфейсе, то есть не в самой концепции</td>
           </tr>
           <tr>
             <td>Ф2: статусы и автоответы</td>
@@ -112,7 +112,7 @@
           <tr>
             <td>Ф3: поиск файлов</td>
             <td>&gt; 80%</td>
-            <td>71.4%: affordance фильтров-чипов требует доработки</td>
+            <td>71.4%: нужно доработать заметность фильтр-чипов</td>
           </tr>
         </tbody>
       </table></div>
@@ -126,30 +126,30 @@
 
     <section id="synthesis" class="case-section">
       <h2>Синтез и приоритизация</h2>
-      <p>Аффинная диаграмма перевела инсайты в тематические кластеры. RICE расставил приоритеты: Ф4=119, Ф1=63, Ф2=47, Ф3=46.</p>
+      <p>Кластеризировали инсайты, приоритизировали фичи по RICE</p>
       <a href="./synthesis.html" class="btn-outline">Открыть синтез →</a>
     </section>
 
     <section id="jtbd" class="case-section">
       <h2>JTBD и UJM</h2>
-      <p>Четыре формулировки JTBD и карты пути «как есть» для каждой функции. Два паттерна сквозные: воркэраунды как норма и пиковая боль, невидимая самому пользователю.</p>
+      <p>Четыре формулировки JTBD и карты пути «as is» для каждой фичи.</p>
       <a href="./jtbd.html" class="btn-outline">Открыть JTBD и UJM →</a>
     </section>
 
     <section id="solutions" class="case-section">
       <h2>Дизайн-решения</h2>
-      <p>Двухколоночная ИА: сайдбар с разделами Поиск, Треды, Задачи, Активность. Четыре функции спроектированы как система: разные задачи, единая архитектура.</p>
+      <p>Двухколоночный интерфейс: сайдбар с разделами Поиск, Треды, Задачи, Активность. Четыре фичи спроектированы в единой системе, у них разные задачи, но одна архитектура.</p>
 
       <div class="carousel-desktop-wrap">
         <div class="carousel carousel--desktop" id="designCarousel">
           <div class="carousel-slide is-left" style="background:none;box-shadow:none;">
-            <img src="../../images/messengermain1.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+            <img src="../../images/messengermain1.webp" style="width:100%;height:100%;object-fit:contain;display:block;">
           </div>
           <div class="carousel-slide is-center" style="background:none;box-shadow:none;">
-            <img src="../../images/messengermain2.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+            <img src="../../images/messengermain2.webp" style="width:100%;height:100%;object-fit:contain;display:block;">
           </div>
           <div class="carousel-slide is-right" style="background:none;box-shadow:none;">
-            <img src="../../images/messengermain3.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
+            <img src="../../images/messengermain3.webp" style="width:100%;height:100%;object-fit:contain;display:block;">
           </div>
         </div>
       </div>
@@ -165,7 +165,7 @@
 
     <section id="iterations" class="case-section">
       <h2>Итерации</h2>
-      <p>Три волны правок по результатам тестирования. Все проблемы на уровне обнаруживаемости, не концепции: affordance фильтров, точка входа в статусы, визуальная иерархия на экране резюме.</p>
+      <p>Три волны правок по результатам тестирования. Все проблемы на уровне заметности, проблема не концепции: заметность фильтров, точка входа в статусы, визуальная иерархия на экране резюме.</p>
       <a href="./iterations.html" class="btn-outline">Открыть итерации →</a>
     </section>
 

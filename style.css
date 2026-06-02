@@ -1681,20 +1681,20 @@ section[id] {
 .carousel-desktop-wrap {
   margin: 1rem -1.5rem 0.75rem;
   overflow: hidden;
-  padding: 10px 0;
+  padding: 16px 0;
   -webkit-mask-image: linear-gradient(to right, transparent 0px, black 20px, black calc(100% - 20px), transparent 100%);
   mask-image: linear-gradient(to right, transparent 0px, black 20px, black calc(100% - 20px), transparent 100%);
 }
 .carousel--desktop {
-  height: 320px;
+  height: 338px;
   overflow: visible;
   margin: 0;
 }
 .carousel--desktop .carousel-slide {
   width: 600px;
-  height: 320px;
+  height: 338px;
   margin-left: -300px;
-  margin-top: -160px;
+  margin-top: -169px;
   border-radius: 8px;
   background: none;
 }
@@ -1723,6 +1723,15 @@ section[id] {
 }
 .carousel--desktop .carousel-slide.is-center:hover {
   transform: translateX(0) scale(1.03);
+}
+
+/* Tall desktop carousel variant (~1.4:1 screenshots, e.g. Monitoring) */
+.carousel--desktop-tall {
+  height: 430px;
+}
+.carousel--desktop-tall .carousel-slide {
+  height: 430px;
+  margin-top: -215px;
 }
 
 /* Key-value metadata table: short label col, long wrappable value col */
@@ -2835,7 +2844,7 @@ details[open] .accordion-chevron {
     margin-top: 2rem;
   }
 
-  /* Кнопки «назад / вперёд» — в столбик */
+  /* Кнопки «назад / вперед» — в столбик */
   .survey-wave-nav {
     flex-direction: column;
     gap: 0.625rem;

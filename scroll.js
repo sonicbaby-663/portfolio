@@ -7,7 +7,7 @@
     if (!href || href.startsWith('#') || href.startsWith('mailto:') || /^https?:/.test(href)) return;
     sessionStorage.setItem('scroll:' + location.pathname, window.scrollY);
 
-    // Не ставим флаг «вперёд» если это ← ссылка (back-link или кнопка с левой стрелкой)
+    // Не ставим флаг «вперед» если это ← ссылка (back-link или кнопка с левой стрелкой)
     var isBack = link.classList.contains('back-link') ||
                  !!link.querySelector('[data-arrow="left"]');
     if (!isBack) {
@@ -21,7 +21,7 @@
     var isFwd = sessionStorage.getItem('scroll:fwd');
 
     sessionStorage.removeItem('scroll:fwd'); // всегда сбрасываем флаг
-    sessionStorage.removeItem(key);          // всегда очищаем сохранённую позицию
+    sessionStorage.removeItem(key);          // всегда очищаем сохраненную позицию
 
     // Если пришли по прямой ссылке (isFwd) — страница должна открыться сверху
     // Если пришли назад (кнопка «Назад» или браузерная история) — восстанавливаем
