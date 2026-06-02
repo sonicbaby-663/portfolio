@@ -26,12 +26,12 @@
     <a href="#audience">Аудитория</a>
     <a href="#research">Исследование</a>
     <a href="#benchmarking">Бенчмаркинг</a>
-    <a href="#hypotheses">Гипотезы</a>
+
     <a href="#user-flow">User Flow</a>
     <a href="#design">Дизайн</a>
     <a href="#usability">Валидация</a>
     <a href="#metrics">Метрики</a>
-    <a href="#next-steps">Next Steps</a>
+    <a href="#next-steps">Следующие шаги</a>
   </nav>
 
   <main class="case-page">
@@ -44,7 +44,7 @@
       <span class="case-tag">Пет-проект · iOS · 2026</span>
       <h1>Travel Summary</h1>
       <p class="case-meta">Product Designer&nbsp;&nbsp;·&nbsp;&nbsp;2026</p>
-      <p class="case-intro">Концептуальная фича для Яндекс Путешествий. Персонализированный итог поездки появляется через 24–48 часов после возвращения и мотивирует поделиться впечатлениями. Спроектировал с нуля: от исследования до UI.</p>
+      <p class="case-intro">Концептуальная фича для Яндекс Путешествий. Персонализированный итог поездки появляется после возвращения и мотивирует поделиться впечатлениями. Спроектировал с нуля: от исследования до финального UI.</p>
       <a href="#" class="btn-outline">Смотреть прототип в Figma →</a>
     </section>
 
@@ -68,7 +68,7 @@
           </div>
           <div class="segment-row-body">
             <p>Публикуют контент о поездках по привычке. Хотят story-формат с минимальной редактурой.</p>
-            <p class="audience-fear"><span class="audience-label">Барьер</span>Не сам факт публикации, а её качество. Конвертируются легче всего.</p>
+            <p class="audience-fear"><span class="audience-label">Барьер</span>Им важен не сам факт публикации, а визуальное качество материала</p>
           </div>
         </div>
         <div class="segment-row">
@@ -78,7 +78,7 @@
           </div>
           <div class="segment-row-body">
             <p>Не публикуют в открытые соцсети, но готовы поделиться в личных чатах при правильном формате.</p>
-            <p class="audience-fear"><span class="audience-label">Ставка</span>Самый большой сегмент. Единственный мост: юмор и неожиданные факты.</p>
+            <p class="audience-fear"><span class="audience-label">Драйвер</span>Для этого сегмента нужно сделать ставку на юмор и неождианные факты</p>
           </div>
         </div>
         <div class="segment-row">
@@ -87,7 +87,7 @@
             <span class="segment-share">~20% выборки</span>
           </div>
           <div class="segment-row-body">
-            <p>Деловые поездки. Эмоциональная подача вторична: ценят утилитарность и структурированную статистику.</p>
+            <p>Пользуются по большей степени для деловых поездок. Эмоциональная подача для них вторична, фокус на практической пользе и применимости</p>
             <p class="audience-fear"><span class="audience-label">Роль</span>Не двигают метрику шеринга, но работают на DAU через архив и сравнение поездок.</p>
           </div>
         </div>
@@ -108,7 +108,7 @@
         <tbody>
           <tr>
             <td>Доля шеринга от DAU фичи</td>
-            <td>28–32%</td>
+            <td>&gt; 28%</td>
             <td>Сейчас 19% публикуют контент о поездках: фича должна снять барьер</td>
           </tr>
           <tr>
@@ -152,58 +152,16 @@
       <a href="./benchmarking.html" class="btn-outline">Открыть бенчмаркинг →</a>
     </section>
 
-    <section id="hypotheses" class="case-section">
-      <h2>Приоритизация гипотез</h2>
-      <p>После интервью было пять гипотез: нужно было решить, в каком порядке проверять количественно. Использовал ICE: Impact × Confidence × Ease.</p>
-      <div class="table-wrap"><table class="case-table case-table--equal" style="margin-top: 1.25rem;">
-        <thead>
-          <tr>
-            <th>Гипотеза</th>
-            <th>ICE</th>
-            <th>Приоритет</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Редактирование: обязательное условие шеринга</td>
-            <td>900</td>
-            <td>Must</td>
-          </tr>
-          <tr>
-            <td>Социальный барьер блокирует шеринг даже при хорошем контенте</td>
-            <td>810</td>
-            <td>Must</td>
-          </tr>
-          <tr>
-            <td>Детализация данных: основа персонализации</td>
-            <td>648</td>
-            <td>Should</td>
-          </tr>
-          <tr>
-            <td>Оптимальный момент показа: первые 48 часов после поездки</td>
-            <td>384</td>
-            <td>Nice</td>
-          </tr>
-          <tr>
-            <td>Пользователи с 2+ поездками ценят summary выше</td>
-            <td>315</td>
-            <td>Nice</td>
-          </tr>
-        </tbody>
-      </table></div>
-      <a href="./hypotheses.html" class="btn-outline" style="margin-top: 1.5rem; display: inline-block;">Открыть приоритизацию →</a>
-    </section>
-
     <section id="user-flow" class="case-section">
       <h2>User Flow</h2>
-      <p>Полный жизненный цикл Travel Summary: от момента бронирования до повторного возврата. Три дорожки: пользователь, система, трекинг. Шесть фаз.</p>
+      <p>Полный жизненный цикл Travel Summary: от момента бронирования до повторного возврата. Две дорожки: пользователь и система.</p>
       <img src="../../images/travelsummaryuserflow.png" alt="User Flow" data-lightbox="landscape" style="width:100%;border-radius:8px;display:block;margin:1rem 0;">
       <a href="./user-flow.html" class="btn-outline">Открыть User Flow →</a>
     </section>
 
     <section id="design" class="case-section">
-      <h2>Дизайн</h2>
-      <p>User flow (swim-lanes, 6 фаз), UI kit на базе дизайн-системы Яндекс Путешествий и 10+ экранов с аннотациями, привязанными к данным исследования.</p>
+      <h2>Дизайн-решения</h2>
+      <p>UI kit на базе дизайн-системы Яндекс Путешествий и экраны с аннотациями, привязанными к данным исследования.</p>
       <div class="carousel" id="designCarousel">
         <div class="carousel-slide is-left" style="background:none;box-shadow:none;">
           <div class="carousel-slide-inner" style="background:none;border:none;">
@@ -226,7 +184,7 @@
 
     <section id="usability" class="case-section">
       <h2>Валидация</h2>
-      <p>Спланировал 3 задачных сценария с 6 респондентами (по 2 на каждый сегмент). Тестирую персонализацию, edit-флоу и конверсию в шеринг. Метрика качества: SUS ≥ 70.</p>
+      <p>Провел ю-тесты через Pathway: 8 участников на каждый сценарий. Анализировал время прохождения и завершаемость</p>
       <a href="./usability.html" class="btn-outline">Открыть план →</a>
     </section>
 
@@ -238,7 +196,7 @@
 
     <section id="next-steps" class="case-section">
       <h2>Следующие шаги</h2>
-      <p>До релиза: расширение опроса и engineering assessment. MVP запускается в четыре фазы от 5% до 100%. Дальше: сравнение поездок, Annual Travel Wrapped и интеграция с Яндекс Картами.</p>
+      <p>До релиза расширить опрос, MVP запускается в четыре фазы от 5% до 100%. Дальше: сравнение поездок, итоговый summary года и интеграция с Яндекс Картами.</p>
       <a href="./next-steps.html" class="btn-outline">Открыть →</a>
     </section>
 
