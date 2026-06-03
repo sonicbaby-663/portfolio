@@ -3025,9 +3025,11 @@ details[open] .accordion-chevron {
     min-height: 44px;
   }
 
-  /* ── Standard carousel: reduce height ── */
+  /* ── Standard carousel: reduce height + fade edges ── */
   .carousel {
     height: 320px;
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
   }
   .carousel-slide {
     height: 320px;
@@ -3072,17 +3074,15 @@ details[open] .accordion-chevron {
     margin-top: -125px;
   }
 
-  /* ── Tables: allow wrapping, prevent overflow ── */
-  .case-table td:nth-child(2) {
-    white-space: normal;
+  /* ── Tables: горизонтальный скролл внутри враппера ── */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
-  .case-table--meta td:first-child {
-    white-space: normal;
-    width: auto;
-  }
-  .case-table--hypo,
-  .case-table--tasks {
-    word-break: break-word;
+
+  /* ── Floating buttons: 44px tap target ── */
+  .back-float-btn {
+    min-height: 44px;
   }
 
   /* ── HMW flip card: column layout, full-width card ── */
@@ -3105,6 +3105,15 @@ details[open] .accordion-chevron {
   .swipe-demo-wrap {
     width: 100%;
   }
+
+  /* ── Accordion: стрелка справа на первой строке, мета ниже ── */
+  details.accordion-item summary {
+    flex-wrap: wrap;
+    row-gap: 0.25rem;
+  }
+  .accordion-title   { order: 1; }
+  .accordion-chevron { order: 2; }
+  .accordion-meta    { order: 3; flex: 0 0 100%; }
 }
 
 /* ── Swipe Hint Demo ── */
