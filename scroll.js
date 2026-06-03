@@ -293,9 +293,9 @@
 
   // ── Navigation config ────────────────────────────────────────────────────
   var CASES = [
-    { id: 'petsee',         title: 'PetSee',        path: '/cases/petsee/index.html' },
+    { id: 'op',             title: 'Термика',        path: '/cases/op/index.html' },
+    { id: 'petsee',         title: 'PetSee',         path: '/cases/petsee/index.html' },
     { id: 'travel-summary', title: 'Travel Summary', path: '/cases/travel-summary/index.html' },
-    { id: 'op',             title: 'Опыт работы',    path: '/cases/op/index.html' },
     { id: 'messenger',      title: 'Мессенджер',     path: '/cases/messenger/index.html' }
   ];
 

@@ -186,7 +186,7 @@
 
             </div>
           </div>
-          <p class="sitter-flip-note">Приблизительная реализация: в финале карточка будет выглядеть как в макетах, анимация плавнее. Каждые 5 секунд: легкий намек-переворот. По клику: полный разворот с расшифровкой бейджей.</p>
+          <p class="sitter-flip-note">Приблизительная реализация: в финале карточка будет выглядеть как в макетах, анимация плавнее. Каждые 5 секунд: легкий намек-переворот. Если нажать, то можно увидеть полный разворот с расшифровкой бейджей.</p>
         </div>
         <p class="hmw-after-metric">Метрика: доля открытий обратной стороны карточки ≥ 60%</p>
       </div>
@@ -202,8 +202,7 @@
         <div class="swipe-demo-outer">
         <div class="swipe-demo-wrap">
           <div class="swipe-demo-accept" id="swipeDemoAccept">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-            Принять
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           </div>
           <div class="swipe-demo-card" id="swipeDemoCard">
             <div class="sdc-photo">
@@ -222,7 +221,7 @@
             </div>
           </div>
         </div>
-        <p class="sitter-flip-note">Приблизительная реализация: в финале карточка будет выглядеть как в макетах. Каждые 5 секунд карточка сдвигается вправо и появляется плашка «Принять».</p>
+        <p class="sitter-flip-note">Приблизительная реализация. Каждые 5 секунд — подсказка-анимация. Можно самому потянуть карточку вправо.</p>
         </div>
         <p class="hmw-after-metric">Метрика: доля ситтеров, использующих свайп в первую сессию ≥ 70%</p>
       </div>
@@ -274,16 +273,23 @@
     })();
   </script>
   <script>
-    // Swipe hint — repeats every 5s when card is in viewport
+    // Swipe demo — hint animation + interactive drag
     (function () {
       var card  = document.getElementById('swipeDemoCard');
       var badge = document.getElementById('swipeDemoAccept');
       if (!card || !badge) return;
 
+      var THRESHOLD = 90;
+      var hintLocked = false;
+      var dragging = false;
+      var startX = 0, dragX = 0;
+
+      // ── Hint animation ──────────────────────────────────────────────────
       function play() {
+        if (hintLocked) return;
         card.classList.remove('is-playing');
         badge.classList.remove('is-playing');
-        void card.offsetWidth; // force reflow to restart animation
+        void card.offsetWidth;
         card.classList.add('is-playing');
         badge.classList.add('is-playing');
       }
@@ -301,6 +307,70 @@
         play();
         setInterval(play, 5000);
       }
+
+      // ── Interactive drag ─────────────────────────────────────────────────
+      function dragStart(x) {
+        hintLocked = true;
+        card.classList.remove('is-playing');
+        badge.classList.remove('is-playing');
+        card.style.transition = 'none';
+        startX = x;
+        dragging = true;
+        dragX = 0;
+      }
+
+      function dragMove(x) {
+        if (!dragging) return;
+        dragX = Math.max(0, x - startX);
+        card.style.transform = 'translateX(' + dragX + 'px)';
+        badge.style.opacity = Math.min(dragX / THRESHOLD, 1);
+      }
+
+      function dragEnd() {
+        if (!dragging) return;
+        dragging = false;
+
+        if (dragX >= THRESHOLD) {
+          card.style.transition = 'transform 0.3s cubic-bezier(0.4,0,0.2,1)';
+          card.style.transform = 'translateX(100vw)';
+          setTimeout(function () {
+            card.style.transition = 'none';
+            card.style.transform = '';
+            badge.style.opacity = '';
+            hintLocked = false;
+          }, 700);
+        } else {
+          card.style.transition = 'transform 0.25s cubic-bezier(0.4,0,0.2,1)';
+          card.style.transform = '';
+          badge.style.opacity = '0';
+          setTimeout(function () {
+            card.style.transition = '';
+            badge.style.opacity = '';
+            hintLocked = false;
+          }, 280);
+        }
+        dragX = 0;
+      }
+
+      // Touch
+      card.addEventListener('touchstart', function (e) {
+        dragStart(e.touches[0].clientX);
+      }, { passive: true });
+      card.addEventListener('touchmove', function (e) {
+        dragMove(e.touches[0].clientX);
+      }, { passive: true });
+      card.addEventListener('touchend', dragEnd);
+      card.addEventListener('touchcancel', dragEnd);
+
+      // Mouse
+      card.addEventListener('mousedown', function (e) {
+        dragStart(e.clientX);
+        e.preventDefault();
+      });
+      document.addEventListener('mousemove', function (e) {
+        dragMove(e.clientX);
+      });
+      document.addEventListener('mouseup', dragEnd);
     })();
 
     document.querySelectorAll('.before-after').forEach(function (ba) {
