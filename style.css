@@ -553,7 +553,8 @@ a.case-image:hover {
 
 /* Horizontal/landscape before-after for desktop screenshots */
 .before-after--landscape {
-  height: 400px;
+  height: auto;
+  aspect-ratio: 16 / 9;
   border-radius: 8px;
 }
 
@@ -3002,6 +3003,107 @@ details[open] .accordion-chevron {
     height: 146px;
     margin-left: -130px;
     margin-top: -73px;
+  }
+
+  /* ── CTA buttons: full width + 44px tap target ── */
+  .btn-outline {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+
+  /* ── Scroll-to-top: 44px tap target ── */
+  .scroll-top-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* ── Bottom nav buttons: 44px tap target, no full width ── */
+  .case-bottom-nav__btn {
+    min-height: 44px;
+  }
+
+  /* ── Standard carousel: reduce height ── */
+  .carousel {
+    height: 320px;
+  }
+  .carousel-slide {
+    height: 320px;
+    margin-top: -160px;
+  }
+
+  /* ── Desktop carousel wrapper: remove negative margins ── */
+  .carousel-desktop-wrap {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* ── Desktop carousel: scale down to fit mobile ── */
+  .carousel--desktop {
+    height: 190px;
+  }
+  .carousel--desktop .carousel-slide {
+    width: 280px;
+    height: 157px;
+    margin-left: -140px;
+    margin-top: -79px;
+  }
+  .carousel--desktop .carousel-slide.is-left {
+    transform: translateX(-200px) scale(0.72);
+  }
+  .carousel--desktop .carousel-slide.is-right {
+    transform: translateX(200px) scale(0.72);
+  }
+  .carousel--desktop .carousel-slide.is-left:hover {
+    transform: translateX(-200px) scale(0.76);
+  }
+  .carousel--desktop .carousel-slide.is-right:hover {
+    transform: translateX(200px) scale(0.76);
+  }
+
+  /* ── Desktop-tall carousel: scale down ── */
+  .carousel--desktop-tall {
+    height: 250px;
+  }
+  .carousel--desktop-tall .carousel-slide {
+    height: 250px;
+    margin-top: -125px;
+  }
+
+  /* ── Tables: allow wrapping, prevent overflow ── */
+  .case-table td:nth-child(2) {
+    white-space: normal;
+  }
+  .case-table--meta td:first-child {
+    white-space: normal;
+    width: auto;
+  }
+  .case-table--hypo,
+  .case-table--tasks {
+    word-break: break-word;
+  }
+
+  /* ── HMW flip card: column layout, full-width card ── */
+  .sitter-flip-wrap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .sitter-flip-card {
+    width: 100%;
+  }
+  .sitter-flip-note {
+    max-width: none;
+  }
+
+  /* ── HMW swipe demo: column layout, full-width wrap ── */
+  .swipe-demo-outer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .swipe-demo-wrap {
+    width: 100%;
   }
 }
 

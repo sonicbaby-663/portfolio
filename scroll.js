@@ -274,6 +274,10 @@
     if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
     var targetClass = dx > 0 ? 'is-right' : 'is-left';
     var target = carousel.querySelector('.carousel-slide.' + targetClass);
+    if (!target) {
+      var dataPos = dx > 0 ? '1' : '-1';
+      target = carousel.querySelector('.carousel-slide[data-pos="' + dataPos + '"]');
+    }
     if (target) target.click();
   }, { passive: true });
 
