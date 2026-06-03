@@ -18,6 +18,11 @@
         var dest = new URL(href, location.href).pathname;
         sessionStorage.setItem('hmw-return:' + dest, location.pathname);
       } catch (ex) {}
+    } else {
+      try {
+        var dest = new URL(href, location.href).pathname;
+        sessionStorage.removeItem('hmw-return:' + dest);
+      } catch (ex) {}
     }
   });
 
@@ -318,8 +323,8 @@
     ],
     'op': [
       { path: '/cases/op/monitoring/index.html', title: 'Мониторинг' },
-      { path: '/cases/op/edo/index.html',         title: 'ЭДО' },
-      { path: '/cases/op/admin/index.html',       title: 'Администратор' }
+      { path: '/cases/op/admin/index.html',       title: 'Редизайн' },
+      { path: '/cases/op/edo/index.html',         title: 'ЭДО' }
     ],
     'messenger': [
       { path: '/cases/messenger/context.html',            title: 'Обзор' },
