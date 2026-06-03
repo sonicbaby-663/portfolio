@@ -292,34 +292,29 @@
 
   var SECTIONS = {
     'petsee': [
-      { path: '/cases/petsee/context.html',              title: 'Обзор' },
-      { path: '/cases/petsee/segmentation.html',         title: 'Аудитория' },
-      { path: '/cases/petsee/research/index.html',       title: 'Исследование' },
-      { path: '/cases/petsee/research/qualitative.html', title: 'Качественное' },
-      { path: '/cases/petsee/research/survey-1.html',    title: 'Опрос: волна 1' },
-      { path: '/cases/petsee/research/survey-2.html',    title: 'Опрос: волна 2' },
-      { path: '/cases/petsee/benchmarking.html',         title: 'Бенчмаркинг' },
-      { path: '/cases/petsee/user-flow.html',            title: 'User Flow' },
-      { path: '/cases/petsee/hmw-before.html',           title: 'HMW' },
-      { path: '/cases/petsee/solutions.html',            title: 'Дизайн-решения' },
-      { path: '/cases/petsee/design.html',               title: 'Lo-fi → Hi-fi' },
-      { path: '/cases/petsee/usability.html',            title: 'Юзабилити' },
-      { path: '/cases/petsee/hmw-after.html',            title: 'HMW после тестов' },
-      { path: '/cases/petsee/mvp-scope.html',            title: 'Приоритизация' },
-      { path: '/cases/petsee/measurement-plan.html',     title: 'Метрики' }
+      { path: '/cases/petsee/context.html',          title: 'Обзор' },
+      { path: '/cases/petsee/segmentation.html',     title: 'Аудитория' },
+      { path: '/cases/petsee/research/index.html',   title: 'Исследование' },
+      { path: '/cases/petsee/benchmarking.html',     title: 'Бенчмаркинг' },
+      { path: '/cases/petsee/user-flow.html',        title: 'User Flow' },
+      { path: '/cases/petsee/hmw-before.html',       title: 'HMW' },
+      { path: '/cases/petsee/solutions.html',        title: 'Дизайн-решения' },
+      { path: '/cases/petsee/design.html',           title: 'Lo-fi → Hi-fi' },
+      { path: '/cases/petsee/usability.html',        title: 'Юзабилити' },
+      { path: '/cases/petsee/hmw-after.html',        title: 'HMW после тестов' },
+      { path: '/cases/petsee/mvp-scope.html',        title: 'Приоритизация' },
+      { path: '/cases/petsee/measurement-plan.html', title: 'Метрики' }
     ],
     'travel-summary': [
-      { path: '/cases/travel-summary/context.html',              title: 'Обзор' },
-      { path: '/cases/travel-summary/segments.html',             title: 'Аудитория' },
-      { path: '/cases/travel-summary/research.html',             title: 'Исследование' },
-      { path: '/cases/travel-summary/research/qualitative.html', title: 'Качественное' },
-      { path: '/cases/travel-summary/research/survey.html',      title: 'Количественное' },
-      { path: '/cases/travel-summary/benchmarking.html',         title: 'Бенчмаркинг' },
-      { path: '/cases/travel-summary/user-flow.html',            title: 'User Flow' },
-      { path: '/cases/travel-summary/design.html',               title: 'Дизайн' },
-      { path: '/cases/travel-summary/usability.html',            title: 'Валидация' },
-      { path: '/cases/travel-summary/measurement-plan.html',     title: 'Метрики' },
-      { path: '/cases/travel-summary/next-steps.html',           title: 'Следующие шаги' }
+      { path: '/cases/travel-summary/context.html',          title: 'Обзор' },
+      { path: '/cases/travel-summary/segments.html',         title: 'Аудитория' },
+      { path: '/cases/travel-summary/research.html',         title: 'Исследование' },
+      { path: '/cases/travel-summary/benchmarking.html',     title: 'Бенчмаркинг' },
+      { path: '/cases/travel-summary/user-flow.html',        title: 'User Flow' },
+      { path: '/cases/travel-summary/design.html',           title: 'Дизайн' },
+      { path: '/cases/travel-summary/usability.html',        title: 'Валидация' },
+      { path: '/cases/travel-summary/measurement-plan.html', title: 'Метрики' },
+      { path: '/cases/travel-summary/next-steps.html',       title: 'Следующие шаги' }
     ],
     'op': [
       { path: '/cases/op/monitoring/index.html', title: 'Мониторинг' },
@@ -327,18 +322,27 @@
       { path: '/cases/op/admin/index.html',       title: 'Администратор' }
     ],
     'messenger': [
-      { path: '/cases/messenger/context.html',              title: 'Обзор' },
-      { path: '/cases/messenger/segments.html',             title: 'Аудитория' },
-      { path: '/cases/messenger/research/index.html',       title: 'Исследование' },
-      { path: '/cases/messenger/research/focus-group.html', title: 'Фокус-группа' },
-      { path: '/cases/messenger/research/interviews.html',  title: 'Интервью' },
-      { path: '/cases/messenger/research/survey.html',      title: 'Опрос' },
-      { path: '/cases/messenger/synthesis.html',            title: 'Синтез' },
-      { path: '/cases/messenger/jtbd.html',                 title: 'JTBD' },
-      { path: '/cases/messenger/solutions.html',            title: 'Дизайн-решения' },
-      { path: '/cases/messenger/usability.html',            title: 'Юзабилити' },
-      { path: '/cases/messenger/iterations.html',           title: 'Итерации' }
+      { path: '/cases/messenger/context.html',            title: 'Обзор' },
+      { path: '/cases/messenger/segments.html',           title: 'Аудитория' },
+      { path: '/cases/messenger/research/index.html',     title: 'Исследование' },
+      { path: '/cases/messenger/synthesis.html',          title: 'Синтез' },
+      { path: '/cases/messenger/jtbd.html',               title: 'JTBD' },
+      { path: '/cases/messenger/solutions.html',          title: 'Дизайн-решения' },
+      { path: '/cases/messenger/usability.html',          title: 'Юзабилити' },
+      { path: '/cases/messenger/iterations.html',         title: 'Итерации' }
     ]
+  };
+
+  // Sub-pages that belong to a hub page — get a floating back button to the hub
+  var HUB_CHILDREN = {
+    '/cases/petsee/research/qualitative.html': { hub: '/cases/petsee/research/index.html',   label: 'Исследование' },
+    '/cases/petsee/research/survey-1.html':    { hub: '/cases/petsee/research/index.html',   label: 'Исследование' },
+    '/cases/petsee/research/survey-2.html':    { hub: '/cases/petsee/research/index.html',   label: 'Исследование' },
+    '/cases/travel-summary/research/qualitative.html': { hub: '/cases/travel-summary/research.html', label: 'Исследование' },
+    '/cases/travel-summary/research/survey.html':      { hub: '/cases/travel-summary/research.html', label: 'Исследование' },
+    '/cases/messenger/research/focus-group.html': { hub: '/cases/messenger/research/index.html', label: 'Исследование' },
+    '/cases/messenger/research/interviews.html':  { hub: '/cases/messenger/research/index.html', label: 'Исследование' },
+    '/cases/messenger/research/survey.html':      { hub: '/cases/messenger/research/index.html', label: 'Исследование' }
   };
 
   function isCaseIndex(path) {
@@ -359,13 +363,21 @@
   function getParentPath(path) {
     if (!path || path === '/' || /^\/index\.html$/.test(path)) return null;
     if (isCaseIndex(path)) return '/index.html';
+    if (HUB_CHILDREN[path]) return null; // hub children handled separately
     var m = /\/cases\/([^\/]+)/.exec(path);
     return m ? '/cases/' + m[1] + '/index.html' : null;
   }
 
   var parentPath = getParentPath(curPath);
 
-  if (parentPath) {
+  var hubChildEntry = HUB_CHILDREN[curPath];
+  if (hubChildEntry) {
+    var backFloatBtn = document.createElement('a');
+    backFloatBtn.className = 'back-float-btn';
+    backFloatBtn.href = hubChildEntry.hub;
+    backFloatBtn.innerHTML = SVG_LEFT + ' ' + hubChildEntry.label;
+    document.body.appendChild(backFloatBtn);
+  } else if (parentPath) {
     var caseNameLabel = 'К кейсу';
     if (parentPath !== '/index.html') {
       var caseIdForLabel = getCaseId(curPath);
