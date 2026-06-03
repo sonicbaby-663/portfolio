@@ -167,11 +167,9 @@ main {
 
 .case-tag {
   display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 500;
+  font-size: 0.875rem;
+  font-weight: 400;
   color: #9b9b9b;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
 
@@ -332,7 +330,8 @@ a.case-image:hover {
 }
 
 .case-hero .btn-outline {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   margin-top: 1.5rem;
 }
 
@@ -1003,6 +1002,17 @@ a.case-image:hover {
 
 .btn-outline:hover {
   background: #f3f3f3;
+}
+
+/* Dark variant used on main portfolio page and nav */
+.case-text .btn-outline {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+}
+.case-text .btn-outline:hover {
+  background: #333;
+  border-color: #333;
 }
 
 .img-placeholder--lg {
@@ -2010,6 +2020,7 @@ section[id] {
   align-items: center;
   gap: 6px;
   margin-top: 0.5rem;
+  border: 1px solid #e8e8e8;
   border-radius: 6px;
   padding: 0.625rem 1.25rem;
   font-size: 0.875rem;
@@ -2534,6 +2545,68 @@ details[open] .accordion-chevron {
 .scroll-top-btn.visible {
   opacity: 1;
   pointer-events: auto;
+}
+
+/* ── Floating back button ───────────────────────────────────────────────── */
+.back-float-btn {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  background: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: background 0.15s;
+}
+.back-float-btn:hover {
+  background: #f3f3f3;
+}
+
+.hmw-return-btn {
+  bottom: 5rem;
+}
+
+/* ── Bottom case / section navigation ──────────────────────────────────── */
+.case-bottom-nav {
+  display: flex;
+  align-items: center;
+  max-width: 720px;
+  margin: 4rem auto 2rem;
+  padding: 2rem 1.5rem 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+.case-bottom-nav__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #1a1a1a;
+  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fff;
+  background: #1a1a1a;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+.case-bottom-nav__btn:hover {
+  background: #333;
+  border-color: #333;
+}
+
+.case-bottom-nav__next {
+  margin-left: auto;
 }
 
 /* Flow */

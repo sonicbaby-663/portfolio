@@ -1,5 +1,5 @@
 (function () {
-  // Scroll position save/restore
+  // ── Scroll position save/restore ────────────────────────────────────────
   document.addEventListener('click', function (e) {
     var link = e.target.closest('a');
     if (!link) return;
@@ -7,11 +7,17 @@
     if (!href || href.startsWith('#') || href.startsWith('mailto:') || /^https?:/.test(href)) return;
     sessionStorage.setItem('scroll:' + location.pathname, window.scrollY);
 
-    // Не ставим флаг «вперед» если это ← ссылка (back-link или кнопка с левой стрелкой)
-    var isBack = link.classList.contains('back-link') ||
-                 !!link.querySelector('[data-arrow="left"]');
-    if (!isBack) {
+    var cls = link.classList;
+    if (!cls.contains('back-float-btn') && !cls.contains('hmw-return-btn')) {
       sessionStorage.setItem('scroll:fwd', '1');
+    }
+
+    // Track HMW → solutions navigation for the "Вернуться" button
+    if (cls.contains('hmw-q-link')) {
+      try {
+        var dest = new URL(href, location.href).pathname;
+        sessionStorage.setItem('hmw-return:' + dest, location.pathname);
+      } catch (ex) {}
     }
   });
 
@@ -19,42 +25,41 @@
     var key   = 'scroll:' + location.pathname;
     var saved = sessionStorage.getItem(key);
     var isFwd = sessionStorage.getItem('scroll:fwd');
-
-    sessionStorage.removeItem('scroll:fwd'); // всегда сбрасываем флаг
-    sessionStorage.removeItem(key);          // всегда очищаем сохраненную позицию
-
-    // Если пришли по прямой ссылке (isFwd) — страница должна открыться сверху
-    // Если пришли назад (кнопка «Назад» или браузерная история) — восстанавливаем
+    sessionStorage.removeItem('scroll:fwd');
+    sessionStorage.removeItem(key);
     if (saved !== null && !isFwd) {
       window.scrollTo(0, parseInt(saved, 10));
     }
   });
 
-  // Floating scroll-to-top button
-  var btn = document.createElement('button');
-  btn.className = 'scroll-top-btn';
-  btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
-  btn.setAttribute('aria-label', 'Наверх');
-  document.body.appendChild(btn);
+  // ── SVG arrows ──────────────────────────────────────────────────────────
+  var SVG_RIGHT = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+  var SVG_LEFT  = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0" data-arrow="left"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>';
 
-  btn.addEventListener('click', function () {
+  // ── Floating scroll-to-top button ────────────────────────────────────────
+  var scrollTopBtn = document.createElement('button');
+  scrollTopBtn.className = 'scroll-top-btn';
+  scrollTopBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  scrollTopBtn.setAttribute('aria-label', 'Наверх');
+  document.body.appendChild(scrollTopBtn);
+
+  scrollTopBtn.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  function updateBtn() {
+  function updateScrollTopBtn() {
     if (window.scrollY > 300) {
-      btn.classList.add('visible');
+      scrollTopBtn.classList.add('visible');
     } else {
-      btn.classList.remove('visible');
+      scrollTopBtn.classList.remove('visible');
     }
   }
 
-  window.addEventListener('scroll', updateBtn, { passive: true });
-  updateBtn();
+  window.addEventListener('scroll', updateScrollTopBtn, { passive: true });
+  updateScrollTopBtn();
 
-  // ── Global Lightbox ──
+  // ── Global Lightbox ──────────────────────────────────────────────────────
   // Appended directly to <body> so it is never inside a CSS-transformed ancestor.
-
   var lb = document.createElement('div');
   lb.className = 'global-lightbox';
   lb.setAttribute('role', 'dialog');
@@ -141,7 +146,6 @@
     if (e.key === 'Escape') closeLightbox();
   });
 
-  // Zoom buttons
   lbZoomIn.addEventListener('click', function () {
     zoomScale = Math.min(4, zoomScale + 0.25);
     clampPan();
@@ -154,7 +158,6 @@
     applyZoom();
   });
 
-  // Wheel zoom
   lbContent.addEventListener('wheel', function (e) {
     e.preventDefault();
     var step = e.deltaY < 0 ? 0.15 : -0.15;
@@ -164,7 +167,6 @@
     applyZoom();
   }, { passive: false });
 
-  // Mouse drag to pan
   lbInner.addEventListener('mousedown', function (e) {
     if (zoomScale <= 1) return;
     e.preventDefault();
@@ -188,7 +190,6 @@
     applyZoom();
   });
 
-  // Touch: pinch to zoom + single-finger pan
   var pinchDist0 = 0, pinchScale0 = 1;
   var touchPanStartX, touchPanStartY, touchPanX0, touchPanY0;
   var isTouchPanning = false;
@@ -231,7 +232,6 @@
   }, { passive: false });
   lbContent.addEventListener('touchend', function () { isTouchPanning = false; });
 
-  // Make .img-placeholder and img[data-lightbox] elements zoomable
   function initZoomables() {
     document.querySelectorAll('.img-placeholder:not([data-zoom-init])').forEach(function (el) {
       el.setAttribute('data-zoom-init', '1');
@@ -252,7 +252,7 @@
   window.openGlobalLightbox  = openLightbox;
   window.closeGlobalLightbox = closeLightbox;
 
-  // ── Carousel swipe (touch) ──
+  // ── Carousel swipe (touch) ───────────────────────────────────────────────
   var swipeStartX = 0;
   var swipeStartY = 0;
 
@@ -272,10 +272,7 @@
     if (target) target.click();
   }, { passive: true });
 
-  // Replace text arrows in .btn-outline elements with SVG icons
-  var SVG_RIGHT = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
-  var SVG_LEFT  = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0" data-arrow="left"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>';
-
+  // ── Replace text arrows in .btn-outline elements with SVG icons ──────────
   document.querySelectorAll('.btn-outline, .back-link, .hmw-q-link').forEach(function (el) {
     var html = el.innerHTML;
     if (/→\s*$/.test(html)) {
@@ -284,4 +281,177 @@
       el.innerHTML = SVG_LEFT + html.replace(/^\s*←\s*/, '');
     }
   });
+
+  // ── Navigation config ────────────────────────────────────────────────────
+  var CASES = [
+    { id: 'petsee',         title: 'PetSee',        path: '/cases/petsee/index.html' },
+    { id: 'travel-summary', title: 'Travel Summary', path: '/cases/travel-summary/index.html' },
+    { id: 'op',             title: 'Опыт работы',    path: '/cases/op/index.html' },
+    { id: 'messenger',      title: 'Мессенджер',     path: '/cases/messenger/index.html' }
+  ];
+
+  var SECTIONS = {
+    'petsee': [
+      { path: '/cases/petsee/context.html',              title: 'Обзор' },
+      { path: '/cases/petsee/segmentation.html',         title: 'Аудитория' },
+      { path: '/cases/petsee/research/index.html',       title: 'Исследование' },
+      { path: '/cases/petsee/research/qualitative.html', title: 'Качественное' },
+      { path: '/cases/petsee/research/survey-1.html',    title: 'Опрос: волна 1' },
+      { path: '/cases/petsee/research/survey-2.html',    title: 'Опрос: волна 2' },
+      { path: '/cases/petsee/benchmarking.html',         title: 'Бенчмаркинг' },
+      { path: '/cases/petsee/user-flow.html',            title: 'User Flow' },
+      { path: '/cases/petsee/hmw-before.html',           title: 'HMW' },
+      { path: '/cases/petsee/solutions.html',            title: 'Дизайн-решения' },
+      { path: '/cases/petsee/design.html',               title: 'Lo-fi → Hi-fi' },
+      { path: '/cases/petsee/usability.html',            title: 'Юзабилити' },
+      { path: '/cases/petsee/hmw-after.html',            title: 'HMW после тестов' },
+      { path: '/cases/petsee/mvp-scope.html',            title: 'Приоритизация' },
+      { path: '/cases/petsee/measurement-plan.html',     title: 'Метрики' }
+    ],
+    'travel-summary': [
+      { path: '/cases/travel-summary/context.html',              title: 'Обзор' },
+      { path: '/cases/travel-summary/segments.html',             title: 'Аудитория' },
+      { path: '/cases/travel-summary/research.html',             title: 'Исследование' },
+      { path: '/cases/travel-summary/research/qualitative.html', title: 'Качественное' },
+      { path: '/cases/travel-summary/research/survey.html',      title: 'Количественное' },
+      { path: '/cases/travel-summary/benchmarking.html',         title: 'Бенчмаркинг' },
+      { path: '/cases/travel-summary/user-flow.html',            title: 'User Flow' },
+      { path: '/cases/travel-summary/design.html',               title: 'Дизайн' },
+      { path: '/cases/travel-summary/usability.html',            title: 'Валидация' },
+      { path: '/cases/travel-summary/measurement-plan.html',     title: 'Метрики' },
+      { path: '/cases/travel-summary/next-steps.html',           title: 'Следующие шаги' }
+    ],
+    'op': [
+      { path: '/cases/op/monitoring/index.html', title: 'Мониторинг' },
+      { path: '/cases/op/edo/index.html',         title: 'ЭДО' },
+      { path: '/cases/op/admin/index.html',       title: 'Администратор' }
+    ],
+    'messenger': [
+      { path: '/cases/messenger/context.html',              title: 'Обзор' },
+      { path: '/cases/messenger/segments.html',             title: 'Аудитория' },
+      { path: '/cases/messenger/research/index.html',       title: 'Исследование' },
+      { path: '/cases/messenger/research/focus-group.html', title: 'Фокус-группа' },
+      { path: '/cases/messenger/research/interviews.html',  title: 'Интервью' },
+      { path: '/cases/messenger/research/survey.html',      title: 'Опрос' },
+      { path: '/cases/messenger/synthesis.html',            title: 'Синтез' },
+      { path: '/cases/messenger/jtbd.html',                 title: 'JTBD' },
+      { path: '/cases/messenger/solutions.html',            title: 'Дизайн-решения' },
+      { path: '/cases/messenger/usability.html',            title: 'Юзабилити' },
+      { path: '/cases/messenger/iterations.html',           title: 'Итерации' }
+    ]
+  };
+
+  function isCaseIndex(path) {
+    return /\/cases\/[^\/]+\/?(?:index\.html)?$/.test(path);
+  }
+
+  function getCaseId(path) {
+    var m = /\/cases\/([^\/]+)/.exec(path);
+    return m ? m[1] : null;
+  }
+
+  // ── Floating back button ─────────────────────────────────────────────────
+  var curPath = location.pathname;
+  var inCases = curPath.indexOf('/cases/') !== -1;
+  var onCaseIndex = isCaseIndex(curPath);
+  var onRoot = curPath === '/' || /^\/index\.html$/.test(curPath);
+
+  function getParentPath(path) {
+    if (!path || path === '/' || /^\/index\.html$/.test(path)) return null;
+    if (isCaseIndex(path)) return '/index.html';
+    var m = /\/cases\/([^\/]+)/.exec(path);
+    return m ? '/cases/' + m[1] + '/index.html' : null;
+  }
+
+  var parentPath = getParentPath(curPath);
+
+  if (parentPath) {
+    var caseNameLabel = 'К кейсу';
+    if (parentPath !== '/index.html') {
+      var caseIdForLabel = getCaseId(curPath);
+      for (var cni = 0; cni < CASES.length; cni++) {
+        if (CASES[cni].id === caseIdForLabel) { caseNameLabel = CASES[cni].title; break; }
+      }
+    }
+    var backLabel = parentPath === '/index.html' ? 'К кейсам' : caseNameLabel;
+
+    var backFloatBtn = document.createElement('a');
+    backFloatBtn.className = 'back-float-btn';
+    backFloatBtn.href = parentPath;
+    backFloatBtn.innerHTML = SVG_LEFT + ' ' + backLabel;
+
+    document.body.appendChild(backFloatBtn);
+  }
+
+  // ── "Вернуться" button (HMW → solutions) ────────────────────────────────
+  var hmwReturnSource = sessionStorage.getItem('hmw-return:' + curPath);
+  if (hmwReturnSource) {
+    var returnBtn = document.createElement('a');
+    returnBtn.className = 'back-float-btn hmw-return-btn';
+    returnBtn.href = hmwReturnSource;
+    returnBtn.innerHTML = SVG_LEFT + ' Вернуться';
+    document.body.appendChild(returnBtn);
+  }
+
+  // ── Bottom navigation ────────────────────────────────────────────────────
+  if (inCases) {
+    var navCaseId = getCaseId(curPath);
+
+    if (navCaseId) {
+      var navPrev = null, navNext = null;
+
+      if (onCaseIndex) {
+        var caseIdx = -1;
+        for (var ci = 0; ci < CASES.length; ci++) {
+          if (CASES[ci].id === navCaseId) { caseIdx = ci; break; }
+        }
+        if (caseIdx !== -1) {
+          if (caseIdx > 0) navPrev = { href: CASES[caseIdx - 1].path, label: CASES[caseIdx - 1].title };
+          if (caseIdx < CASES.length - 1) navNext = { href: CASES[caseIdx + 1].path, label: CASES[caseIdx + 1].title };
+        }
+      } else {
+        var secs = SECTIONS[navCaseId];
+        if (secs) {
+          var secIdx = -1;
+          for (var si = 0; si < secs.length; si++) {
+            if (curPath === secs[si].path || curPath.endsWith(secs[si].path)) {
+              secIdx = si; break;
+            }
+          }
+          if (secIdx !== -1) {
+            if (secIdx > 0) navPrev = { href: secs[secIdx - 1].path, label: secs[secIdx - 1].title };
+            if (secIdx < secs.length - 1) navNext = { href: secs[secIdx + 1].path, label: secs[secIdx + 1].title };
+          }
+        }
+      }
+
+      if (navPrev || navNext) {
+        var bottomNav = document.createElement('div');
+        bottomNav.className = 'case-bottom-nav';
+
+        if (navPrev) {
+          var prevA = document.createElement('a');
+          prevA.className = 'case-bottom-nav__btn';
+          prevA.href = navPrev.href;
+          prevA.innerHTML = SVG_LEFT + ' ' + navPrev.label;
+          bottomNav.appendChild(prevA);
+        }
+
+        if (navNext) {
+          var nextA = document.createElement('a');
+          nextA.className = 'case-bottom-nav__btn case-bottom-nav__next';
+          nextA.href = navNext.href;
+          nextA.innerHTML = navNext.label + ' ' + SVG_RIGHT;
+          bottomNav.appendChild(nextA);
+        }
+
+        var footer = document.querySelector('footer');
+        if (footer) {
+          footer.parentNode.insertBefore(bottomNav, footer);
+        } else {
+          document.body.appendChild(bottomNav);
+        }
+      }
+    }
+  }
 })();
