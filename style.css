@@ -3106,6 +3106,7 @@ details[open] .accordion-chevron {
     -webkit-overflow-scrolling: touch;
   }
 
+
   /* ── Floating buttons: 44px tap target ── */
   .back-float-btn {
     min-height: 44px;

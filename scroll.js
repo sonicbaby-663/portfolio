@@ -541,3 +541,42 @@
     }
   }
 })();
+
+// ── Table overflow fix ───────────────────────────────────────────────────────
+(function () {
+  function fixTableOverflow() {
+    var isMobile = window.innerWidth <= 600;
+    document.querySelectorAll('.table-wrap').forEach(function (wrap) {
+      var table = wrap.querySelector('table');
+      if (!table) return;
+      if (!isMobile) {
+        table.style.minWidth = '';
+        return;
+      }
+      if (table.classList.contains('case-table--hypo') ||
+          table.classList.contains('case-table--meta')) return;
+      var prevLayout   = table.style.tableLayout;
+      var prevWidth    = table.style.width;
+      var prevMinWidth = table.style.minWidth;
+      table.style.tableLayout = 'auto';
+      table.style.width       = 'max-content';
+      table.style.minWidth    = '0';
+      var naturalW = table.offsetWidth;
+      table.style.tableLayout = prevLayout;
+      table.style.width       = prevWidth;
+      table.style.minWidth    = prevMinWidth;
+      if (naturalW > wrap.clientWidth) {
+        table.style.minWidth = naturalW + 'px';
+      } else {
+        table.style.minWidth = '';
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fixTableOverflow);
+  } else {
+    fixTableOverflow();
+  }
+  window.addEventListener('resize', fixTableOverflow);
+})();
