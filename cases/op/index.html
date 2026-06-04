@@ -41,8 +41,8 @@
           <p>Внутренний инструмент для отслеживания актуальности нормативной базы учебных продуктов. До него эксперты держали по десятку открытых вкладок в Консультант+ и на сайтах ведомств, а изменения отслеживали вручную.</p>
           <a href="./monitoring/index.html" class="btn-outline btn--primary-light">Смотреть кейс →</a>
         </div>
-        <a href="./monitoring/index.html" class="case-image" tabindex="-1" aria-hidden="true">
-          <img src="../../images/monitoringcover.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <a href="./monitoring/index.html" class="case-image" tabindex="-1" aria-hidden="true" style="aspect-ratio:unset;height:auto;">
+          <img src="../../images/monitoringdesigndecision1.1.webp" alt="" style="width:100%;height:auto;display:block;">
         </a>
       </article>
 
@@ -55,9 +55,13 @@
           <p>Системный редизайн легаси-панели. 10 разделов на 50–100+ страниц, 3 раздела уже в продакшне. Два типа пользователей с противоположными ожиданиями: опытные привыкли к легаси-паттернам, новые ждут современного интерфейса.</p>
           <a href="./admin/index.html" class="btn-outline btn--primary-light">Смотреть кейс →</a>
         </div>
-        <a href="./admin/index.html" class="case-image" tabindex="-1" aria-hidden="true">
-          <img src="../../images/adminpanelcover.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
-        </a>
+        <div class="case-image">
+          <div class="before-after" style="height:100%;margin:0;border-radius:0;">
+            <div class="ba-before"><img src="../../images/adminpaneldesigndecisionbefore3.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>
+            <div class="ba-after"><img src="../../images/adminpaneldesigndecisionafter3.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>
+            <div class="ba-divider"><div class="ba-handle" aria-label="Перетащите для сравнения"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4L2 9L6 14" stroke="rgba(220,38,38,0.75)"/><path d="M12 4L16 9L12 14" stroke="rgba(22,163,74,0.75)"/></svg></div></div>
+          </div>
+        </div>
       </article>
 
       <article class="case">
@@ -69,8 +73,8 @@
           <p>Электронный документооборот внутри административной панели. Встроенный ЭДО убирает разрыв между внешними агрегаторами для подписания и продуктом: все данные, процесс подписания и протоколы внутри системы.</p>
           <a href="./edo/index.html" class="btn-outline btn--primary-light">Смотреть кейс →</a>
         </div>
-        <a href="./edo/index.html" class="case-image" tabindex="-1" aria-hidden="true">
-          <img src="../../images/adminpanelcover.webp" alt="" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <a href="./edo/index.html" class="case-image" tabindex="-1" aria-hidden="true" style="aspect-ratio:unset;height:auto;">
+          <img src="../../images/edodesigndecison2.1.webp" alt="" style="width:100%;height:auto;display:block;">
         </a>
       </article>
 
@@ -85,5 +89,34 @@
   </footer>
 
   <script src="../../scroll.js"></script>
+  <script>
+    (function () {
+      document.querySelectorAll('.before-after:not(.before-after--vertical)').forEach(function (ba) {
+        var after = ba.querySelector('.ba-after');
+        var divider = ba.querySelector('.ba-divider');
+        var dragging = false;
+        function setPos(pct) {
+          pct = Math.max(0, Math.min(100, pct));
+          after.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+          divider.style.left = pct + '%';
+        }
+        setPos(50);
+        ba.addEventListener('mousedown', function (e) { dragging = true; e.preventDefault(); });
+        document.addEventListener('mouseup', function () { dragging = false; });
+        document.addEventListener('mousemove', function (e) {
+          if (!dragging) return;
+          var rect = ba.getBoundingClientRect();
+          setPos((e.clientX - rect.left) / rect.width * 100);
+        });
+        ba.addEventListener('touchstart', function () { dragging = true; }, { passive: true });
+        ba.addEventListener('touchend', function () { dragging = false; }, { passive: true });
+        ba.addEventListener('touchmove', function (e) {
+          if (!dragging) return;
+          var rect = ba.getBoundingClientRect();
+          setPos((e.touches[0].clientX - rect.left) / rect.width * 100);
+        }, { passive: false });
+      });
+    })();
+  </script>
 </body>
 </html>

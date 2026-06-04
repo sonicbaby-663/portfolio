@@ -152,8 +152,9 @@ main {
 /* Case cards */
 .case {
   display: flex;
-  align-items: center;
-  gap: 2rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.25rem;
   padding: 2.5rem 0;
   text-decoration: none;
   color: inherit;
@@ -204,9 +205,8 @@ main {
 
 /* Image placeholder */
 .case-image {
-  flex-shrink: 0;
-  width: 280px;
-  height: 158px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   background: #f3f3f3;
   border-radius: 6px;
   border: 1px solid #e8e8e8;
@@ -2894,14 +2894,7 @@ details[open] .accordion-chevron {
 /* Responsive */
 @media (max-width: 560px) {
   .case {
-    flex-direction: column;
-    gap: 1.25rem;
-  }
-
-  .case-image {
-    width: 100%;
-    height: 160px;
-    order: -1;
+    gap: 1rem;
   }
 
   footer {
