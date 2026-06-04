@@ -504,6 +504,31 @@ a.case-image:hover {
   z-index: 2;
 }
 
+.ba-zoom-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 4;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.88);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  transition: background 0.15s, color 0.15s;
+  backdrop-filter: blur(4px);
+}
+
+.ba-zoom-btn:hover {
+  background: #fff;
+  color: #1a1a1a;
+}
+
 .ba-handle {
   width: 34px;
   height: 34px;
@@ -1246,21 +1271,23 @@ a.case-image:hover {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.88);
   border: none;
   cursor: pointer;
-  font-size: 0.8125rem;
   color: #555;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
-  transition: background 0.15s;
-  line-height: 1;
+  transition: background 0.15s, color 0.15s;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .global-lightbox-close:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background: #fff;
+  color: #1a1a1a;
 }
 
 .global-lightbox-zoom-controls {
@@ -1274,25 +1301,26 @@ a.case-image:hover {
 }
 
 .global-lightbox-zoom-btn {
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.88);
   border: none;
   cursor: pointer;
-  font-size: 1.25rem;
-  font-weight: 400;
-  color: #333;
+  color: #555;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.15s;
-  line-height: 1;
+  transition: background 0.15s, color 0.15s;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   user-select: none;
 }
 
 .global-lightbox-zoom-btn:hover {
-  background: rgba(0, 0, 0, 0.22);
+  background: #fff;
+  color: #1a1a1a;
 }
 .global-lightbox-zoom-btn:disabled {
   opacity: 0.3;

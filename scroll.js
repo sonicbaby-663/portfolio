@@ -69,14 +69,17 @@
   lb.className = 'global-lightbox';
   lb.setAttribute('role', 'dialog');
   lb.setAttribute('aria-modal', 'true');
+  var SVG_CLOSE   = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+  var SVG_ZOOM_IN  = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>';
+  var SVG_ZOOM_OUT = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>';
   lb.innerHTML =
     '<div class="global-lightbox-backdrop"></div>' +
     '<div class="global-lightbox-content">' +
-    '<button class="global-lightbox-close" aria-label="Закрыть">✕</button>' +
+    '<button class="global-lightbox-close" aria-label="Закрыть">' + SVG_CLOSE + '</button>' +
     '<div class="global-lightbox-inner"></div>' +
     '<div class="global-lightbox-zoom-controls">' +
-    '<button class="global-lightbox-zoom-btn" data-zoom="out" aria-label="Отдалить">−</button>' +
-    '<button class="global-lightbox-zoom-btn" data-zoom="in"  aria-label="Приблизить">+</button>' +
+    '<button class="global-lightbox-zoom-btn" data-zoom="out" aria-label="Отдалить">' + SVG_ZOOM_OUT + '</button>' +
+    '<button class="global-lightbox-zoom-btn" data-zoom="in"  aria-label="Приблизить">' + SVG_ZOOM_IN + '</button>' +
     '</div>' +
     '</div>';
   document.body.appendChild(lb);
@@ -85,13 +88,15 @@
   var lbBackdrop = lb.querySelector('.global-lightbox-backdrop');
   var lbClose    = lb.querySelector('.global-lightbox-close');
   var lbInner    = lb.querySelector('.global-lightbox-inner');
-  var lbZoomIn   = lb.querySelector('[data-zoom="in"]');
-  var lbZoomOut  = lb.querySelector('[data-zoom="out"]');
+  var lbZoomIn      = lb.querySelector('[data-zoom="in"]');
+  var lbZoomOut     = lb.querySelector('[data-zoom="out"]');
+  var lbZoomControls = lb.querySelector('.global-lightbox-zoom-controls');
 
   var zoomScale  = 1;
   var panX = 0, panY = 0;
   var isDragging = false;
   var dragStartX, dragStartY, dragPanX, dragPanY;
+  var lbIsSliderMode = false;
 
   function clampPan() {
     var rect = lbContent.getBoundingClientRect();
@@ -120,17 +125,60 @@
     panY = 0;
   }
 
-  function openLightbox(type, src) {
+  function openLightbox(type, src, opts) {
     var t = type || 'landscape';
     lbContent.className = 'global-lightbox-content global-lightbox-content--' + t;
-    if (src) {
-      var imgStyle = t === 'landscape'
-        ? 'max-width:min(92vw,1200px);max-height:calc(90vh - 80px);width:auto;height:auto;display:block;border-radius:12px;user-select:none;-webkit-user-drag:none;'
-        : 'width:100%;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none;';
-      lbInner.innerHTML = '<img src="' + src + '" style="' + imgStyle + '">';
+
+    if (opts && opts.before && opts.after) {
+      lbIsSliderMode = true;
+      lbZoomControls.style.display = 'none';
+      var baStyle = 'width:min(92vw,1200px);margin:0;border-radius:12px;';
+      var SVG_HANDLE = '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4L2 9L6 14" stroke="rgba(220,38,38,0.75)"/><path d="M12 4L16 9L12 14" stroke="rgba(22,163,74,0.75)"/></svg>';
+      lbInner.innerHTML =
+        '<div class="before-after before-after--landscape" style="' + baStyle + '">' +
+        '<div class="ba-before"><img src="' + opts.before + '" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>' +
+        '<div class="ba-after"><img src="' + opts.after + '" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></div>' +
+        '<div class="ba-divider"><div class="ba-handle" aria-label="Перетащите для сравнения">' + SVG_HANDLE + '</div></div>' +
+        '</div>';
+      lbInner.style.height = 'auto';
+      lbInner.style.width  = 'auto';
+      var lbBa = lbInner.querySelector('.before-after');
+      var lbBaAfter   = lbBa.querySelector('.ba-after');
+      var lbBaDivider = lbBa.querySelector('.ba-divider');
+      var lbBaDragging = false;
+      function lbSetPos(pct) {
+        pct = Math.max(0, Math.min(100, pct));
+        lbBaAfter.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+        lbBaDivider.style.left = pct + '%';
+      }
+      lbSetPos(50);
+      lbBa.addEventListener('mousedown', function (e) { lbBaDragging = true; e.preventDefault(); e.stopPropagation(); });
+      document.addEventListener('mouseup',  function () { lbBaDragging = false; });
+      document.addEventListener('mousemove', function (e) {
+        if (!lbBaDragging) return;
+        var r = lbBa.getBoundingClientRect();
+        lbSetPos((e.clientX - r.left) / r.width * 100);
+      });
+      lbBa.addEventListener('touchstart', function () { lbBaDragging = true; }, { passive: true });
+      lbBa.addEventListener('touchend',   function () { lbBaDragging = false; }, { passive: true });
+      lbBa.addEventListener('touchmove', function (e) {
+        if (!lbBaDragging) return;
+        var r = lbBa.getBoundingClientRect();
+        lbSetPos((e.touches[0].clientX - r.left) / r.width * 100);
+      }, { passive: false });
+    } else {
+      lbIsSliderMode = false;
+      lbZoomControls.style.display = '';
+      if (src) {
+        var imgStyle = t === 'landscape'
+          ? 'max-width:min(92vw,1200px);max-height:calc(90vh - 80px);width:auto;height:auto;display:block;border-radius:12px;user-select:none;-webkit-user-drag:none;'
+          : 'width:100%;height:100%;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none;';
+        lbInner.innerHTML = '<img src="' + src + '" style="' + imgStyle + '">';
+      }
+      lbInner.style.height = t === 'landscape' ? 'auto' : '100%';
+      lbInner.style.width  = t === 'landscape' ? 'auto' : '100%';
     }
-    lbInner.style.height = t === 'landscape' ? 'auto' : '100%';
-    lbInner.style.width  = t === 'landscape' ? 'auto' : '100%';
+
     resetView();
     applyZoom();
     lb.classList.add('is-open');
@@ -140,6 +188,8 @@
   function closeLightbox() {
     lb.classList.remove('is-open');
     document.body.style.overflow = '';
+    lbIsSliderMode = false;
+    lbZoomControls.style.display = '';
     resetView();
     applyZoom();
     setTimeout(function () { lbInner.innerHTML = ''; }, 300);
@@ -173,7 +223,7 @@
   }, { passive: false });
 
   lbInner.addEventListener('mousedown', function (e) {
-    if (zoomScale <= 1) return;
+    if (lbIsSliderMode || zoomScale <= 1) return;
     e.preventDefault();
     isDragging = true;
     dragStartX = e.clientX;
@@ -247,6 +297,21 @@
       el.style.cursor = 'zoom-in';
       el.addEventListener('click', function () {
         openLightbox(el.getAttribute('data-lightbox') || 'landscape', el.src);
+      });
+    });
+    document.querySelectorAll('.before-after[data-before]:not([data-zoom-init])').forEach(function (ba) {
+      ba.setAttribute('data-zoom-init', '1');
+      var btn = document.createElement('button');
+      btn.className = 'ba-zoom-btn';
+      btn.setAttribute('aria-label', 'Увеличить');
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>';
+      ba.appendChild(btn);
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        openLightbox('landscape', null, {
+          before: ba.getAttribute('data-before'),
+          after:  ba.getAttribute('data-after')
+        });
       });
     });
   }
