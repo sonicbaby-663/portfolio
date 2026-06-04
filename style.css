@@ -255,7 +255,6 @@ footer a:hover {
 }
 
 header {
-  opacity: 0;
   animation: fadeInUp 0.6s ease forwards;
   animation-delay: 0s;
 }
