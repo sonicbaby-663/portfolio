@@ -555,6 +555,7 @@
       }
       if (table.classList.contains('case-table--hypo') ||
           table.classList.contains('case-table--meta')) return;
+      if (window.getComputedStyle(table).tableLayout !== 'fixed') return;
       var prevLayout   = table.style.tableLayout;
       var prevWidth    = table.style.width;
       var prevMinWidth = table.style.minWidth;
